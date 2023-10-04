@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:valueConverter="clr-namespace:SteelStrickers.ValueConverter;assembly=SteelStrickers"
+             xmlns:controls="clr-namespace:SteelStrickers.Controls;assembly=SteelStrickers"
+             x:Class="SteelStrickers.Views.ControllerPage">
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <valueConverter:DummyValueConverter x:Key="DummyConverter"/>
+                    <Style TargetType="Label">
+                        <Setter Property="HorizontalOptions" Value="Center"/>
+                        <Setter Property="VerticalOptions" Value="Center"/>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <controls:JoystickControl x:Name="JoystickControl" Grid.Column="0" BackgroundColor="#ececec"
+                                            HorizontalOptions="Center" VerticalOptions="Center" 
+                                            HeightRequest="250" WidthRequest="150"/>
+
+            <StackLayout BindingContext="{x:Reference Name=JoystickControl}" Grid.Column="1" VerticalOptions="Center" Orientation="Vertical">
+                <StackLayout Orientation="Vertical ">
+                    <Label Text="Xposition" />
+                    <Label Text="{Binding Xposition}"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical ">
+                    <Label Text="Yposition" Grid.Row="1" />
+                    <Label Text="{Binding Yposition}"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical ">
+                    <Label Text="Distance"/>
+                    <Label Text="{Binding Distance}"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical ">
+                    <Label Text="Angle"/>
+                    <Label Text="{Binding Angle}"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
