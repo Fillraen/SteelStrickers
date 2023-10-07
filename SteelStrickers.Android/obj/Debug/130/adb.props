@@ -1,2 +1,2 @@
-AdbTarget=-s AZTP712101110254
+AdbTarget=-s emulator-5554
 AdbOptions=
