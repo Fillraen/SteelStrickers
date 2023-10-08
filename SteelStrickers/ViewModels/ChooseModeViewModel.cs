@@ -15,7 +15,6 @@ namespace SteelStrickers.ViewModels
         {
             GoToControllerPageCommand = new Command(OnGoToControllerPageClicked);
             SearchOpponentCommand = new Command(SearchOpponent);
-
         }
 
         private async void OnGoToControllerPageClicked(object obj)

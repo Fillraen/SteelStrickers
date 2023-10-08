@@ -16,6 +16,7 @@ namespace SteelStrickers
             SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NHaF5cXmVCf1NpRmJGfV5yd0VOalxUTnRbUj0eQnxTdEZiWX9acXBURWRaVUV2Wg==");
             DependencyService.Register<DAO_User>(); 
             DependencyService.Register<DAO_Robots>(); 
+            DependencyService.Register<BluetoothService>();
             MainPage = new AppShell();
         }
 

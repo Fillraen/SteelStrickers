@@ -5,6 +5,8 @@ public class MonoPackageManager_Resources {
 		"SteelStrickers.Android.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
+		"Plugin.BluetoothClassic.Abstractions.dll",
+		"Plugin.BluetoothClassic.Android.dll",
 		"Rg.Plugins.Popup.dll",
 		"SteelStrickers.dll",
 		"Syncfusion.Buttons.XForms.Android.dll",

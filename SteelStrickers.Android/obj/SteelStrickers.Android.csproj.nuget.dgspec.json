@@ -137,6 +137,10 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "Plugin.BluetoothClassic": {
+              "target": "Package",
+              "version": "[1.1.5, )"
+            },
             "Rg.Plugins.Popup": {
               "target": "Package",
               "version": "[2.1.0, )"

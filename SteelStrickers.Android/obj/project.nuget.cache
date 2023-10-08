@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "kaABgb7luRL/ASB1kcro/Tpn+kLQ2m3LBiL9wfPgUmRG/URbUGMpEHdsYbSPKaIXQO2dENBL5X30gtV7bd/FwQ==",
+  "dgSpecHash": "y0Pn+to+9GPcN9Nr36L74Z7VVumUM8bN/boYstzZR9NhUvII+3auja3am1NdAu3Eekvp+bNFxlQBxjjZs2GS/Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\NTAer\\Desktop\\Xaz\\SteelStrickers-Xamarin\\SteelStrickers.Android\\SteelStrickers.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NTAer\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\NTAer\\.nuget\\packages\\plugin.bluetoothclassic\\1.1.5\\plugin.bluetoothclassic.1.1.5.nupkg.sha512",
     "C:\\Users\\NTAer\\.nuget\\packages\\rg.plugins.popup\\2.1.0\\rg.plugins.popup.2.1.0.nupkg.sha512",
     "C:\\Users\\NTAer\\.nuget\\packages\\syncfusion.licensing\\23.1.39\\syncfusion.licensing.23.1.39.nupkg.sha512",
     "C:\\Users\\NTAer\\.nuget\\packages\\syncfusion.xamarin.buttons\\23.1.39\\syncfusion.xamarin.buttons.23.1.39.nupkg.sha512",

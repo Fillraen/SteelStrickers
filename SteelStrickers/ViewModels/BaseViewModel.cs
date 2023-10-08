@@ -14,6 +14,8 @@ namespace SteelStrickers.ViewModels
         
         public IDAO_User daoUser => DependencyService.Get<IDAO_User>();
         public IDAO_Robots daoRobots => DependencyService.Get<IDAO_Robots>();
+        public IBluetoothService bluetoothService => DependencyService.Get<IBluetoothService>();
+        public IBluetoothDiscoveryService bluetoothDiscoveryService => DependencyService.Get<IBluetoothDiscoveryService>();
 
         bool isBusy = false;
         public bool IsBusy
