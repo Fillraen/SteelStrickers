@@ -16,15 +16,8 @@ namespace SteelStrickers.Services
         private IBluetoothManagedConnection _currentBluetoothConnection;
         public BluetoothService()
         {
-            // Abonnez-vous au message pour recevoir la liste des appareils
-            MessagingCenter.Subscribe<List<Robot>>(this, "DiscoveredDevices", (devices) =>
-            {
-                // Traitez la liste des appareils ici
-                // Par exemple, les afficher dans une ListView
-            });
+
         }
-
-
         public IEnumerable<Robot> GetAvailableDevices()
         {
             var robots = new List<Robot>();

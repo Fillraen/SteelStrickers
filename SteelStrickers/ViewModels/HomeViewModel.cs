@@ -32,7 +32,7 @@ namespace SteelStrickers.ViewModels
                 }
             }
         }
-        private IBluetoothDiscoveryService _bluetoothDiscoveryService = DependencyService.Get<IBluetoothDiscoveryService>();
+
         public Command ChooseModeCommand { get; }
 
         public Command DiscoverCommand { get; }
@@ -40,18 +40,19 @@ namespace SteelStrickers.ViewModels
         {
             InitializeData();
             ChooseModeCommand = new Command(OnFightClicked);
-            DiscoverCommand = new Command(() => Discover());
+            DiscoverCommand = new Command(async () => await Discover());
             //Robots = new ObservableCollection<Robot>(bluetoothService.GetAvailableRobots());
-
+            
+        }
+        private async Task Discover()
+        {
             MessagingCenter.Subscribe<Robot>(this, "DiscoveredDevice", (robot) =>
             {
                 // Ajouter le robot à votre ObservableCollection
                 Robots.Add(robot);
             });
-        }
-        private void Discover()
-        {
-            _bluetoothDiscoveryService.StartDiscovery();
+
+            bluetoothDiscoveryService.StartDiscovery();
         }
         private async void InitializeData()
         {
