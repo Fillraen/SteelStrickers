@@ -74,7 +74,7 @@ namespace SteelStrickers.Droid.Services
                         Robot robot = new Robot
                         {
                             Adresse_MAC = device.Address,
-                            Nom_Robot = robotName
+                            Bluetooth_Name = robotName
                         };
                         MessagingCenter.Send(robot, "DiscoveredDevice");
                     }

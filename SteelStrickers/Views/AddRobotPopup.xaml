@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:pages="http://rotorgames.com"
+            xmlns:viewModels="clr-namespace:SteelStrickers.ViewModels;assembly=SteelStrickers"
+            x:Class="SteelStrickers.Views.AddRobotPopup">
+    <pages:PopupPage.BindingContext>
+        <viewModels:AddRobotViewModel/>
+    </pages:PopupPage.BindingContext>
+    <pages:PopupPage.Animation>
+        <pages:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <!--You can use any elements here which are extended from Xamarin.Forms.View-->
+    <StackLayout 
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" 
+        Padding="20, 20, 20, 20">
+
+    </StackLayout>
+</pages:PopupPage>
+    

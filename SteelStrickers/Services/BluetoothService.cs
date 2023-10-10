@@ -30,7 +30,7 @@ namespace SteelStrickers.Services
                 robots.Add(new Robot
                 {
                     Adresse_MAC = device.Address,
-                    Nom_Robot = device.Name
+                    Bluetooth_Name = device.Name
                     // Remplissez les autres propriétés si nécessaire
                 });
             }
@@ -41,12 +41,13 @@ namespace SteelStrickers.Services
         public bool Connect(Robot robot)
         {
             BluetoothDeviceModel device = _bluetoothAdapter.BondedDevices.FirstOrDefault(d => d.Address == robot.Adresse_MAC);
+            _bluetoothAdapter.StartDiscovery();
+
             var connection = _bluetoothAdapter.CreateManagedConnection(device);
             try
             {
                 connection.Connect();
                 _currentBluetoothConnection = connection;
-
 
                 // Abonner aux événements
                 _currentBluetoothConnection.OnStateChanged += HandleStateChanged;

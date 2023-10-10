@@ -9,6 +9,24 @@
     <ContentPage.BindingContext>
         <viewModels:HomeViewModel />
     </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <!-- Bouton Ajouter un robot -->
+        <ToolbarItem Text="Ajouter un robot" 
+                     IconImageSource="add_robot_icon.png" 
+                     Order="Primary" 
+                     Priority="0" 
+                     Command="{Binding OnAddRobotClicked}"/>
+
+        <!-- Bouton Open Settings -->
+        <ToolbarItem Text="Open Settings" 
+                     IconImageSource="settings_icon.png" 
+                     Order="Primary" 
+                     Priority="1" 
+                     Command="{Binding OnOpenSettingsClicked}"/>
+
+
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <!-- Grid layout with center a selection of robots with a button to edit it or delete it at center bottom the navigation for the selected robot -->
         <Grid Margin="5">
@@ -63,7 +81,6 @@
                                     <Button Grid.Row="2" Grid.Column="0" Text="" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource speelBtn}"/>
                                     <Button Grid.Row="3" Grid.Column="1" Text="" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource speelBtn}"/>
                                 </Grid>
-
                             </Grid>
                         </cards:SfCardView>
                     </DataTemplate>

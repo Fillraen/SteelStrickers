@@ -12,7 +12,6 @@ C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers\obj\Debug\netstandard2.0\V
 C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers\obj\Debug\netstandard2.0\Views\HomePage.xaml.g.cs
 C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
 C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers\obj\Debug\netstandard2.0\Views\RankingPage.xaml.g.cs
-C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers\obj\Debug\netstandard2.0\Views\SettingsPage.xaml.g.cs
 C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.AssemblyInfoInputs.cache
 C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.AssemblyInfo.cs
 C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.csproj.CoreCompileInputs.cache
@@ -42,3 +41,5 @@ C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netst
 C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.dll
 C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\refint\SteelStrickers.dll
 C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.pdb
+C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers\obj\Debug\netstandard2.0\Views\AddRobotPopup.xaml.g.cs
+C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers\obj\Debug\netstandard2.0\Views\SettingsPopup.xaml.g.cs

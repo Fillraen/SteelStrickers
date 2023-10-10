@@ -38,6 +38,7 @@ namespace SteelStrickers.Droid
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Rg.Plugins.Popup.Popup.Init(this);
 
             BluetoothDiscoveryService = new BluetoothDiscoveryService();
             DependencyService.RegisterSingleton<BluetoothDiscoveryService>(BluetoothDiscoveryService);
@@ -84,6 +85,11 @@ namespace SteelStrickers.Droid
             }
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        public override void OnBackPressed()
+        {
+            Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed);
         }
     }
 }
