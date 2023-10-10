@@ -1,4 +1,5 @@
-﻿using Android.Bluetooth;
+﻿using System;
+using Android.Bluetooth;
 using Android.Content;
 using Android.OS;
 using SteelStrickers.Models;
@@ -46,13 +47,14 @@ namespace SteelStrickers.Droid.Services
 
             _bluetoothAdapter.StartDiscovery();
             _isDiscovering = true;
-
+            
             new Handler().PostDelayed(() => {
                 if (_bluetoothAdapter.IsDiscovering)
                 {
                     _bluetoothAdapter.CancelDiscovery();
                 }
-            }, 10000); // 5 secondes
+            }, 60000); // 60 secondes
+            
         }
 
         private class DiscoveryReceiver : BroadcastReceiver
@@ -64,18 +66,19 @@ namespace SteelStrickers.Droid.Services
                 if (BluetoothDevice.ActionFound.Equals(action))
                 {
                     BluetoothDevice device = (BluetoothDevice)intent.GetParcelableExtra(BluetoothDevice.ExtraDevice);
-
+                    //Console.WriteLine($"Robot discovered: {device.Address} , Name {device.Name}, Alias {device.Alias}, test {device.BluetoothClass}");
                     // Vérifier si le dispositif n'est pas déjà couplé
-                    if (device.BondState != Bond.Bonded)
+                    string robotName = device.Name ?? device.Alias;
+                    if (device.BondState != Bond.Bonded && !string.IsNullOrEmpty(robotName))
                     {
                         Robot robot = new Robot
                         {
                             Adresse_MAC = device.Address,
-                            Nom_Robot = device.Name
+                            Nom_Robot = robotName
                         };
-
                         MessagingCenter.Send(robot, "DiscoveredDevice");
                     }
+
                 }
             }
         }

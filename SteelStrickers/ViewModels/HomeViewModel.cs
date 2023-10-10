@@ -49,7 +49,8 @@ namespace SteelStrickers.ViewModels
             MessagingCenter.Subscribe<Robot>(this, "DiscoveredDevice", (robot) =>
             {
                 // Ajouter le robot à votre ObservableCollection
-                Robots.Add(robot);
+                Console.WriteLine($"Robot discovered: {robot.Adresse_MAC} , Name {robot.Nom_Robot}" );
+                DetailedUser.Robots.Add(robot);
             });
 
             bluetoothDiscoveryService.StartDiscovery();
@@ -70,6 +71,11 @@ namespace SteelStrickers.ViewModels
         {
             await daoUser.UpdateApiPropertyAsync(DetailedUser);
         }
-    }
 
+        ~HomeViewModel()
+        {
+            MessagingCenter.Unsubscribe<Robot>(this, "DiscoveredDevice");
+        }
+
+    }
 }
