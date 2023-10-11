@@ -3,6 +3,7 @@ using Plugin.BluetoothClassic.Abstractions;
 using SteelStrickers.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -10,6 +11,7 @@ using Xamarin.Forms;
 
 namespace SteelStrickers.Services
 {
+
     public class BluetoothService : IBluetoothService
     {
         private IBluetoothAdapter _bluetoothAdapter = DependencyService.Resolve<IBluetoothAdapter>();
@@ -18,9 +20,9 @@ namespace SteelStrickers.Services
         {
 
         }
-        public IEnumerable<Robot> GetAvailableDevices()
+        public ObservableCollection<Robot> GetAvailableDevices()
         {
-            var robots = new List<Robot>();
+            var robots = new ObservableCollection<Robot>();
 
             // Obtenir tous les périphériques appairés
             var bondedDevices = _bluetoothAdapter.BondedDevices;
@@ -41,7 +43,7 @@ namespace SteelStrickers.Services
         public bool Connect(Robot robot)
         {
             BluetoothDeviceModel device = _bluetoothAdapter.BondedDevices.FirstOrDefault(d => d.Address == robot.Adresse_MAC);
-            _bluetoothAdapter.StartDiscovery();
+
 
             var connection = _bluetoothAdapter.CreateManagedConnection(device);
             try
@@ -61,8 +63,6 @@ namespace SteelStrickers.Services
                 return false; // Connexion échouée
             }
         }
-
-        
 
         public void SendData(string data)
         {

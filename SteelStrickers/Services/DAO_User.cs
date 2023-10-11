@@ -46,41 +46,8 @@ namespace SteelStrickers.Services
                     Nom_Robot = "Robot1",
                     ID_Utilisateur = 1,
                     Adresse_MAC = "00:11:22:33:44:55",
-                    Camera_IP = "192.168.1.1",
                     ID_Status = 1,
                     Nom_Status = "Connecté",
-                    Actions = new List<Action>
-                    {
-                        new Action
-                        {
-                            ID_Action = 1,
-                            Nom_Action = "Action1",
-                            Description = "Description de l'action 1"
-                        },
-                        new Action
-                        {
-                            ID_Action = 2,
-                            Nom_Action = "Action2",
-                            Description = "Description de l'action 2"
-                        },
-                        // Ajouter d'autres instances d'actions ici
-                    },
-                    Capteurs = new List<Capteur>
-                    {
-                        new Capteur
-                        {
-                            ID_Capteur = 1,
-                            Nom_Capteur = "Capteur1",
-                            Description = "Description du capteur 1"
-                        },
-                        new Capteur
-                        {
-                            ID_Capteur = 2,
-                            Nom_Capteur = "Capteur2",
-                            Description = "Description du capteur 2"
-                        },
-                        // Ajouter d'autres instances de capteurs ici
-                    }
                 },
                 new Robot
                 {
@@ -88,41 +55,8 @@ namespace SteelStrickers.Services
                     Nom_Robot = "Robot2",
                     ID_Utilisateur = 1,
                     Adresse_MAC = "11:22:33:44:55:66",
-                    Camera_IP = "192.168.1.2",
                     ID_Status = 1,
                     Nom_Status = "Connecté",
-                    Actions = new List<Action>
-                    {
-                        new Action
-                        {
-                            ID_Action = 3,
-                            Nom_Action = "Action3",
-                            Description = "Description de l'action 3"
-                        },
-                        new Action
-                        {
-                            ID_Action = 4,
-                            Nom_Action = "Action4",
-                            Description = "Description de l'action 4"
-                        },
-                        // Ajouter d'autres instances d'actions ici
-                    },
-                    Capteurs = new List<Capteur>
-                    {
-                        new Capteur
-                        {
-                            ID_Capteur = 3,
-                            Nom_Capteur = "Capteur3",
-                            Description = "Description du capteur 3"
-                        },
-                        new Capteur
-                        {
-                            ID_Capteur = 4,
-                            Nom_Capteur = "Capteur4",
-                            Description = "Description du capteur 4"
-                        },
-                        // Ajouter d'autres instances de capteurs ici
-                    }
                 },
                 // Ajouter d'autres instances de robots ici
             },

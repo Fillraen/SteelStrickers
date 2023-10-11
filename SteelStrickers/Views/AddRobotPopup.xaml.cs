@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
+using SteelStrickers.Models;
+using SteelStrickers.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,6 +24,28 @@ namespace SteelStrickers.Views
         {
             // Close the popup
             PopupNavigation.Instance.PopAsync(true);
+        }
+
+        private void OnBondedDeviceSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem is Robot robot)
+            {
+                // Logique pour se connecter à l'appareil sélectionné
+                (BindingContext as AddRobotViewModel)?.ConnectToBondedDevice(robot);
+            }
+            // Désélectionnez l'élément pour pouvoir le sélectionner à nouveau
+            ((ListView)sender).SelectedItem = null;
+        }
+
+        private void OnDiscoveryDeviceSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem is Robot robot)
+            {
+                // Logique pour l'appariement et la connexion à l'appareil sélectionné
+                (BindingContext as AddRobotViewModel)?.PairAndConnectToDiscoveryDevice(robot);
+            }
+            // Désélectionnez l'élément pour pouvoir le sélectionner à nouveau
+            ((ListView)sender).SelectedItem = null;
         }
     }
 }

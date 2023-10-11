@@ -170,14 +170,14 @@ public final class R {
 		public static final int notification_template_part_time = 0x7f0b007f;
 	}
 	public static final class string {
-		public static final int call_notification_answer_action = 0x7f0e001f;
-		public static final int call_notification_answer_video_action = 0x7f0e0020;
-		public static final int call_notification_decline_action = 0x7f0e0021;
-		public static final int call_notification_hang_up_action = 0x7f0e0022;
-		public static final int call_notification_incoming_text = 0x7f0e0023;
-		public static final int call_notification_ongoing_text = 0x7f0e0024;
-		public static final int call_notification_screening_text = 0x7f0e0025;
-		public static final int status_bar_notification_info_overflow = 0x7f0e0093;
+		public static final int call_notification_answer_action = 0x7f0e0022;
+		public static final int call_notification_answer_video_action = 0x7f0e0023;
+		public static final int call_notification_decline_action = 0x7f0e0024;
+		public static final int call_notification_hang_up_action = 0x7f0e0025;
+		public static final int call_notification_incoming_text = 0x7f0e0026;
+		public static final int call_notification_ongoing_text = 0x7f0e0027;
+		public static final int call_notification_screening_text = 0x7f0e0028;
+		public static final int status_bar_notification_info_overflow = 0x7f0e0096;
 	}
 	public static final class style {
 		public static final int TextAppearance_Compat_Notification = 0x7f0f0183;

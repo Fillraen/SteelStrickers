@@ -49,8 +49,8 @@ namespace SteelStrickers.ViewModels
             OnOpenSettingsClicked = new Command(OpenSettings);
             OnAddRobotClicked = new Command(AddRobot);
             //Robots = new ObservableCollection<Robot>(bluetoothService.GetAvailableRobots());
-
         }
+
         private async Task Discover()
         {
             MessagingCenter.Subscribe<Robot>(this, "DiscoveredDevice", (robot) =>

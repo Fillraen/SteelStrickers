@@ -81,7 +81,7 @@ target triple = "armv7-unknown-linux-android"
 @__app_environment_variables_n_1.2 = internal constant [15 x i8] c"MONO_LOG_LEVEL\00", align 1
 @__app_environment_variables_v_1.3 = internal constant [5 x i8] c"info\00", align 1
 @__app_environment_variables_n_2.4 = internal constant [17 x i8] c"XAMARIN_BUILD_ID\00", align 1
-@__app_environment_variables_v_2.5 = internal constant [37 x i8] c"92a84305-bc28-408f-8797-3adf05a64cfa\00", align 1
+@__app_environment_variables_v_2.5 = internal constant [37 x i8] c"35580cb3-2f69-4f06-8935-6c1e3f8dc442\00", align 1
 @__app_environment_variables_n_3.6 = internal constant [28 x i8] c"XA_HTTP_CLIENT_HANDLER_TYPE\00", align 1
 @__app_environment_variables_v_3.7 = internal constant [41 x i8] c"Xamarin.Android.Net.AndroidClientHandler\00", align 1
 @__app_environment_variables_n_4.8 = internal constant [16 x i8] c"XA_TLS_PROVIDER\00", align 1
@@ -125,7 +125,7 @@ target triple = "armv7-unknown-linux-android"
 	i32 3, ; package_naming_policy
 	i32 12, ; environment_variable_count
 	i32 0, ; system_property_count
-	i32 149, ; number_of_assemblies_in_apk
+	i32 154, ; number_of_assemblies_in_apk
 	i32 67, ; bundled_assembly_name_width
 	i32 2, ; number_of_assembly_store_files
 	i32 28, ; number_of_dso_cache_entries
@@ -495,10 +495,15 @@ target triple = "armv7-unknown-linux-android"
 @__XamarinAndroidBundledAssembly_name_146 = internal global [67 x i8] zeroinitializer, align 1
 @__XamarinAndroidBundledAssembly_name_147 = internal global [67 x i8] zeroinitializer, align 1
 @__XamarinAndroidBundledAssembly_name_148 = internal global [67 x i8] zeroinitializer, align 1
+@__XamarinAndroidBundledAssembly_name_149 = internal global [67 x i8] zeroinitializer, align 1
+@__XamarinAndroidBundledAssembly_name_150 = internal global [67 x i8] zeroinitializer, align 1
+@__XamarinAndroidBundledAssembly_name_151 = internal global [67 x i8] zeroinitializer, align 1
+@__XamarinAndroidBundledAssembly_name_152 = internal global [67 x i8] zeroinitializer, align 1
+@__XamarinAndroidBundledAssembly_name_153 = internal global [67 x i8] zeroinitializer, align 1
 
 
 ; Bundled assembly name buffers, all 67 bytes long
-@bundled_assemblies = local_unnamed_addr global [149 x %struct.XamarinAndroidBundledAssembly] [
+@bundled_assemblies = local_unnamed_addr global [154 x %struct.XamarinAndroidBundledAssembly] [
 	; 0
 	%struct.XamarinAndroidBundledAssembly {
 		i32 -1, ; apk_fd
@@ -1839,6 +1844,51 @@ target triple = "armv7-unknown-linux-android"
 		i8* null, ; data
 		i32 67, ; name_length
 		i8* getelementptr inbounds ([67 x i8], [67 x i8]* @__XamarinAndroidBundledAssembly_name_148, i32 0, i32 0); name
+	}, 
+	; 149
+	%struct.XamarinAndroidBundledAssembly {
+		i32 -1, ; apk_fd
+		i32 0, ; data_offset
+		i32 0, ; data_size
+		i8* null, ; data
+		i32 67, ; name_length
+		i8* getelementptr inbounds ([67 x i8], [67 x i8]* @__XamarinAndroidBundledAssembly_name_149, i32 0, i32 0); name
+	}, 
+	; 150
+	%struct.XamarinAndroidBundledAssembly {
+		i32 -1, ; apk_fd
+		i32 0, ; data_offset
+		i32 0, ; data_size
+		i8* null, ; data
+		i32 67, ; name_length
+		i8* getelementptr inbounds ([67 x i8], [67 x i8]* @__XamarinAndroidBundledAssembly_name_150, i32 0, i32 0); name
+	}, 
+	; 151
+	%struct.XamarinAndroidBundledAssembly {
+		i32 -1, ; apk_fd
+		i32 0, ; data_offset
+		i32 0, ; data_size
+		i8* null, ; data
+		i32 67, ; name_length
+		i8* getelementptr inbounds ([67 x i8], [67 x i8]* @__XamarinAndroidBundledAssembly_name_151, i32 0, i32 0); name
+	}, 
+	; 152
+	%struct.XamarinAndroidBundledAssembly {
+		i32 -1, ; apk_fd
+		i32 0, ; data_offset
+		i32 0, ; data_size
+		i8* null, ; data
+		i32 67, ; name_length
+		i8* getelementptr inbounds ([67 x i8], [67 x i8]* @__XamarinAndroidBundledAssembly_name_152, i32 0, i32 0); name
+	}, 
+	; 153
+	%struct.XamarinAndroidBundledAssembly {
+		i32 -1, ; apk_fd
+		i32 0, ; data_offset
+		i32 0, ; data_size
+		i8* null, ; data
+		i32 67, ; name_length
+		i8* getelementptr inbounds ([67 x i8], [67 x i8]* @__XamarinAndroidBundledAssembly_name_153, i32 0, i32 0); name
 	}
 ], align 4; end of 'bundled_assemblies' array
 

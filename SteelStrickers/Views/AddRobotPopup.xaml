@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <pages:PopupPage  
-            xmlns="http://xamarin.com/schemas/2014/forms"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:pages="http://rotorgames.com"
-            xmlns:viewModels="clr-namespace:SteelStrickers.ViewModels;assembly=SteelStrickers"
-            x:Class="SteelStrickers.Views.AddRobotPopup">
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="http://rotorgames.com"
+    xmlns:viewModels="clr-namespace:SteelStrickers.ViewModels;assembly=SteelStrickers"
+    x:Class="SteelStrickers.Views.AddRobotPopup">
     <pages:PopupPage.BindingContext>
         <viewModels:AddRobotViewModel/>
     </pages:PopupPage.BindingContext>
@@ -20,12 +20,49 @@
             EasingOut="SinIn"
             HasBackgroundAnimation="True"/>
     </pages:PopupPage.Animation>
-    <!--You can use any elements here which are extended from Xamarin.Forms.View-->
-    <StackLayout 
-        VerticalOptions="Center" 
-        HorizontalOptions="Center" 
-        Padding="20, 20, 20, 20">
-
+    <StackLayout VerticalOptions="Center" 
+                 HorizontalOptions="Center" 
+                 Padding="20, 20, 20, 20">
+        <Label Text="Nom du robot" />
+        <Entry Text="{Binding NomRobot}" Placeholder="Entrez le nom du robot" />
+        <Button Text="Connecter en Bluetooth" Command="{Binding ConnectBluetoothCommand}" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">
+                <!-- Liste des appareils associés -->
+                <Label Text="Appareils associés" />
+                <ListView x:Name="bondedListView"
+                          WidthRequest="100"
+                          VerticalOptions="Start"
+                          ItemsSource="{Binding BondedDevices}"
+                          ItemSelected="OnBondedDeviceSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Bluetooth_Name}" Detail="{Binding Adresse_MAC}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Grid.Row="1">
+                <!-- Liste des appareils détectés -->
+                <Label Text="Appareils détectés" />
+                <ListView x:Name="discoveryListView"
+                          WidthRequest="100"
+                          VerticalOptions="Start"
+                          ItemsSource="{Binding DiscoveryDevices}"
+                          ItemSelected="OnDiscoveryDeviceSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Bluetooth_Name}" Detail="{Binding Adresse_MAC}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
     </StackLayout>
 </pages:PopupPage>
+    
     

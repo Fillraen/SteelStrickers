@@ -13,10 +13,11 @@
           "Newtonsoft.Json": "13.0.3",
           "Plugin.BluetoothClassic": "1.1.5",
           "Rg.Plugins.Popup": "2.1.0",
-          "Syncfusion.Licensing": "23.1.39",
-          "Syncfusion.Xamarin.Buttons": "23.1.39",
-          "Syncfusion.Xamarin.Cards": "23.1.39",
-          "Syncfusion.Xamarin.SfCarousel": "23.1.39",
+          "Syncfusion.Licensing": "23.1.40",
+          "Syncfusion.Xamarin.Buttons": "23.1.40",
+          "Syncfusion.Xamarin.Cards": "23.1.40",
+          "Syncfusion.Xamarin.SfCarousel": "23.1.40",
+          "Syncfusion.Xamarin.SfListView": "23.1.40",
           "Xamarin.Essentials": "1.8.0",
           "Xamarin.Forms": "5.0.0.2612"
         },
@@ -60,59 +61,89 @@
           }
         }
       },
-      "Syncfusion.Licensing/23.1.39": {
+      "Syncfusion.Licensing/23.1.40": {
         "runtime": {
           "lib/netstandard2.0/Syncfusion.Licensing.dll": {
-            "assemblyVersion": "23.1.39.0",
-            "fileVersion": "23.1.39.0"
+            "assemblyVersion": "23.1.40.0",
+            "fileVersion": "23.1.40.0"
           }
         }
       },
-      "Syncfusion.Xamarin.Buttons/23.1.39": {
+      "Syncfusion.Xamarin.Buttons/23.1.40": {
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "23.1.39",
+          "Syncfusion.Xamarin.Core": "23.1.40",
           "Xamarin.Forms": "5.0.0.2612"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.Buttons.XForms.dll": {
-            "assemblyVersion": "23.1.39.0",
-            "fileVersion": "23.1.39.0"
+            "assemblyVersion": "23.1.40.0",
+            "fileVersion": "23.1.40.0"
           }
         }
       },
-      "Syncfusion.Xamarin.Cards/23.1.39": {
+      "Syncfusion.Xamarin.Cards/23.1.40": {
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "23.1.39",
+          "Syncfusion.Xamarin.Core": "23.1.40",
           "Xamarin.Forms": "5.0.0.2612"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.Cards.XForms.dll": {
-            "assemblyVersion": "23.1.39.0",
-            "fileVersion": "23.1.39.0"
+            "assemblyVersion": "23.1.40.0",
+            "fileVersion": "23.1.40.0"
           }
         }
       },
-      "Syncfusion.Xamarin.Core/23.1.39": {
+      "Syncfusion.Xamarin.Core/23.1.40": {
         "dependencies": {
-          "Syncfusion.Licensing": "23.1.39",
+          "Syncfusion.Licensing": "23.1.40",
           "Xamarin.Forms": "5.0.0.2612"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.Core.XForms.dll": {
-            "assemblyVersion": "23.1.39.0",
-            "fileVersion": "23.1.39.0"
+            "assemblyVersion": "23.1.40.0",
+            "fileVersion": "23.1.40.0"
           }
         }
       },
-      "Syncfusion.Xamarin.SfCarousel/23.1.39": {
+      "Syncfusion.Xamarin.DataSource/23.1.40": {
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.DataSource.Portable.dll": {
+            "assemblyVersion": "23.1.40.0",
+            "fileVersion": "23.1.40.0"
+          }
+        }
+      },
+      "Syncfusion.Xamarin.GridCommon/23.1.40": {
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.GridCommon.Portable.dll": {
+            "assemblyVersion": "23.1.40.0",
+            "fileVersion": "23.1.40.0"
+          }
+        }
+      },
+      "Syncfusion.Xamarin.SfCarousel/23.1.40": {
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "23.1.39",
+          "Syncfusion.Xamarin.Core": "23.1.40",
           "Xamarin.Forms": "5.0.0.2612"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfCarousel.XForms.dll": {
-            "assemblyVersion": "23.1.39.0",
-            "fileVersion": "23.1.39.0"
+            "assemblyVersion": "23.1.40.0",
+            "fileVersion": "23.1.40.0"
+          }
+        }
+      },
+      "Syncfusion.Xamarin.SfListView/23.1.40": {
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "23.1.40",
+          "Syncfusion.Xamarin.DataSource": "23.1.40",
+          "Syncfusion.Xamarin.GridCommon": "23.1.40",
+          "Xamarin.Forms": "5.0.0.2612"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.SfListView.XForms.dll": {
+            "assemblyVersion": "23.1.40.0",
+            "fileVersion": "23.1.40.0"
           }
         }
       },
@@ -223,40 +254,61 @@
       "path": "rg.plugins.popup/2.1.0",
       "hashPath": "rg.plugins.popup.2.1.0.nupkg.sha512"
     },
-    "Syncfusion.Licensing/23.1.39": {
+    "Syncfusion.Licensing/23.1.40": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-sPi+vrSoqcX/QXE6UwFnj+vWhnY6mVRR01JeoPq832OwRPBabe56dOf5nYD2ky49nPl6dxiEhcbvw/qIbraQMQ==",
-      "path": "syncfusion.licensing/23.1.39",
-      "hashPath": "syncfusion.licensing.23.1.39.nupkg.sha512"
+      "sha512": "sha512-YINuGj+/cqNPioddjV9mBYQJokXDb32e2C+NHshz1L9oPBRxfbB08dRx1c5cCdABbzQEGn2SLX8c6xj89Kv98w==",
+      "path": "syncfusion.licensing/23.1.40",
+      "hashPath": "syncfusion.licensing.23.1.40.nupkg.sha512"
     },
-    "Syncfusion.Xamarin.Buttons/23.1.39": {
+    "Syncfusion.Xamarin.Buttons/23.1.40": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XDc/K9TKcMbQnrwncf8YzM8Ri2ELfOTDiI/JkcKop0pVtA/uxut/vEB9QajjdBhAAXz2wM/Hbw3js29FlwL+pA==",
-      "path": "syncfusion.xamarin.buttons/23.1.39",
-      "hashPath": "syncfusion.xamarin.buttons.23.1.39.nupkg.sha512"
+      "sha512": "sha512-+ij+8L1Kcq0CpqkWC0qfHbZ15VPYQmV9iPbizdsH1FywIVs5QLCMX1KAeTs53htobmFe+SCDPvps12Np+fByIQ==",
+      "path": "syncfusion.xamarin.buttons/23.1.40",
+      "hashPath": "syncfusion.xamarin.buttons.23.1.40.nupkg.sha512"
     },
-    "Syncfusion.Xamarin.Cards/23.1.39": {
+    "Syncfusion.Xamarin.Cards/23.1.40": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NSF2n5BA7psqCfJjLyWxsdwRrzrk/cylMJYg13CYKA56i7fJNvOkD/i9QA8ub0PQEmxpqKCRohdQ3be1z96BEA==",
-      "path": "syncfusion.xamarin.cards/23.1.39",
-      "hashPath": "syncfusion.xamarin.cards.23.1.39.nupkg.sha512"
+      "sha512": "sha512-5LRte7F2KJ04R7GSkgDvsgszojj1iCOgLmcpUu3TZQyNvI38pExhc7mJDgkzpBt8oO/dcBQKYZWiQ3Sivg0f2A==",
+      "path": "syncfusion.xamarin.cards/23.1.40",
+      "hashPath": "syncfusion.xamarin.cards.23.1.40.nupkg.sha512"
     },
-    "Syncfusion.Xamarin.Core/23.1.39": {
+    "Syncfusion.Xamarin.Core/23.1.40": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1aqthhK+p6eDUfYkzmcKQinHoSYM0gTVYbjGAVkDFEckvdt2iDbjNP4k8D775LdW1Q+DrYhQtlIkYBWnQcVJUA==",
-      "path": "syncfusion.xamarin.core/23.1.39",
-      "hashPath": "syncfusion.xamarin.core.23.1.39.nupkg.sha512"
+      "sha512": "sha512-tfzqxFbqX5QJCTZOjoZKMOLuFc0nsB4TVnBWO5l/P7lCS4CdZ9XpUIvvgiW8flVRY6YI+6+EEbN442/118nq0w==",
+      "path": "syncfusion.xamarin.core/23.1.40",
+      "hashPath": "syncfusion.xamarin.core.23.1.40.nupkg.sha512"
     },
-    "Syncfusion.Xamarin.SfCarousel/23.1.39": {
+    "Syncfusion.Xamarin.DataSource/23.1.40": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-eRhXhz0UjbDYS9ax6fL49BYJanD3chHrvNywUiwyBA+fyjzXsn23lUcek7W+2hBvErtKOB0GDhkP90yIir4YUw==",
-      "path": "syncfusion.xamarin.sfcarousel/23.1.39",
-      "hashPath": "syncfusion.xamarin.sfcarousel.23.1.39.nupkg.sha512"
+      "sha512": "sha512-ltmXWX2rvc7dS5ddT37VuibhNKXUIHxEgQIkLRkW+5AgCdaETF5WC0EY+9Y7lmUt3lLwtoso/fAvGQUWq0TsxA==",
+      "path": "syncfusion.xamarin.datasource/23.1.40",
+      "hashPath": "syncfusion.xamarin.datasource.23.1.40.nupkg.sha512"
+    },
+    "Syncfusion.Xamarin.GridCommon/23.1.40": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-isImtgvot/tlcp5H24oLGOOGcpzZVfPGmzkIo7VuvzoAEbjFeZQ6RXA0aMfPefm+I9w2IVCfTETLmL83WZKEyQ==",
+      "path": "syncfusion.xamarin.gridcommon/23.1.40",
+      "hashPath": "syncfusion.xamarin.gridcommon.23.1.40.nupkg.sha512"
+    },
+    "Syncfusion.Xamarin.SfCarousel/23.1.40": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0N36kml+ChoAy3mdbPv01RukAmtoWSU3HenzP9u+5Az3/hG2eT90OcdlYqd2vUFDjSNHytAcPy5ZMnt1LOVb5Q==",
+      "path": "syncfusion.xamarin.sfcarousel/23.1.40",
+      "hashPath": "syncfusion.xamarin.sfcarousel.23.1.40.nupkg.sha512"
+    },
+    "Syncfusion.Xamarin.SfListView/23.1.40": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dy75zetY+uvNvRcJmDJ6oLD39C3LlaX1lRQBxy667ycgB1wyHsUXwDQa+362xOUnvqrhqxPQa3P+213cT2ArQg==",
+      "path": "syncfusion.xamarin.sflistview/23.1.40",
+      "hashPath": "syncfusion.xamarin.sflistview.23.1.40.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",
