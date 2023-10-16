@@ -16,7 +16,15 @@
                 <Button Text="Course" BackgroundColor="Red" Command="{Binding GoToControllerPageCommand}"/>
             </Grid>
             <Grid BackgroundColor="bLUE" Grid.Column="1">
-                <Button Text="Combat" Command="{Binding SearchOpponentCommand}"/>
+                <StackLayout>
+                    <Button Text="Combat" Command="{Binding SearchOpponentCommand}"/>
+                    <StackLayout>
+                        <Label Text="Rejoindre une partie"/>
+                        <Entry Text="{Binding MatchId, Mode=TwoWay}"/>
+                    </StackLayout>
+
+                    <Button Text="Create a Match" Command="{Binding CreateMatchCommand}"/>
+                </StackLayout>
             </Grid>
         </Grid>
     </ContentPage.Content>

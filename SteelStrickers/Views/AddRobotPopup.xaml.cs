@@ -18,6 +18,7 @@ namespace SteelStrickers.Views
         public AddRobotPopup()
         {
             InitializeComponent();
+            cancelButton.Clicked += OnCloseButtonClicked;
         }
 
         private void OnCloseButtonClicked(object sender, EventArgs e)
@@ -46,6 +47,12 @@ namespace SteelStrickers.Views
             }
             // Désélectionnez l'élément pour pouvoir le sélectionner à nouveau
             ((ListView)sender).SelectedItem = null;
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            cancelButton.Clicked -= OnCloseButtonClicked;
         }
     }
 }

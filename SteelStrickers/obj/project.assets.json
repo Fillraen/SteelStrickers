@@ -11,6 +11,19 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "MQTTnet/4.3.1.873": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MQTTnet.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MQTTnet.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -303,6 +316,41 @@
         "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json"
+      ]
+    },
+    "MQTTnet/4.3.1.873": {
+      "sha512": "5Btmzjv9TWQewlHL6QPB3/deTxAfHf0cR1ixehH/4311oKUpiYrgt1uQZFTbyBWjR7zVKv1U3+s4o3IPm/++Ww==",
+      "type": "package",
+      "path": "mqttnet/4.3.1.873",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/MQTTnet.dll",
+        "lib/net452/MQTTnet.xml",
+        "lib/net461/MQTTnet.dll",
+        "lib/net461/MQTTnet.xml",
+        "lib/net48/MQTTnet.dll",
+        "lib/net48/MQTTnet.xml",
+        "lib/net5.0/MQTTnet.dll",
+        "lib/net5.0/MQTTnet.xml",
+        "lib/net6.0/MQTTnet.dll",
+        "lib/net6.0/MQTTnet.xml",
+        "lib/net7.0/MQTTnet.dll",
+        "lib/net7.0/MQTTnet.xml",
+        "lib/netcoreapp3.1/MQTTnet.dll",
+        "lib/netcoreapp3.1/MQTTnet.xml",
+        "lib/netstandard1.3/MQTTnet.dll",
+        "lib/netstandard1.3/MQTTnet.xml",
+        "lib/netstandard2.0/MQTTnet.dll",
+        "lib/netstandard2.0/MQTTnet.xml",
+        "lib/netstandard2.1/MQTTnet.dll",
+        "lib/netstandard2.1/MQTTnet.xml",
+        "lib/uap10.0.10240/MQTTnet.dll",
+        "lib/uap10.0.10240/MQTTnet.pri",
+        "lib/uap10.0.10240/MQTTnet.xml",
+        "mqttnet.4.3.1.873.nupkg.sha512",
+        "mqttnet.nuspec",
+        "nuget.png"
       ]
     },
     "NETStandard.Library/2.0.3": {
@@ -1133,6 +1181,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "MQTTnet >= 4.3.1.873",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 13.0.3",
       "Plugin.BluetoothClassic >= 1.1.5",
@@ -1147,25 +1196,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SLAB95\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\NTAer\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SLAB95\\Desktop\\SteelStrickers\\SteelStrickers\\SteelStrickers.csproj",
+      "projectUniqueName": "C:\\Users\\NTAer\\Desktop\\Xaz\\SteelStrickers-Xamarin\\SteelStrickers\\SteelStrickers.csproj",
       "projectName": "SteelStrickers",
-      "projectPath": "C:\\Users\\SLAB95\\Desktop\\SteelStrickers\\SteelStrickers\\SteelStrickers.csproj",
-      "packagesPath": "C:\\Users\\SLAB95\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SLAB95\\Desktop\\SteelStrickers\\SteelStrickers\\obj\\",
+      "projectPath": "C:\\Users\\NTAer\\Desktop\\Xaz\\SteelStrickers-Xamarin\\SteelStrickers\\SteelStrickers.csproj",
+      "packagesPath": "C:\\Users\\NTAer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\NTAer\\Desktop\\Xaz\\SteelStrickers-Xamarin\\SteelStrickers\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\SLAB95\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\NTAer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1193,6 +1240,10 @@
       "netstandard2.0": {
         "targetAlias": "netstandard2.0",
         "dependencies": {
+          "MQTTnet": {
+            "target": "Package",
+            "version": "[4.3.1.873, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
@@ -1251,7 +1302,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

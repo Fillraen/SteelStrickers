@@ -43,6 +43,9 @@ namespace SteelStrickers.Services
         public bool Connect(Robot robot)
         {
             BluetoothDeviceModel device = _bluetoothAdapter.BondedDevices.FirstOrDefault(d => d.Address == robot.Adresse_MAC);
+            BluetoothDeviceModel device2 = _bluetoothAdapter.BondedDevices.FirstOrDefault(d => d.Name == robot.Bluetooth_Name);
+
+
 
 
             var connection = _bluetoothAdapter.CreateManagedConnection(device);

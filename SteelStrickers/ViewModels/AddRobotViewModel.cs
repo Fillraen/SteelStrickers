@@ -18,6 +18,15 @@ namespace SteelStrickers.ViewModels
             set { SetProperty(ref _nomRobot, value); }
         }
 
+        private bool _isListViewVisible = true;
+
+        public bool IsListViewVisible
+        {
+            get { return _isListViewVisible; }
+            set { SetProperty(ref _isListViewVisible, value); }
+        }
+
+
         public ObservableCollection<Robot> BondedDevices { get; set; } = new ObservableCollection<Robot>();
         public ObservableCollection<Robot> DiscoveryDevices { get; set; } = new ObservableCollection<Robot>();
 
@@ -27,12 +36,14 @@ namespace SteelStrickers.ViewModels
         {
 
             ConnectBluetoothCommand = new Command(ConnectBluetooth);
+            IsListViewVisible = false;
         }
 
         private void ConnectBluetooth()
         {
             BondedDevices.Clear();
             DiscoveryDevices.Clear();
+            IsListViewVisible = true;
             // Logique pour démarrer la découverte Bluetooth et remplir les listes BondedDevices et DiscoveryDevices
             var t= bluetoothService.GetAvailableDevices();
 
@@ -53,12 +64,24 @@ namespace SteelStrickers.ViewModels
         public void ConnectToBondedDevice(Robot robot)
         {
             // Logique pour se connecter à l'appareil associé
+            if (bluetoothService.Connect(robot))
+            {
+                IsListViewVisible = false;
+            }
+            
         }
 
         public void PairAndConnectToDiscoveryDevice(Robot robot)
         {
             // Logique pour l'appariement et la connexion à l'appareil détecté
             bluetoothDiscoveryService.PairDevice(robot);
+            if (bluetoothService.Connect(robot))
+            {
+                IsListViewVisible = false;
+
+
+                
+            }
         }
 
         ~AddRobotViewModel()

@@ -26,7 +26,9 @@
         <Label Text="Nom du robot" />
         <Entry Text="{Binding NomRobot}" Placeholder="Entrez le nom du robot" />
         <Button Text="Connecter en Bluetooth" Command="{Binding ConnectBluetoothCommand}" />
-        <Grid>
+        <Button Text="Annuler" x:Name="cancelButton" />
+        <Grid IsVisible="{Binding IsListViewVisible}">
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />

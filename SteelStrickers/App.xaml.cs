@@ -17,6 +17,8 @@ namespace SteelStrickers
             DependencyService.Register<DAO_User>(); 
             DependencyService.Register<DAO_Robots>(); 
             DependencyService.Register<BluetoothService>();
+            //DependencyService.Register<BluetoothDiscoveryService>();
+            DependencyService.Register<DAO_MQTT>();
             MainPage = new AppShell();
         }
 

@@ -16,5 +16,6 @@ namespace SteelStrickers.Models
         public int ID_Arbitre { get; set; }
         public int? ID_Vainqueur { get; set; }
         public string Nom_Type { get; set; }
+        public string Topic { get; set; }
     }
 }
