@@ -25,11 +25,11 @@ namespace SteelStrickers.Services
         {
             DetailedUser detailedUser = new DetailedUser
             {
-                ID_Utilisateur = 1,
-                Nom_Utilisateur = "User1",
+                IdUser = 1,
+                Username = "User1",
                 Email = "user1@example.com",
-                Date_Inscription = "2023-01-01",
-                MMR = 1000,
+                SignInDate = "2023-01-01",
+                Elo = 1000,
                 Role = "Utilisateur",
                 Statistiques = new Statistique
                 {
@@ -64,29 +64,25 @@ namespace SteelStrickers.Services
             {
                 new Combat
                 {
-                    ID_Combat = 1,
-                    ID_Robot1 = 1,
-                    ID_Robot2 = 2,
+                    IdCombat = 1,
+                    IdRobot1 = 1,
+                    IdRobot2 = 2,
                     Points_Robot1 = 10,
                     Points_Robot2 = 20,
-                    Temps_Combat = "00:10:00",
-                    ID_Type_Combat = 1,
-                    ID_Arbitre = 4,
-                    ID_Vainqueur = 2,
-                    Nom_Type = "Combat à mort"
+                    FightingTime = "00:10:00",
+                    IdArbitre = 4,
+                    IdVainqueur = 2
                 },
                 new Combat
                 {
-                    ID_Combat = 2,
-                    ID_Robot1 = 2,
-                    ID_Robot2 = 1,
+                    IdCombat = 2,
+                    IdRobot1 = 2,
+                    IdRobot2 = 1,
                     Points_Robot1 = 15,
                     Points_Robot2 = 25,
-                    Temps_Combat = "00:15:00",
-                    ID_Type_Combat = 2,
-                    ID_Arbitre = 4,
-                    ID_Vainqueur = 1,
-                    Nom_Type = "Combat par points"
+                    FightingTime = "00:15:00",
+                    IdArbitre = 4,
+                    IdVainqueur = 1
                 },
                 // Ajouter d'autres instances de combats ici
             }

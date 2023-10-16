@@ -9,6 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "SteelStrickers/1.0.0": {
         "dependencies": {
+          "MQTTnet": "4.3.1.873",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "13.0.3",
           "Plugin.BluetoothClassic": "1.1.5",
@@ -26,6 +27,14 @@
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
+      "MQTTnet/4.3.1.873": {
+        "runtime": {
+          "lib/netstandard2.0/MQTTnet.dll": {
+            "assemblyVersion": "4.3.1.873",
+            "fileVersion": "4.3.1.873"
+          }
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -225,6 +234,13 @@
       "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "MQTTnet/4.3.1.873": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5Btmzjv9TWQewlHL6QPB3/deTxAfHf0cR1ixehH/4311oKUpiYrgt1uQZFTbyBWjR7zVKv1U3+s4o3IPm/++Ww==",
+      "path": "mqttnet/4.3.1.873",
+      "hashPath": "mqttnet.4.3.1.873.nupkg.sha512"
     },
     "NETStandard.Library/2.0.3": {
       "type": "package",

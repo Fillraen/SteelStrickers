@@ -43,7 +43,6 @@ namespace SteelStrickers.Services
         public bool Connect(Robot robot)
         {
             BluetoothDeviceModel device = _bluetoothAdapter.BondedDevices.FirstOrDefault(d => d.Address == robot.Adresse_MAC);
-            BluetoothDeviceModel device2 = _bluetoothAdapter.BondedDevices.FirstOrDefault(d => d.Name == robot.Bluetooth_Name);
 
 
 
@@ -90,6 +89,7 @@ namespace SteelStrickers.Services
             Memory<byte> data = args.Buffer;
             // Gérer les données reçues ici
             var receivedString = Encoding.UTF8.GetString(data.ToArray());
+            Console.WriteLine("message : " + receivedString + " \n ");
             DataReceived?.Invoke(this, receivedString); // Pour déclencher l'événement DataReceived
         }
 
@@ -100,3 +100,4 @@ namespace SteelStrickers.Services
 
     }
 }
+   

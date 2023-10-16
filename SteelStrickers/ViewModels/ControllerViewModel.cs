@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace SteelStrickers.ViewModels
 {
@@ -14,31 +16,58 @@ namespace SteelStrickers.ViewModels
         public int JoystickXposition
         {
             get { return _joystickXposition; }
-            set { _joystickXposition = value; NotifyPropertyChanged(nameof(JoystickXposition)); }
+            set
+            {
+                if (SetProperty(ref _joystickXposition, value))
+                {
+                    SendPositionData();
+                }
+            }
         }
 
         private int _joystickYposition;
         public int JoystickYposition
         {
             get { return _joystickYposition; }
-            set { _joystickYposition = value; NotifyPropertyChanged(nameof(JoystickYposition)); }
+            set
+            {
+                if (SetProperty(ref _joystickYposition, value))
+                {
+                    SendPositionData();
+                }
+            }
         }
 
         private int _joystickDistance;
         public int JoystickDistance
         {
             get { return _joystickDistance; }
-            set { _joystickDistance = value; NotifyPropertyChanged(nameof(JoystickDistance)); }
+            set
+            {
+                if (SetProperty(ref _joystickDistance, value))
+                {
+                    SendPositionData();
+                }
+            }
         }
 
         private int _joystickAngle;
-
         public int JoystickAngle
         {
             get { return _joystickAngle; }
-            set { _joystickAngle = value; NotifyPropertyChanged(nameof(JoystickAngle)); }
+            set
+            {
+                if (SetProperty(ref _joystickAngle, value))
+                {
+                    SendPositionData();
+                }
+            }
         }
 
+        
+
+        public ICommand Action1Command { get; }
+        public ICommand Action2Command { get; }
 
 
         public Robot CurrentRobot { get; set; }
@@ -47,14 +76,29 @@ namespace SteelStrickers.ViewModels
             //CurrentRobot = robot;
 
             // S'abonner à l'événement DataReceived
+            Action1Command = new Command(SendAction1);
+            Action2Command = new Command(SendAction2);
+
+
+
             bluetoothService.DataReceived += OnDataReceived;
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        void NotifyPropertyChanged(string name)
+        private void SendPositionData()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            // Créez une chaîne de données avec les valeurs X, Y, angle et distance
+            string data = $"X={JoystickXposition}, Y={JoystickYposition}, Angle={JoystickAngle}, Distance={JoystickDistance}";
+            bluetoothService.SendData(data);
+        }
+        private void SendAction1()
+        {
+            // Envoyez le message prédéterminé pour l'action 1
+            bluetoothService.SendData("A1;");
+        }
+
+        private void SendAction2()
+        {
+            // Envoyez le message prédéterminé pour l'action 2
+            bluetoothService.SendData("A2;");
         }
 
         private void OnDataReceived(object sender, string data)

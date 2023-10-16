@@ -4,6 +4,7 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "SteelStrickers.Android.dll" comes first in this list. */
 		"SteelStrickers.Android.dll",
 		"FormsViewGroup.dll",
+		"MQTTnet.dll",
 		"Newtonsoft.Json.dll",
 		"Plugin.BluetoothClassic.Abstractions.dll",
 		"Plugin.BluetoothClassic.Android.dll",

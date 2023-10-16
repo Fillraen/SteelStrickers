@@ -1,2 +1,2 @@
-AdbTarget=-s 192.168.1.14:5555
+AdbTarget=-s PAD70EEA00009373
 AdbOptions=
