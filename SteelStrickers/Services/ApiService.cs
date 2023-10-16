@@ -15,46 +15,48 @@ namespace SteelStrickers.Services
 
         public async Task<T> GetAsync<T>(string endpoint)
         {
-            var response = await _client.GetAsync(BaseUrl + endpoint);
+            Uri uri = new Uri(BaseUrl + endpoint);
+            var response = await _client.GetAsync(uri).ConfigureAwait(false);
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<T>(content);
             }
-            // Handle errors as you see fit
+            // Gérer les erreurs comme vous le souhaitez
             return default;
         }
 
         public async Task<T> GetWithConditionAsync<T>(string endpoint, Dictionary<string, string> parameters)
         {
-            var queryString = new FormUrlEncodedContent(parameters).ReadAsStringAsync().Result; // Convert parameters to URL query string
-            var response = await _client.GetAsync($"{BaseUrl}{endpoint}?{queryString}");
+            var queryString = new FormUrlEncodedContent(parameters).ReadAsStringAsync().Result;
+            Uri uri = new Uri($"{BaseUrl}{endpoint}?{queryString}");
+            var response = await _client.GetAsync(uri).ConfigureAwait(false);
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<T>(content);
             }
-            // Handle errors as you see fit
             return default;
         }
 
         public async Task<bool> PostAsync<T>(string endpoint, T data)
         {
             var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
-            var response = await _client.PostAsync(BaseUrl + endpoint, content);
+            var response = await _client.PostAsync(BaseUrl + endpoint, content).ConfigureAwait(false);
             return response.IsSuccessStatusCode;
         }
 
         public async Task<bool> PutAsync<T>(string endpoint, T data)
         {
             var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
-            var response = await _client.PutAsync(BaseUrl + endpoint, content);
+            var response = await _client.PutAsync(BaseUrl + endpoint, content).ConfigureAwait(false);
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<bool> DeleteAsync(string endpoint, int id)
+        public async Task<bool> DeleteAsync(string endpoint, string id)
         {
-            var response = await _client.DeleteAsync($"{BaseUrl}{endpoint}/{id}");
+            Uri uri = new Uri($"{BaseUrl}{endpoint}/{id}");
+            var response = await _client.DeleteAsync(uri).ConfigureAwait(false);
             return response.IsSuccessStatusCode;
         }
 
