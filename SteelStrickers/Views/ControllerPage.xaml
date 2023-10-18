@@ -27,9 +27,10 @@
 
             <controls:JoystickControl x:Name="JoystickControl" Grid.Column="0" BackgroundColor="#ececec"
                                             HorizontalOptions="Center" VerticalOptions="Center" 
-                                            HeightRequest="250" WidthRequest="150"/>
+                                            HeightRequest="250" WidthRequest="150"
+                                            Xposition="{Binding Xposition}" Yposition="{Binding Yposition}" Distance="{Binding Distance}" Angle="{Binding Angle}"/>
             <StackLayout Grid.Column="1">
-                <StackLayout BindingContext="{x:Reference Name=JoystickControl}"  VerticalOptions="Center" Orientation="Vertical">
+                <StackLayout BindingContext="{x:Reference Name=JoystickControl}" x:Name="StackLayoutJoystickData"  VerticalOptions="Center" Orientation="Vertical">
                     <StackLayout Orientation="Vertical ">
                         <Label Text="Xposition" />
                         <Label Text="{Binding Xposition}"/>

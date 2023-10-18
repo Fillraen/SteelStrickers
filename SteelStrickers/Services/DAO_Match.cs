@@ -14,7 +14,7 @@ namespace SteelStrickers.Services
 
         public DAO_Match()
         {
-            _apiService = new ApiService();
+            _apiService = ApiService.Instance;
             userId = Preferences.Get("IdUser", -1);
         }
 
@@ -25,12 +25,12 @@ namespace SteelStrickers.Services
 
         public async Task<GameTopic> GetAvailableTopic()
         {
-            return await _apiService.GetAsync<GameTopic>("topic/available");
+            return await _apiService.GetAsync<GameTopic>("matchs/topic/available");
         }
 
         public async Task<List<Match>> GetMatchByUserId(int userId)
         {
-            return await _apiService.GetAsync<List<Match>>($"user/{userId}/matches");
+            return await _apiService.GetAsync<List<Match>>($"matchs/user/{userId}");
         }
 
         public async Task<bool> CreateMatch(Match match)

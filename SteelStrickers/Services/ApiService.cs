@@ -13,6 +13,25 @@ namespace SteelStrickers.Services
 
         private readonly HttpClient _client = new HttpClient();
 
+        private static ApiService _instance;
+
+        public static ApiService Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ApiService();
+                }
+                return _instance;
+            }
+        }
+
+        private ApiService()
+        {
+            // Initialisez ici si nécessaire
+        }
+
         public async Task<T> GetAsync<T>(string endpoint)
         {
             Uri uri = new Uri(BaseUrl + endpoint);
@@ -23,19 +42,6 @@ namespace SteelStrickers.Services
                 return JsonConvert.DeserializeObject<T>(content);
             }
             // Gérer les erreurs comme vous le souhaitez
-            return default;
-        }
-
-        public async Task<T> GetWithConditionAsync<T>(string endpoint, Dictionary<string, string> parameters)
-        {
-            var queryString = new FormUrlEncodedContent(parameters).ReadAsStringAsync().Result;
-            Uri uri = new Uri($"{BaseUrl}{endpoint}?{queryString}");
-            var response = await _client.GetAsync(uri).ConfigureAwait(false);
-            if (response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<T>(content);
-            }
             return default;
         }
 

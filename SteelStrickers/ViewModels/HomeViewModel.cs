@@ -48,12 +48,12 @@ namespace SteelStrickers.ViewModels
             InitializeData();
             userId = Preferences.Get("IdUser", -1);
             //userId = 2;
+            Robots = new ObservableCollection<Robot>();
 
             ChooseModeCommand = new Command(OnFightClicked);
             DiscoverCommand = new Command(async () => await Discover());
             OnOpenSettingsClicked = new Command(OpenSettings);
             OnAddRobotClicked = new Command(AddRobot);
-            //Robots = new ObservableCollection<Robot>(bluetoothService.GetAvailableRobots());
         }
 
         private async Task Discover()
@@ -68,11 +68,14 @@ namespace SteelStrickers.ViewModels
         private async void InitializeData()
         {
             //DetailedUser = await daoUser.GetUserByIdAsync(userId);
+            
             var RobotsList = await daoRobots.GetAllRobotsByUserId();
             foreach (var robots in RobotsList )
             {
                 Robots.Add(robots);
             }
+            
+            
         }
 
         private async void OnFightClicked(object obj)

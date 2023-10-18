@@ -20,7 +20,7 @@ namespace SteelStrickers.Services
         private int userId;
         public DAO_User()
         {
-            _apiService = new ApiService();
+            _apiService = ApiService.Instance;
             userId = Preferences.Get("IdUser", -1);
         }
 

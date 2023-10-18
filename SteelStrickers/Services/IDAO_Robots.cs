@@ -10,6 +10,9 @@ namespace SteelStrickers.Services
 {
     public interface IDAO_Robots
     {
+        List<Robot> GetAllRobots();
+
+
         Task<List<Robot>> GetAllRobotsByUserId();
         Task<Robot> GetRobotById(int id);
         Task<bool> EditRobot(Robot robot);

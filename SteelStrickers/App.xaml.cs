@@ -27,6 +27,7 @@ namespace SteelStrickers
 
         protected override void OnStart()
         {
+            /*
             if (MainPage is Shell shellPage)
             {
                 int userId = Preferences.Get("IdUser", -1);
@@ -56,6 +57,7 @@ namespace SteelStrickers
                     shellPage.GoToAsync($"//{nameof(LoginPage)}");
                 }
             }
+            */
         }
 
         protected override void OnSleep()

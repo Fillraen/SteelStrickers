@@ -38,7 +38,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <cards:SfCardLayout BindableLayout.ItemsSource="{Binding DetailedUser.Robots}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" Padding="10" VerticalOptions="FillAndExpand" Margin="15" ShowSwipedCard="True">
+            <cards:SfCardLayout BindableLayout.ItemsSource="{Binding Robots}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" Padding="10" VerticalOptions="FillAndExpand" Margin="15" ShowSwipedCard="True">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <cards:SfCardView Padding="15" x:DataType="models:Robot">

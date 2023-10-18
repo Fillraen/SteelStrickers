@@ -19,10 +19,18 @@ namespace SteelStrickers.Services
 
         public DAO_Robots()
         {
-            _apiService = new ApiService();
+            _apiService = ApiService.Instance;
             userId = Preferences.Get("IdUser", -1);
         }
 
+        public List<Robot> GetAllRobots()
+        {
+            var t = new List<Robot>();
+            Robot a = new Robot();
+            a.Name = "Robot 1";
+            t.Add(a);
+            return t;
+        }
 
         public async Task<List<Robot>> GetAllRobotsByUserId()
         {
