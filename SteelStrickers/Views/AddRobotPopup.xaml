@@ -43,7 +43,7 @@
                           ItemSelected="OnBondedDeviceSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding Bluetooth_Name}" Detail="{Binding Adresse_MAC}" />
+                            <TextCell Text="{Binding BluetoothName}" Detail="{Binding MacAddress}" />
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
@@ -58,7 +58,7 @@
                           ItemSelected="OnDiscoveryDeviceSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding Bluetooth_Name}" Detail="{Binding Adresse_MAC}" />
+                            <TextCell Text="{Binding BluetoothName}" Detail="{Binding MacAddress}" />
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

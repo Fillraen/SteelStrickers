@@ -39,6 +39,25 @@ namespace SteelStrickers.Services
             return default;
         }
 
+        public async Task<T> GetWithHeadersAsync<T>(string endpoint, Dictionary<string, string> headers)
+        {
+            Uri uri = new Uri(BaseUrl + endpoint);
+            var request = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            foreach (var header in headers)
+            {
+                request.Headers.Add(header.Key, header.Value);
+            }
+
+            var response = await _client.SendAsync(request).ConfigureAwait(false);
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<T>(content);
+            }
+            return default;
+        }
+
         public async Task<bool> PostAsync<T>(string endpoint, T data)
         {
             var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");

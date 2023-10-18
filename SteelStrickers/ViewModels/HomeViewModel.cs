@@ -9,6 +9,7 @@ using Rg.Plugins.Popup.Services;
 using SteelStrickers.Models;
 using SteelStrickers.Services;
 using SteelStrickers.Views;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SteelStrickers.ViewModels
@@ -23,8 +24,8 @@ namespace SteelStrickers.ViewModels
             set { SetProperty(ref robots, value); }
         }
 
-        private DetailedUser detailedUser;
-        public DetailedUser DetailedUser
+        private User detailedUser;
+        public User DetailedUser
         {
             get { return detailedUser; }
             set
@@ -41,9 +42,12 @@ namespace SteelStrickers.ViewModels
         public Command DiscoverCommand { get; }
         public ICommand OnOpenSettingsClicked { get; private set; }
         public ICommand OnAddRobotClicked { get; private set; }
+        private int userId;
         public HomeViewModel()
         {
             InitializeData();
+            userId = Preferences.Get("IdUser", -1);
+
             ChooseModeCommand = new Command(OnFightClicked);
             DiscoverCommand = new Command(async () => await Discover());
             OnOpenSettingsClicked = new Command(OpenSettings);
@@ -56,14 +60,14 @@ namespace SteelStrickers.ViewModels
             MessagingCenter.Subscribe<Robot>(this, "DiscoveredDevice", (robot) =>
             {
                 // Ajouter le robot à votre ObservableCollection
-                Console.WriteLine($"Robot discovered: {robot.Adresse_MAC} , Name {robot.Nom_Robot}" );
+                Console.WriteLine($"Robot discovered: {robot.MacAddress} , Name {robot.Name}" );
             });
             bluetoothDiscoveryService.StartDiscovery();
         }
         private async void InitializeData()
         {
-            DetailedUser = await daoUser.GetUser();
-            Robots = new ObservableCollection<Robot>(DetailedUser.Robots);
+            //DetailedUser = await daoUser.GetUserByIdAsync(userId);
+            Robots = await daoRobots.;
         }
 
         private async void OnFightClicked(object obj)
@@ -74,7 +78,7 @@ namespace SteelStrickers.ViewModels
 
         private async void UpdateApiPropertyAsync()
         {
-            await daoUser.UpdateApiPropertyAsync(DetailedUser);
+            await daoUser.UpdateUserAsync(DetailedUser);
         }
 
         private void OpenSettings()

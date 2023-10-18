@@ -1,2 +1,2 @@
-AdbTarget=-s PAD70EEA00009373
+AdbTarget=-s emulator-5554
 AdbOptions=

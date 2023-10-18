@@ -1,13 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using SteelStrickers.Models;
 using SteelStrickers.ViewModels;
-using Action = SteelStrickers.Models.Action;
+using Xamarin.Essentials;
 
 
 
@@ -15,106 +16,56 @@ namespace SteelStrickers.Services
 {
     public class DAO_User : IDAO_User
     {
-
+        private readonly ApiService _apiService;
+        private int userId;
         public DAO_User()
         {
-
+            _apiService = new ApiService();
+            userId = Preferences.Get("IdUser", -1);
         }
 
-        public async Task<DetailedUser> GetUser()
+        // Les méthodes de DAO_Users
+
+        public async Task<ObservableCollection<User>> GetAllUsersAsync()
         {
-            DetailedUser detailedUser = new DetailedUser
-            {
-                IdUser = 1,
-                Username = "User1",
-                Email = "user1@example.com",
-                SignInDate = "2023-01-01",
-                Elo = 1000,
-                Role = "Utilisateur",
-                Statistiques = new Statistique
-                {
-                    Jeux_Joues = 10,
-                    Jeux_Gagnes = 5,
-                    Jeux_Perdus = 5,
-                    Temps_Total_Joue = "03:00:00"
-                },
-                Robots = new List<Robot>
-            {
-                new Robot
-                {
-                    ID_Robot = 1,
-                    Nom_Robot = "Robot1",
-                    ID_Utilisateur = 1,
-                    Adresse_MAC = "00:11:22:33:44:55",
-                    ID_Status = 1,
-                    Nom_Status = "Connecté",
-                },
-                new Robot
-                {
-                    ID_Robot = 2,
-                    Nom_Robot = "Robot2",
-                    ID_Utilisateur = 1,
-                    Adresse_MAC = "11:22:33:44:55:66",
-                    ID_Status = 1,
-                    Nom_Status = "Connecté",
-                },
-                // Ajouter d'autres instances de robots ici
-            },
-                Combats = new List<Combat>
-            {
-                new Combat
-                {
-                    IdCombat = 1,
-                    IdRobot1 = 1,
-                    IdRobot2 = 2,
-                    Points_Robot1 = 10,
-                    Points_Robot2 = 20,
-                    FightingTime = "00:10:00",
-                    IdArbitre = 4,
-                    IdVainqueur = 2
-                },
-                new Combat
-                {
-                    IdCombat = 2,
-                    IdRobot1 = 2,
-                    IdRobot2 = 1,
-                    Points_Robot1 = 15,
-                    Points_Robot2 = 25,
-                    FightingTime = "00:15:00",
-                    IdArbitre = 4,
-                    IdVainqueur = 1
-                },
-                // Ajouter d'autres instances de combats ici
-            }
-            };
-            return detailedUser;
+            return await _apiService.GetAsync<ObservableCollection<User>>("users");
         }
 
-        public async Task UpdateApiPropertyAsync(DetailedUser DetailedUser)
+        public async Task<User> GetUserByIdAsync(int id)
         {
-            try
-            {
-                var httpClient = new HttpClient();
-                var json = JsonConvert.SerializeObject(DetailedUser);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await httpClient.PutAsync("https://votre-api.com/utilisateurs/1", content);
+            return await _apiService.GetAsync<User>($"users/{id}");
+        }
 
-                if (response.IsSuccessStatusCode)
-                {
-                    // Mise à jour réussie
-                    // Effectuez les actions nécessaires, telles que la mise à jour de l'interface utilisateur 
-                }
-                else
-                {
-                    // La mise à jour a échoué
-                    // Gérez l'erreur en conséquence, affichez un message d'erreur, etc.
-                }
-            }
-            catch (Exception ex)
+        public async Task<User> GetUserByEmailAsync(string email)
+        {
+            var headers = new Dictionary<string, string> { { "Email", email } };
+            var user = await _apiService.GetWithHeadersAsync<User>("/users/by-email", headers);
+            if (user != null)
             {
-                // Gestion des exceptions
-                // Gérez les erreurs de connexion, les erreurs d'API, etc.
+                return (user);
             }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<string> AddUserAsync(User user)
+        {
+            bool isSuccess = await _apiService.PostAsync("users", user);
+            return isSuccess ? null : "Erreur lors de l'ajout de l'utilisateur";
+        }
+
+        public async Task<string> UpdateUserAsync(User user)
+        {
+            bool isSuccess = await _apiService.PutAsync($"users/{user.IdUser}", user);
+            return isSuccess ? null : "Erreur lors de la mise à jour de l'utilisateur";
+        }
+
+        public async Task<string> DeleteUserAsync(int id)
+        {
+            bool isSuccess = await _apiService.DeleteAsync("users", id.ToString());
+            return isSuccess ? null : "Erreur lors de la suppression de l'utilisateur";
         }
 
     }
