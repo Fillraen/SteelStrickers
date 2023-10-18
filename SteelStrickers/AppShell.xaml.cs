@@ -13,6 +13,7 @@ namespace SteelStrickers
             InitializeComponent();
             Routing.RegisterRoute(nameof(ChooseModePage), typeof(ChooseModePage));
             Routing.RegisterRoute(nameof(ControllerPage), typeof(ControllerPage));
+            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

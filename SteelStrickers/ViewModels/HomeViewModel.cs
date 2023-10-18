@@ -47,6 +47,7 @@ namespace SteelStrickers.ViewModels
         {
             InitializeData();
             userId = Preferences.Get("IdUser", -1);
+            //userId = 2;
 
             ChooseModeCommand = new Command(OnFightClicked);
             DiscoverCommand = new Command(async () => await Discover());
@@ -67,7 +68,11 @@ namespace SteelStrickers.ViewModels
         private async void InitializeData()
         {
             //DetailedUser = await daoUser.GetUserByIdAsync(userId);
-            Robots = await daoRobots.;
+            var RobotsList = await daoRobots.GetAllRobotsByUserId();
+            foreach (var robots in RobotsList )
+            {
+                Robots.Add(robots);
+            }
         }
 
         private async void OnFightClicked(object obj)

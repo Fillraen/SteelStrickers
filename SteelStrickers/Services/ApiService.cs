@@ -9,7 +9,7 @@ namespace SteelStrickers.Services
 {
     public class ApiService
     {
-        private const string BaseUrl = "http://yourapiurl.com/api/";
+        private const string BaseUrl = "https://almeida.alwaysdata.net/";
 
         private readonly HttpClient _client = new HttpClient();
 
