@@ -29,20 +29,23 @@ namespace SteelStrickers.ViewModels
         private async void SearchOpponent()
         {
             // Supposons que vous avez une méthode GetTopicForMatch dans un service de BDD
-            var topic = await daoRobots.GetTopicForMatch(MatchId.ToString());
-            daoMqtt.Subscribe(topic);
+            var topic = await daoMatch.GetTopicForMatch(int.Parse(MatchId));
+            daoMqtt.Subscribe(topic.Topic);
         }
 
         private async void CreateMatch()
         {
             // Supposons que vous avez une méthode GetAvailableTopic dans un service de BDD
-            var availableTopic = await daoRobots.GetAvailableTopic();
-            Combat combat = new Combat();
-            combat.Topic = availableTopic;
+            GameTopic availableTopic = await daoMatch.GetAvailableTopic();
+            Match combat = new Match();
+            Random rnd = new Random();
+            int code = rnd.Next(000000000, 999999999); // Génère un nombre aléatoire à 10 chiffres
+            combat.IdFight = code;
+            combat.Topic = availableTopic.Id;
             // Supposons que vous avez une méthode CreateMatchInDB qui crée le match et retourne l'ID.
-            await daoRobots.CreateMatchInDB(combat);
+            await daoMatch.CreateMatch(combat);
 
-            daoMqtt.Subscribe(availableTopic);
+            daoMqtt.Subscribe(availableTopic.Topic);
         }
 
         

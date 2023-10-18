@@ -4,13 +4,16 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using SteelStrickers.Models;
+using Match = SteelStrickers.Models.Match;
 
 namespace SteelStrickers.Services
 {
     public interface IDAO_Robots
     {
-        Task<string> GetTopicForMatch(string matchId);
-        Task<string> GetAvailableTopic();
-        Task<bool> CreateMatchInDB(Combat match);
+        Task<List<Robot>> GetAllRobotsByUserId();
+        Task<Robot> GetRobotById(int id);
+        Task<bool> EditRobot(Robot robot);
+        Task<bool> DeleteRobot(int id);
+        Task<bool> AddRobot(Robot robot);
     }
 }
