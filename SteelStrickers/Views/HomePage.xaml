@@ -54,7 +54,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Button Grid.Row="0" Grid.Column="0" Text="Se Connecter" Command="{Binding Source={x:Reference Name=HomePageInstance}, Path=BindingContext.DiscoverCommand}"/>
-                                <Label Grid.Column="1" Grid.Row="1" Text="{Binding Nom_Robot}" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Grid.Column="1" Grid.Row="1" Text="{Binding Name}" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
                                 <StackLayout Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalOptions="Center">
                                     <Button x:Name="EditButton" Text="Edit" HorizontalOptions="Center" VerticalOptions="Center"/>
                                     <!-- set button with custom contant like an img and a label -->

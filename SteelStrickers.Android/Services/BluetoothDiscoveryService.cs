@@ -67,7 +67,7 @@ namespace SteelStrickers.Droid.Services
             try
             {
                 // Utilisez la méthode CreateBond pour apparier l'appareil
-                BluetoothDevice device = _bluetoothAdapter.GetRemoteDevice(robot.Adresse_MAC);
+                BluetoothDevice device = _bluetoothAdapter.GetRemoteDevice(robot.MacAddress);
                 return device.CreateBond();
             }
             catch
@@ -92,8 +92,8 @@ namespace SteelStrickers.Droid.Services
                     {
                         Robot robot = new Robot
                         {
-                            Adresse_MAC = device.Address,
-                            Bluetooth_Name = robotName
+                            MacAddress = device.Address,
+                            BluetoothName = robotName
                         };
 
                         MessagingCenter.Send(robot, "DiscoveredDevice");
@@ -108,8 +108,8 @@ namespace SteelStrickers.Droid.Services
                         // L'appareil est maintenant apparié, vous pouvez initier la connexion ici
                         Robot robot = new Robot
                         {
-                            Adresse_MAC = device.Address,
-                            Bluetooth_Name = device.Name ?? device.Alias
+                            MacAddress = device.Address,
+                            BluetoothName = device.Name ?? device.Alias
                         };
 
                         BluetoothService bluetoothService = new BluetoothService();
