@@ -67,7 +67,7 @@ namespace SteelStrickers.ViewModels
             if (bluetoothService.Connect(robot))
             {
                 IsListViewVisible = false;
-                bluetoothService.SendData("A");
+                bluetoothService.SendData("Login;");
             }
             
         }

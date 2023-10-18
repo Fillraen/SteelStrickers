@@ -57,12 +57,19 @@ namespace SteelStrickers.Services
                 _currentBluetoothConnection.OnStateChanged += HandleStateChanged;
                 _currentBluetoothConnection.OnRecived += HandleDataReceived;
                 _currentBluetoothConnection.OnError += HandleConnectionError;
-
                 return true; // Connexion réussie
             }
             catch
             {
                 return false; // Connexion échouée
+            }
+        }
+
+        public void Disconnect()
+        {
+            if (_currentBluetoothConnection != null)
+            {
+                _currentBluetoothConnection.Dispose();
             }
         }
 
@@ -76,8 +83,6 @@ namespace SteelStrickers.Services
         }
 
         public event EventHandler<string> DataReceived;
-
-
         private void HandleStateChanged(object sender, StateChangedEventArgs args)
         {
             ConnectionState state = args.ConnectionState;

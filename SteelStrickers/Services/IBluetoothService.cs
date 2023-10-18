@@ -11,6 +11,7 @@ namespace SteelStrickers.Services
         ObservableCollection<Robot> GetAvailableDevices(); // Liste des robots disponibles.
         bool Connect(Robot robot); // Connecter à un robot.
         void SendData(string data); // Envoyer des données à un robot.
+        void Disconnect(); // Déconnecter du robot.
         event EventHandler<string> DataReceived; // Événement pour les données reçues.
 
     }

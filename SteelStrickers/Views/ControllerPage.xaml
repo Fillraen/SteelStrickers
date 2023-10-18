@@ -51,6 +51,7 @@
                 <StackLayout>
                     <Button Text="Action 1" Command="{Binding Action1Command}" />
                     <Button Text="Action 2" Command="{Binding Action2Command}" />
+                    <Button Text="Logout" Command="{Binding DisconnectCommand}" />
                 </StackLayout>
             </StackLayout>
         </Grid>
