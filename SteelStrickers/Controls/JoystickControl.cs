@@ -7,6 +7,7 @@ namespace SteelStrickers.Controls
 {
     public class JoystickControl : View
     {
+        #region X
         public static readonly BindableProperty XpositionProperty =
             BindableProperty.Create(
                 propertyName: "Xposition",
@@ -20,6 +21,9 @@ namespace SteelStrickers.Controls
             get { return (int)GetValue(XpositionProperty); }
             set { SetValue(XpositionProperty, value); }
         }
+
+
+        #endregion
 
         public static readonly BindableProperty YpositionProperty =
             BindableProperty.Create(
