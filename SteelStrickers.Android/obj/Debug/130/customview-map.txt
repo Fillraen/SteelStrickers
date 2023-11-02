@@ -22,6 +22,7 @@ background;obj\Debug\130\res\mipmap-anydpi-v26\icon.xml
 background;obj\Debug\130\res\mipmap-anydpi-v26\icon_round.xml
 cache-path;C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers.Android\obj\Debug\130\lp\65\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\130\res\values\colors.xml
+<<<<<<< Updated upstream
 com.google.android.material.appbar.AppBarLayout;C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers.Android\obj\Debug\130\lp\66\jl\res\layout\flyoutcontent.xml
 com.google.android.material.appbar.AppBarLayout;C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers.Android\obj\Debug\130\lp\66\jl\res\layout\rootlayout.xml
 com.google.android.material.appbar.AppBarLayout;C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers.Android\obj\Debug\130\lp\66\jl\res\layout\shellcontent.xml
@@ -34,6 +35,22 @@ declare-styleable;C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers.Android\
 enum;C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers.Android\obj\Debug\130\lp\3\jl\res\values\attrs.xml
 external-cache-path;C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers.Android\obj\Debug\130\lp\65\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers.Android\obj\Debug\130\lp\65\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+=======
+com.google.android.material.appbar.AppBarLayout;C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\lp\66\jl\res\layout\flyoutcontent.xml
+com.google.android.material.appbar.AppBarLayout;C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\lp\66\jl\res\layout\rootlayout.xml
+com.google.android.material.appbar.AppBarLayout;C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\lp\66\jl\res\layout\shellcontent.xml
+com.google.android.material.bottomnavigation.BottomNavigationView;C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\lp\66\jl\res\layout\bottomtablayout.xml
+com.google.android.material.tabs.TabLayout;C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\lp\66\jl\res\layout\fallbacktabbardonotuse.xml
+com.google.android.material.tabs.TabLayout;C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\lp\66\jl\res\layout\rootlayout.xml
+com.google.android.material.tabs.TabLayout;C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\lp\66\jl\res\layout\tabbar.xml
+crc643f46942d9dd1fff9.ShellFlyoutLayout;C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\lp\66\jl\res\layout\flyoutcontent.xml
+crc64720bb2db43a66fe9.FormsViewPager;C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\lp\66\jl\res\layout\rootlayout.xml
+declare-styleable;C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\lp\3\jl\res\values\attrs.xml
+declare-styleable;C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\lp\66\jl\res\values\attrs.xml
+enum;C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\lp\3\jl\res\values\attrs.xml
+external-cache-path;C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\lp\65\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-path;C:\Users\NTAer\Desktop\Xaz\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\lp\65\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+>>>>>>> Stashed changes
 foreground;obj\Debug\130\res\mipmap-anydpi-v26\icon.xml
 foreground;obj\Debug\130\res\mipmap-anydpi-v26\icon_round.xml
 FrameLayout;C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers.Android\obj\Debug\130\lp\66\jl\res\layout\bottomtablayout.xml
