@@ -52,7 +52,6 @@ namespace SteelStrickers.ViewModels
             set { SetProperty(ref selectedRobot, value); }
         }
 
-        public ObservableCollection<Robot> robots_list{ get; set; }
 
         public ICommand EditRobotCommand { get; private set; }
         public ICommand DeleteRobotCommand { get; private set; }

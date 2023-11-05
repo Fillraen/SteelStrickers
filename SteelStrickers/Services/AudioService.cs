@@ -12,12 +12,10 @@ namespace SteelStrickers.Services
 {
     public class AudioService
     {
-        ISimpleAudioPlayer player = CrossSimpleAudioPlayer.Current;
+        readonly ISimpleAudioPlayer player = CrossSimpleAudioPlayer.Current;
 
         public void PlayBackgroundMusic()
         {
-            var assembly = typeof(AudioService).GetTypeInfo().Assembly;
-            var audioStream = assembly.GetManifestResourceStream("energicMusic.mp3");
             player.Load("energicMusic.mp3");
             player.Loop = true; // To loop the music
             player.Play();
