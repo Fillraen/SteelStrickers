@@ -21,6 +21,7 @@
             HasBackgroundAnimation="True"/>
     </pages:PopupPage.Animation>
     <StackLayout VerticalOptions="Center" 
+                 BackgroundColor="White"
                  HorizontalOptions="Center" 
                  Padding="20, 20, 20, 20">
         <Label Text="Nom du robot" />

@@ -21,12 +21,10 @@ namespace SteelStrickers.Models
         public int GameLoose { get; set; }
         public TimeSpan TotalTimePlayed { get; set; }
         public string Role { get; set; }
-
-        public ICollection<Robot> Robots { get; set; }
+        public string Icon { get; set; }
 
         public User()
         {
-            Robots = new List<Robot>();
         }
 
         public void SetEncryptionKey(string key = null)

@@ -2,29 +2,225 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:SteelStrickers.ViewModels;assembly=SteelStrickers"
-             x:Class="SteelStrickers.Views.ChooseModePage">
+             xmlns:models="clr-namespace:SteelStrickers.Models;assembly=SteelStrickers"
+             x:Class="SteelStrickers.Views.ChooseModePage"
+             Background="#001b25"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             x:Name="ChooseModePageName">
     <ContentPage.BindingContext>
         <viewModels:ChooseModeViewModel/>
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="White" />
+                                <Setter Property="CornerRadius"
+                                        Value="25"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid  Grid.Column="0">
-                <Button Text="Course" BackgroundColor="Red" Command="{Binding GoToControllerPageCommand}"/>
-            </Grid>
-            <Grid BackgroundColor="bLUE" Grid.Column="1">
-                <StackLayout>
-                    <Button Text="Combat" Command="{Binding SearchOpponentCommand}"/>
-                    <StackLayout>
-                        <Label Text="Rejoindre une partie"/>
-                        <Entry Text="{Binding MatchId, Mode=TwoWay}"/>
+        <Grid Padding="0,0,0,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!-- Header -->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame Style="{StaticResource GameModeFrame_Menu}">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="icon2.png" WidthRequest="42" HeightRequest="42" HorizontalOptions="Start" />
+                        <StackLayout Orientation="Vertical" Margin="10,0,40,0">
+                            <Label Text="{Binding _User.Username}" Style="{StaticResource GameModeMenu_PlayerName}" Margin="0,0,0,0"/>
+                            <StackLayout Orientation="Horizontal" Margin="0,-5,0,0">
+                                <Label Text="{Binding _User.Elo}" Style="{StaticResource GameModeMenu_Ranking}"/>
+                                <Image Source="icon_trophy.png" WidthRequest="16" HeightRequest="16" />
+                            </StackLayout>
+                        </StackLayout>
                     </StackLayout>
-
-                    <Button Text="Create a Match" Command="{Binding CreateMatchCommand}"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding UserInformationCommand}" NumberOfTapsRequired="1" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Label Grid.Column="1" Text="GAME MODE" Style="{StaticResource GameModeTitle}"/>
+                <StackLayout Grid.Column="2" Orientation="Horizontal" HorizontalOptions="End">
+                    <Image Source="icon_settingsWhite.png" WidthRequest="32" HeightRequest="32" Margin="20,10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenSettingsCommand}" NumberOfTapsRequired="1"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </StackLayout>
+            </Grid>
+            <!-- Body -->
+            <Grid Grid.Row="1" Padding="10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.2*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!-- Choose witch mode -->
+                <Grid  Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Column="0" Style="{StaticResource GameModeChooseModeFrame}" Margin="0,0,5,0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChooseTestModeCommand}" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                        <Image Source="gameMode_testBg.png" Style="{StaticResource GameModeChooseModeImage}"/>
+
+                    </Frame>
+                    <Label Grid.Column="0" Text="TEST" Style="{StaticResource GameModeTitle}" VerticalOptions="Start" Margin="0,30,0,0"/>
+
+                    <Frame Grid.Column="1" Style="{StaticResource GameModeChooseModeFrame}" Margin="5,0,0,0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChooseMatchModeCommand}" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                        <Image Source="gameMode_matchBg" Style="{StaticResource GameModeChooseModeImage}"/>
+                    </Frame>
+                    <Label Grid.Column="1" Text="MATCH" Style="{StaticResource GameModeTitle}" VerticalOptions="Start" Margin="0,30,0,0"/>
+                </Grid>
+                <!-- Action Button -->
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- Edit Button -->
+                    <Frame Grid.Column="0" Style="{StaticResource GameModeActionButtonFrame}" Margin="20,0">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+                            <Label Text="Edit" Style="{StaticResource GameModeActionButtonText}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding EditRobotCommand}" NumberOfTapsRequired="1"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Delete Button -->
+                    <Frame Grid.Column="1" Style="{StaticResource GameModeActionButtonFrame}" Margin="-10,0,50,0" BackgroundColor="#e7642f">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+                            <Label Text="Delete" Style="{StaticResource GameModeActionButtonText}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding DeleteRobotCommand}" NumberOfTapsRequired="1"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </Frame>
+                    <!-- Connect bluetooth btn -->
+                    <Frame Grid.Column="2" Style="{StaticResource GameModeActionButtonFrame}">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+                            <Image Source="icon_ble.png" HeightRequest="36"/>
+                            <Label Text="Connect Bluetooth" Style="{StaticResource GameModeActionButtonText}">
+                            </Label>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ConnectBluetoothCommand}" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                    <!-- Disconnect bluetooth btn -->
+                    <Frame Grid.Column="3" Style="{StaticResource GameModeActionButtonFrameAccent}">
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label Text="Disconnect From" Style="{StaticResource GameModeActionButtonTextAccent}" Margin="0,0,0,-7"/>
+                            <Label Text="Robot Name" Style="{StaticResource GameModeActionButtonTextAccent2}" Margin="0,-7,0,0" />
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding DisconnectBluetoothCommand}" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </Grid>
+                <!-- List Available robots -->
+                <Grid Grid.Row="2">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" >
+                        <Frame Padding="10,0"
+                               Background="Transparent"
+                               Margin="5,10,5,0"
+                               HasShadow="True"
+                               CornerRadius="10"
+                               WidthRequest="100"
+                               HorizontalOptions="Center"
+                               VerticalOptions="FillAndExpand"
+                               BorderColor="White">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding AddRobotCommand}" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         WidthRequest="150">
+                                <Image Source="icons_add_white.png"
+                                       Style="{StaticResource GameModeRobotImage}"
+                                       VerticalOptions="Center"
+                                       WidthRequest="50"
+                                       HeightRequest="50" />
+                            </StackLayout>
+                        </Frame>
+                        <!-- Horizontal list of robots -->
+                        <RefreshView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,10,0,0" >
+                            <CollectionView ItemsSource="{Binding Robots}"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="Start"
+                                            SelectedItem="{Binding SelectedRobot, Mode=TwoWay}"
+                                            SelectionMode="Single"
+                                            Margin="0">
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="20"/>
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate x:DataType="models:Robot">
+                                        <Frame Padding="0,0"
+                                               Margin="5"
+                                               HasShadow="True"
+                                               CornerRadius="15"
+                                               WidthRequest="200"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="FillAndExpand"
+                                               BackgroundColor="Transparent"
+                                               IsClippedToBounds="True">
+                                            <Grid Padding="0,0">
+                                                <Image Source="bg_robog.png"
+                                                       Aspect="AspectFill"
+                                                       HorizontalOptions="FillAndExpand"
+                                                       VerticalOptions="FillAndExpand"/>
+                                                <StackLayout HorizontalOptions="Center"
+                                                             VerticalOptions="Center"
+                                                             WidthRequest="150">
+                                                    <Label Text="{Binding Name}"
+                                                           Style="{StaticResource GameModeRobotName}"
+                                                           HorizontalTextAlignment="Center" />
+                                                    <Image Source="char2.png"
+                                                           Style="{StaticResource GameModeRobotImage}"
+                                                           VerticalOptions="Center"
+                                                           WidthRequest="100"
+                                                           HeightRequest="100" />
+                                                </StackLayout>
+                                            </Grid>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </RefreshView>
+                    </StackLayout>
+                </Grid>
             </Grid>
         </Grid>
     </ContentPage.Content>

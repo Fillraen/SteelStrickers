@@ -26,7 +26,8 @@ namespace SteelStrickers.Droid
             Manifest.Permission.BluetoothPrivileged,
             Manifest.Permission.AccessNetworkState,
             Manifest.Permission.AccessCoarseLocation,
-            Manifest.Permission.AccessFineLocation
+            Manifest.Permission.AccessFineLocation,
+            Manifest.Permission.ForegroundService
         };
 
         private const int RequestPermissionsCode = 1000;

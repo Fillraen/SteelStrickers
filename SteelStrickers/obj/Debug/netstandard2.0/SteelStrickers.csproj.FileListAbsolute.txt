@@ -46,3 +46,28 @@ C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers\obj\Debug\netstandard2.0\X
 C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.dll
 C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers\obj\Debug\netstandard2.0\refint\SteelStrickers.dll
 C:\Users\SLAB95\Desktop\SteelStrickers\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.pdb
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.csproj.AssemblyReference.cache
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\Views\AddRobotPopup.xaml.g.cs
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\Views\AuthPopup.xaml.g.cs
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\Views\ChooseModePage.xaml.g.cs
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\Views\ControllerPage.xaml.g.cs
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\Views\HistoryPage.xaml.g.cs
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\Views\HomePage.xaml.g.cs
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\Views\RankingPage.xaml.g.cs
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\Views\SettingsPopup.xaml.g.cs
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.AssemblyInfoInputs.cache
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.AssemblyInfo.cs
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.csproj.CoreCompileInputs.cache
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.dll
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\refint\SteelStrickers.dll
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.pdb
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\bin\Debug\netstandard2.0\SteelStrickers.deps.json
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\bin\Debug\netstandard2.0\SteelStrickers.dll
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\bin\Debug\netstandard2.0\ref\SteelStrickers.dll
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\bin\Debug\netstandard2.0\SteelStrickers.pdb
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\Views\UserInformationPopup.xaml.g.cs

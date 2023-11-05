@@ -12,5 +12,6 @@ namespace SteelStrickers.Models
         public string BluetoothName { get; set; }
         public string MacAddress { get; set; }
         public string Status { get; set; }
+        public string Character { get; set; }
     }
 }

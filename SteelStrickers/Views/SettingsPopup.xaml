@@ -18,8 +18,11 @@
     </pages:PopupPage.Animation>
     <!--You can use any elements here which are extended from Xamarin.Forms.View-->
     <StackLayout 
+        BackgroundColor="White"
         VerticalOptions="Center" 
         HorizontalOptions="Center" 
+        WidthRequest="300"
+        HeightRequest="300"
         Padding="20, 20, 20, 20">
         <Label
             Text="Settings Popup"/>

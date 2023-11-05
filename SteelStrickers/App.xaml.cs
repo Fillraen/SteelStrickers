@@ -10,17 +10,22 @@ namespace SteelStrickers
 {
     public partial class App : Application
     {
-
+        private readonly AudioService audioService;
         public App()
         {
             InitializeComponent();
-            SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NHaF5cXmVCf1NpRmJGfV5yd0VOalxUTnRbUj0eQnxTdEZiWX9acXBURWRaVUV2Wg==");
+            SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NHaF5cXmVCf1FpQXxbf1xzZFxMZV5bRXJPMyBoS35RdURiWXteeXFXR2VbUUZy");
             DependencyService.Register<DAO_User>(); 
             DependencyService.Register<DAO_Robots>(); 
             DependencyService.Register<DAO_Match>();
             DependencyService.Register<BluetoothService>();
             //DependencyService.Register<BluetoothDiscoveryService>();
             DependencyService.Register<DAO_MQTT>();
+
+            audioService = new AudioService();
+            audioService.PlayBackgroundMusic();
+
+
             MainPage = new AppShell();
             Preferences.Set("IdUser", 2);
         }
@@ -62,10 +67,14 @@ namespace SteelStrickers
 
         protected override void OnSleep()
         {
+            // Stop music when app goes to sleep
+            audioService.StopBackgroundMusic();
         }
 
         protected override void OnResume()
         {
+            // Resume music when app comes back to foreground
+            audioService.PlayBackgroundMusic();
         }
     }
 }

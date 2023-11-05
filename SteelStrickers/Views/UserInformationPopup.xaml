@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:pages="http://rotorgames.com"
+                 xmlns:viewModels="clr-namespace:SteelStrickers.ViewModels;assembly=SteelStrickers"
+                 x:Class="SteelStrickers.Views.UserInformationPopup">
+
+    <pages:PopupPage.Animation>
+        <pages:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <pages:PopupPage.Content>
+        <StackLayout HeightRequest="400" WidthRequest="350" VerticalOptions="Center" HorizontalOptions="Center" IsClippedToBounds="False">
+            <Grid> 
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <!-- Utilise * pour prendre toute la hauteur disponible -->
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <!-- Utilise * pour prendre toute la largeur disponible -->
+                </Grid.ColumnDefinitions>
+
+                <!-- Image adaptée à la grille -->
+                <Image Grid.Row="0" Grid.Column="0"
+                       Source="Generic_Vertical_Window_Premade.png" Aspect="AspectFill"/>
+
+                <!-- Contenu superposé sur l'image -->
+                <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Center" Orientation="Vertical" Padding="20">
+                    <Label Text="User Information"
+                           Margin="0,-15,0,0"
+                           TextColor="White"
+                           FontSize="{StaticResource FontSizeXMedium}"
+                           FontFamily="Roboto-Bold.ttf#Roboto"/>
+                    <!-- Ajoutez d'autres contrôles ici si nécessaire -->
+                    <Grid Margin="0,30,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/> <!-- Icon -->
+                            <RowDefinition Height="*"/> <!-- Name -->
+                            <RowDefinition Height="*"/> <!-- Email -->
+                            <RowDefinition Height="*"/> <!-- Password -->
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="icon28.png" WidthRequest="64" HeightRequest="64"/>
+                        <Label Grid.Row="1" Text="Name" TextColor="White" FontSize="{StaticResource FontSizeMedium}" FontFamily="Roboto-Bold.ttf#Roboto"/>
+                        <Label Grid.Row="2" Text="Email" TextColor="White" FontSize="{StaticResource FontSizeMedium}" FontFamily="Roboto-Bold.ttf#Roboto"/>
+                        <Label Grid.Row="3" Text="Password" TextColor="White" FontSize="{StaticResource FontSizeMedium}" FontFamily="Roboto-Bold.ttf#Roboto"/>
+
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </pages:PopupPage.Content>
+</pages:PopupPage>

@@ -74,8 +74,6 @@ namespace SteelStrickers.ViewModels
             {
                 Robots.Add(robots);
             }
-            
-            
         }
 
         private async void OnFightClicked(object obj)

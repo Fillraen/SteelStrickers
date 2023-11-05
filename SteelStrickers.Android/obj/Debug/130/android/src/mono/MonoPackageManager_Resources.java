@@ -8,6 +8,8 @@ public class MonoPackageManager_Resources {
 		"Newtonsoft.Json.dll",
 		"Plugin.BluetoothClassic.Abstractions.dll",
 		"Plugin.BluetoothClassic.Android.dll",
+		"Plugin.SimpleAudioPlayer.Abstractions.dll",
+		"Plugin.SimpleAudioPlayer.dll",
 		"Rg.Plugins.Popup.dll",
 		"SteelStrickers.dll",
 		"Syncfusion.Buttons.XForms.Android.dll",
