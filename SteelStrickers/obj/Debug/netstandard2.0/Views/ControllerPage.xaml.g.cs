@@ -20,13 +20,9 @@ namespace SteelStrickers.Views {
         private global::SteelStrickers.Controls.JoystickControl JoystickControl;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.StackLayout StackLayoutJoystickData;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ControllerPage));
             JoystickControl = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::SteelStrickers.Controls.JoystickControl>(this, "JoystickControl");
-            StackLayoutJoystickData = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "StackLayoutJoystickData");
         }
     }
 }

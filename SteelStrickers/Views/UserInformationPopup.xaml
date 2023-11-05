@@ -18,45 +18,75 @@
             HasBackgroundAnimation="True"/>
     </pages:PopupPage.Animation>
     <pages:PopupPage.Content>
-        <StackLayout HeightRequest="425" WidthRequest="375" VerticalOptions="Center" HorizontalOptions="Center" >
-            <Grid> 
+        <StackLayout HeightRequest="475" WidthRequest="375" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
-                    <!-- Utilise * pour prendre toute la hauteur disponible -->
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <!-- Utilise * pour prendre toute la largeur disponible -->
                 </Grid.ColumnDefinitions>
 
-                <!-- Image adaptée à la grille -->
-                <Image Grid.Row="0" Grid.Column="0"
-                       Source="Generic_Vertical_Window_Premade.png" Aspect="AspectFit"/>
+                <Image Grid.Row="0" Grid.Column="0" Source="Generic_Vertical_Window_Premade.png" Aspect="AspectFit"/>
 
-                <!-- Contenu superposé sur l'image -->
-                <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Center" Orientation="Vertical" Padding="20">
-                    <Label Text="User Information"
-                           VerticalOptions="Center"
-                           VerticalTextAlignment="Center"
-                           Margin="0,-15,0,0"
-                           TextColor="White"
-                           FontSize="{StaticResource FontSizeXMedium}"
-                           FontFamily="Roboto-Bold.ttf#Roboto"/>
-                    <!-- Ajoutez d'autres contrôles ici si nécessaire -->
-                    <Grid Margin="0,30,0,0">
+                <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" Padding="20">
+                    <Label Text="User Information" Style="{StaticResource UserInformationTitleLabelStyle}"/>
+
+                    <Grid Margin="0,20,0,0" HorizontalOptions="Center">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/> <!-- Icon -->
-                            <RowDefinition Height="*"/> <!-- Name -->
-                            <RowDefinition Height="*"/> <!-- Email -->
-                            <RowDefinition Height="*"/> <!-- Password -->
+                            <RowDefinition Height="Auto"/>
+                            <!-- Icon -->
+                            <RowDefinition Height="Auto"/>
+                            <!-- Name -->
+                            <RowDefinition Height="Auto"/>
+                            <!-- Email -->
+                            <RowDefinition Height="Auto"/>
+                            <!-- Password -->
+                            <RowDefinition Height="Auto"/>
+                            <!-- Button to confirm or cancel -->
                         </Grid.RowDefinitions>
-                        <Image Grid.Row="0" Source="icon28.png" WidthRequest="64" HeightRequest="64"/>
-                        <Label Grid.Row="1" Text="Name" TextColor="White" FontSize="{StaticResource FontSizeMedium}" FontFamily="Roboto-Bold.ttf#Roboto"/>
-                        <Label Grid.Row="2" Text="Email" TextColor="White" FontSize="{StaticResource FontSizeMedium}" FontFamily="Roboto-Bold.ttf#Roboto"/>
-                        <Label Grid.Row="3" Text="Password" TextColor="White" FontSize="{StaticResource FontSizeMedium}" FontFamily="Roboto-Bold.ttf#Roboto"/>
+
+                        <Grid Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start">
+                            <Image Source="IconUIElement" WidthRequest="112" HeightRequest="112" Style="{StaticResource UserInformationIconImageStyle}"/>
+                            <Image Source="icon8.png" WidthRequest="64" HeightRequest="64" Style="{StaticResource UserInformationIconImageStyle}"/>
+                        </Grid>
+
+                        <Frame Grid.Row="1" Style="{StaticResource UserInformationFrameStyle}">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Image Source="icon_user.png" WidthRequest="24" HeightRequest="24" Style="{StaticResource UserInformationIconImageStyle}"/>
+                                <Entry x:Name="NameEntry" Placeholder="Name" Style="{StaticResource UserInformationEntryStyle}"/>
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="2" Style="{StaticResource UserInformationFrameStyle}">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Image Source="icon_message.png" WidthRequest="24" HeightRequest="24" Style="{StaticResource UserInformationIconImageStyle}"/>
+                                <Entry x:Name="EmailEntry" Placeholder="Email" Style="{StaticResource UserInformationEntryStyle}"/>
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="3" Style="{StaticResource UserInformationFrameStyle}">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Image Source="icon_cadenas.png" WidthRequest="24" HeightRequest="24" Style="{StaticResource UserInformationIconImageStyle}"/>
+                                <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" Style="{StaticResource UserInformationEntryStyle}"/>
+                            </StackLayout>
+                        </Frame>
+                        <StackLayout Grid.Row="4" Orientation="Horizontal" Padding="10" Margin="0,-40,0,0">
+                            <Frame WidthRequest="150" HeightRequest="75" HasShadow="False" Background="Transparent" Margin="0">
+                                <Grid>
+                                    <Image Source="GenericSmallButtonNormal.png" Aspect="AspectFit"/>
+                                    <Label Text="Cancel" TextColor="#61d9f1" FontSize="{StaticResource FontSizeMedium}" FontFamily="Roboto-Bold.ttf#Roboto" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame WidthRequest="150" HeightRequest="75" HasShadow="False" Background="Transparent" Margin="0" >
+                                <Grid>
+                                    <Image Source="GenericSmallButtonNormal.png" Aspect="AspectFit"/>
+                                    <Label Text="Confirm" TextColor="#61d9f1" FontSize="{StaticResource FontSizeMedium}" FontFamily="Roboto-Bold.ttf#Roboto" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
                     </Grid>
                 </StackLayout>
             </Grid>
         </StackLayout>
     </pages:PopupPage.Content>
 </pages:PopupPage>
+    

@@ -4,51 +4,52 @@
              xmlns:valueConverter="clr-namespace:SteelStrickers.ValueConverter;assembly=SteelStrickers"
              xmlns:controls="clr-namespace:SteelStrickers.Controls;assembly=SteelStrickers"
              xmlns:viewModels="clr-namespace:SteelStrickers.ViewModels;assembly=SteelStrickers"
-             x:Class="SteelStrickers.Views.ControllerPage">
+             x:Class="SteelStrickers.Views.ControllerPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
     <ContentPage.BindingContext>
         <viewModels:ControllerViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <Grid>
+        <Grid Margin="0" Padding="0">
             <Grid.Resources>
                 <ResourceDictionary>
                     <valueConverter:DummyValueConverter x:Key="DummyConverter"/>
-                    <Style TargetType="Label">
-                        <Setter Property="HorizontalOptions" Value="Center"/>
-                        <Setter Property="VerticalOptions" Value="Center"/>
-                    </Style>
                 </ResourceDictionary>
             </Grid.Resources>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <controls:JoystickControl x:Name="JoystickControl" Grid.Column="0" BackgroundColor="#ececec"
-                                            HorizontalOptions="Center" VerticalOptions="Center" 
-                                            HeightRequest="250" WidthRequest="150"
+            <Image Grid.ColumnSpan="3" Source="Background.png" Aspect="AspectFill" />
+
+            <controls:JoystickControl x:Name="JoystickControl" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="End" HeightRequest="250" WidthRequest="150" Margin="50,0,0,0"
                                             Xposition="{Binding Xposition, Mode=TwoWay}" Yposition="{Binding Yposition, Mode=TwoWay}" Distance="{Binding Distance, Mode=TwoWay}" Angle="{Binding Angle, Mode=TwoWay}"/>
-            <StackLayout Grid.Column="1">
-                <StackLayout BindingContext="{x:Reference Name=JoystickControl}" x:Name="StackLayoutJoystickData"  VerticalOptions="Center" Orientation="Vertical">
-                    <StackLayout Orientation="Vertical ">
-                        <Label Text="Xposition" />
-                        <Label Text="{Binding Xposition}"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical ">
-                        <Label Text="Yposition" Grid.Row="1" />
-                        <Label Text="{Binding Yposition}"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical ">
-                        <Label Text="Distance"/>
-                        <Label Text="{Binding Distance}"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical ">
-                        <Label Text="Angle"/>
-                        <Label Text="{Binding Angle}"/>
-                    </StackLayout>
-                    
-                </StackLayout>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Row="0" Grid.ColumnSpan="3" Source="HUDTimer.png" Aspect="AspectFit" WidthRequest="150" HeightRequest="75" VerticalOptions="Start" Margin="0,20,0,0"/>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="02" FontSize="{StaticResource FontSizeXLarge}" FontFamily="Roboto-BoldItalic.ttf#Roboto" TextColor="#61d9f1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,35,-80,0"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="10" FontSize="{StaticResource FontSizeLarge}" FontFamily="Roboto-Bold.ttf#Roboto" TextColor="#07acef" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start"  Margin="0,37,0,0"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="07" FontSize="{StaticResource FontSizeXLarge}" FontFamily="Roboto-BoldItalic.ttf#Roboto" TextColor="#f93e5b" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" Margin="-80,35,0,0"/>
+
+                <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Text="03:21" FontSize="{StaticResource FontSizeXMedium}" FontFamily="Roboto-Bold.ttf#Roboto" TextColor="#07acef" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" Margin="0"/>
+
+            </Grid>
+            
+            <StackLayout Grid.Column="2">
                 <StackLayout>
                     <Button Text="Action 1" Command="{Binding Action1Command}" />
                     <Button Text="Action 2" Command="{Binding Action2Command}" />
@@ -58,3 +59,4 @@
         </Grid>
     </ContentPage.Content>
 </ContentPage>
+    

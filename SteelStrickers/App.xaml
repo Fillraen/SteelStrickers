@@ -32,6 +32,7 @@
             <x:Double x:Key="FontSizeMedium">16</x:Double>
             <x:Double x:Key="FontSizeXMedium">22</x:Double>
             <x:Double x:Key="FontSizeLarge">28</x:Double>
+            <x:Double x:Key="FontSizeXLarge">32</x:Double>
             <x:Double x:Key="FontSizeExtraLarge">40</x:Double>
 
             <!--#region  Set robot as default font for elements with text -->
@@ -270,6 +271,42 @@
                 <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
             <!-- #endregion Game Mode Page -->
+
+            <!-- #region user information popup             -->
+
+            <Style x:Key="UserInformationTitleLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#61d9f1"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSizeXMedium}"/>
+                <Setter Property="FontFamily" Value="Roboto-BoldItalic.ttf#Roboto"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
+                <Setter Property="Margin" Value="15,-11,0,0"/>
+            </Style>
+
+            <Style x:Key="UserInformationIconImageStyle" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFit"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="UserInformationEntryStyle" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="#61d9f1"/>
+                <Setter Property="TextColor" Value="#61d9f1"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"/>
+                <Setter Property="FontFamily" Value="Roboto-Bold.ttf#Roboto"/>
+                <Setter Property="WidthRequest" Value="200"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="UserInformationFrameStyle" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="50"/>
+                <Setter Property="BackgroundColor" Value="#03293e"/>
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="Margin" Value="20,5"/>
+            </Style>
+            <!-- #endregion user information popup             -->
         </ResourceDictionary>        
     </Application.Resources>
 </Application>

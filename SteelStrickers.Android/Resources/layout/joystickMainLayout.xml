@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 	<SteelStrikers.Droid.JoystickAndroidCustomControl.SquareLinearLayout
-		android:background="@drawable/pad"
+		android:background="@drawable/JoystickHUDUIElement"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:gravity="center_vertical|center_horizontal"
 		android:id="@+id/joystickLayout"
 		android:orientation="horizontal">
 		<LinearLayout
-			android:background="@drawable/stick"
+			android:background="@drawable/ThumbHUDUIElement"
 			android:layout_width="50dip"
 			android:layout_height="50dip"
 			android:id="@+id/stickview"

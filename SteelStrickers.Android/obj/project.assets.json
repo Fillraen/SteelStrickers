@@ -206,7 +206,7 @@
             "related": ".pdb"
           },
           "lib/MonoAndroid10/Plugin.SimpleAudioPlayer.dll": {
-            "related": ".Abstractions.pdb;.dll.mdb;.pdb;.XML"
+            "related": ".Abstractions.pdb;.pdb;.XML"
           }
         },
         "runtime": {
@@ -214,7 +214,7 @@
             "related": ".pdb"
           },
           "lib/MonoAndroid10/Plugin.SimpleAudioPlayer.dll": {
-            "related": ".Abstractions.pdb;.dll.mdb;.pdb;.XML"
+            "related": ".Abstractions.pdb;.pdb;.XML"
           }
         }
       },
@@ -6268,7 +6268,19 @@
             "target": "Package",
             "version": "[28.0.0.3, )"
           },
+          "Xamarin.Android.Support.Design": {
+            "target": "Package",
+            "version": "[28.0.0.3, )"
+          },
           "Xamarin.Android.Support.v4": {
+            "target": "Package",
+            "version": "[28.0.0.3, )"
+          },
+          "Xamarin.Android.Support.v4": {
+            "target": "Package",
+            "version": "[28.0.0.3, )"
+          },
+          "Xamarin.Android.Support.v7.AppCompat": {
             "target": "Package",
             "version": "[28.0.0.3, )"
           },
@@ -6280,9 +6292,21 @@
             "target": "Package",
             "version": "[28.0.0.3, )"
           },
+          "Xamarin.Android.Support.v7.CardView": {
+            "target": "Package",
+            "version": "[28.0.0.3, )"
+          },
           "Xamarin.Android.Support.v7.MediaRouter": {
             "target": "Package",
             "version": "[28.0.0.3, )"
+          },
+          "Xamarin.Android.Support.v7.MediaRouter": {
+            "target": "Package",
+            "version": "[28.0.0.3, )"
+          },
+          "Xamarin.AndroidX.Core": {
+            "target": "Package",
+            "version": "[1.12.0.1, )"
           },
           "Xamarin.AndroidX.Core": {
             "target": "Package",
@@ -6292,6 +6316,14 @@
             "target": "Package",
             "version": "[1.2.0, )"
           },
+          "Xamarin.AndroidX.MediaRouter": {
+            "target": "Package",
+            "version": "[1.2.0, )"
+          },
+          "Xamarin.AndroidX.Palette": {
+            "target": "Package",
+            "version": "[1.0.0.5, )"
+          },
           "Xamarin.AndroidX.Palette": {
             "target": "Package",
             "version": "[1.0.0.5, )"
@@ -6299,6 +6331,14 @@
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.8.0, )"
+          },
+          "Xamarin.Essentials": {
+            "target": "Package",
+            "version": "[1.8.0, )"
+          },
+          "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[5.0.0.2196, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
