@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Dd3mAbcPE0uB9msoq6nl24+mWze2OrF0ITOH6qpLlc61otnVcAR5TF+kJWnCA7OZAgc98Lm/CRzzsu5uTWKc4g==",
+  "dgSpecHash": "OtKwv8OJ6Jb2zCYQUPkX5cn/JOOsuvFZeWziHpksoAiPhDzgGUHHUJdPSFNcfIoYcbJkWMnSgHHujGKMt1H79w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\NTAer\\Desktop\\Project VisualStudio\\Fillraen\\SteelStrickers-Xamarin\\SteelStrickers\\SteelStrickers.csproj",
+  "projectFilePath": "C:\\Users\\NTAer\\Desktop\\Xaz\\SteelStrickers-Xamarin\\SteelStrickers\\SteelStrickers.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NTAer\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\NTAer\\.nuget\\packages\\mqttnet\\4.3.1.873\\mqttnet.4.3.1.873.nupkg.sha512",
@@ -22,7 +22,6 @@
     "C:\\Users\\NTAer\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\NTAer\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\NTAer\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",
-    "C:\\Users\\NTAer\\.nuget\\packages\\xam.plugin.simpleaudioplayer\\1.6.0\\xam.plugin.simpleaudioplayer.1.6.0.nupkg.sha512",
     "C:\\Users\\NTAer\\.nuget\\packages\\xamarin.essentials\\1.8.0\\xamarin.essentials.1.8.0.nupkg.sha512",
     "C:\\Users\\NTAer\\.nuget\\packages\\xamarin.forms\\5.0.0.2612\\xamarin.forms.5.0.0.2612.nupkg.sha512"
   ],

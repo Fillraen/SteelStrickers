@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\NTAer\\Desktop\\Project VisualStudio\\Fillraen\\SteelStrickers-Xamarin\\SteelStrickers\\SteelStrickers.csproj": {}
+    "C:\\Users\\NTAer\\Desktop\\Xaz\\SteelStrickers-Xamarin\\SteelStrickers\\SteelStrickers.csproj": {}
   },
   "projects": {
-    "C:\\Users\\NTAer\\Desktop\\Project VisualStudio\\Fillraen\\SteelStrickers-Xamarin\\SteelStrickers\\SteelStrickers.csproj": {
+    "C:\\Users\\NTAer\\Desktop\\Xaz\\SteelStrickers-Xamarin\\SteelStrickers\\SteelStrickers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\NTAer\\Desktop\\Project VisualStudio\\Fillraen\\SteelStrickers-Xamarin\\SteelStrickers\\SteelStrickers.csproj",
+        "projectUniqueName": "C:\\Users\\NTAer\\Desktop\\Xaz\\SteelStrickers-Xamarin\\SteelStrickers\\SteelStrickers.csproj",
         "projectName": "SteelStrickers",
-        "projectPath": "C:\\Users\\NTAer\\Desktop\\Project VisualStudio\\Fillraen\\SteelStrickers-Xamarin\\SteelStrickers\\SteelStrickers.csproj",
+        "projectPath": "C:\\Users\\NTAer\\Desktop\\Xaz\\SteelStrickers-Xamarin\\SteelStrickers\\SteelStrickers.csproj",
         "packagesPath": "C:\\Users\\NTAer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\NTAer\\Desktop\\Project VisualStudio\\Fillraen\\SteelStrickers-Xamarin\\SteelStrickers\\obj\\",
+        "outputPath": "C:\\Users\\NTAer\\Desktop\\Xaz\\SteelStrickers-Xamarin\\SteelStrickers\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -86,10 +86,6 @@
             "Syncfusion.Xamarin.SfListView": {
               "target": "Package",
               "version": "[23.1.40, )"
-            },
-            "Xam.Plugin.SimpleAudioPlayer": {
-              "target": "Package",
-              "version": "[1.6.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
