@@ -72,18 +72,18 @@ namespace SteelStrickers.ViewModels
             SelectedRobot = new Robot();
             _User = new User();
             InitializeData();
-            
+
 
             // Initialize commands
-            EditRobotCommand = new Command(() => EditRobot());
-            DeleteRobotCommand = new Command(() => DeleteRobot());
-            ConnectBluetoothCommand = new Command(() => ConnectBluetooth());
-            DisconnectBluetoothCommand = new Command(() => DisconnectBluetooth());
-            OpenSettingsCommand = new Command(() => OpenSettings());
-            ChooseTestModeCommand = new Command(() => ChooseTestMode());
-            ChooseMatchModeCommand = new Command(() => ChooseMatchMode());
-            AddRobotCommand = new Command(() => AddRobot());
-            UserInformationCommand = new Command(() => UserInformation());
+            EditRobotCommand = new Command(async () => await EditRobot());
+            DeleteRobotCommand = new Command(async () => await DeleteRobot());
+            ConnectBluetoothCommand = new Command(async () => await ConnectBluetooth());
+            DisconnectBluetoothCommand = new Command(async () => await DisconnectBluetooth());
+            OpenSettingsCommand = new Command(async () => await OpenSettings());
+            ChooseTestModeCommand = new Command(async () => await ChooseTestMode());
+            ChooseMatchModeCommand = new Command(async () => await ChooseMatchMode());
+            AddRobotCommand = new Command(async () => await AddRobot());
+            UserInformationCommand = new Command(async () => await UserInformation());
         }
         private async void UpdateApiPropertyAsync()
         {
@@ -92,7 +92,6 @@ namespace SteelStrickers.ViewModels
         private void InitializeData()
         {
             //Load your data here
-
             userId = Preferences.Get("IdUser", -1);
             Task.Run(async () => await LoadUser());
             Task.Run(async () => await LoadRobots());
@@ -112,54 +111,90 @@ namespace SteelStrickers.ViewModels
             _User = await daoUser.GetUserByIdAsync(userId);
         }
 
-        private void UserInformation()
+        private async Task UserInformation()
         {
             //open user information popup page
-            PopupNavigation.Instance.PushAsync(new UserInformationPopup());
-
+            await PopupNavigation.Instance.PushAsync(new UserInformationPopup());
         }
 
-        private void EditRobot()
+        private async Task EditRobot()
         {
-            // Implement the edit logic here
+            // Implement the edit logic here asynchronously
         }
 
-        private void DeleteRobot()
+        private async Task DeleteRobot()
         {
-            // Implement the delete logic here
+            // Delete Robot asynchronously
+            if (SelectedRobot.Name != null)
+            {
+                Robots.Remove(SelectedRobot);
+                await daoRobots.DeleteRobot(SelectedRobot.IdRobot);
+                SelectedRobot = new Robot();
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert("Delete Error", "No robot is selected. Please select to a robot before attempting to delete.", "OK");
+            }
         }
 
-        private void ConnectBluetooth()
+        private async Task ConnectBluetooth()
         {
-            // Implement the connect Bluetooth logic here
-            var t = SelectedRobot;
+            // Implement the connect Bluetooth logic asynchronously
+            if (SelectedRobot.Name != null)
+            {
+                await bluetoothService.Connect(SelectedRobot);
+                await Application.Current.MainPage.DisplayAlert("Connection Ok", "", "OK");
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert("Connection Error", "No robot selected for connection.", "OK");
+            }
         }
 
-        private void DisconnectBluetooth()
+        private async Task DisconnectBluetooth()
         {
-            // Implement the disconnect Bluetooth logic here
+            var isConnected = bluetoothService.IsConnected();
+
+            // Implement the disconnect Bluetooth logic asynchronously
+            if (SelectedRobot.Name != null && isConnected)
+            {
+                await bluetoothService.Disconnect();
+            }
         }
 
-        private void OpenSettings()
+        private async Task OpenSettings()
         {
-            // Implement the settings logic here
-            PopupNavigation.Instance.PushAsync(new SettingsPopup());
+            // Implement the settings logic asynchronously
+            await PopupNavigation.Instance.PushAsync(new SettingsPopup());
         }
 
-        private void ChooseTestMode()
+        private async Task ChooseTestMode()
         {
-            // Implement the logic to choose the test mode here
+            // First check if there is a connected robot
+            var isConnected = bluetoothService.IsConnected();
+
+            if (isConnected)
+            {
+                // If there is a connected robot, navigate to the Controller page
+                await Application.Current.MainPage.Navigation.PushAsync(new ControllerPage());
+            }
+            else
+            {
+                // If no robot is connected, show an error message or prompt to connect
+                await Application.Current.MainPage.DisplayAlert("Connection Error", "No robot is connected. Please connect to a robot before attempting to choose test mode.", "OK");
+            }
         }
 
-        private void ChooseMatchMode()
+        private async Task ChooseMatchMode()
         {
-            // Implement the logic to choose the match mode here
+            // Implement the logic to choose the match mode asynchronously
+            await PopupNavigation.Instance.PushAsync(new MatchModePopup());
         }
 
-        private void AddRobot()
+        private async Task AddRobot()
         {
-            // Implement the logic to add a new robot here
-            PopupNavigation.Instance.PushAsync(new AddRobotPopup());
+            // Implement the logic to add a new robot asynchronously
+            await PopupNavigation.Instance.PushAsync(new AddRobotPopup());
         }
 
 

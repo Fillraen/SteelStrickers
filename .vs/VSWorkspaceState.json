@@ -1,10 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\SteelStrickers",
     "\\SteelStrickers.Android",
     "\\SteelStrickers.Android\\Assets",
-    "\\SteelStrickers.Android\\bin"
+    "\\SteelStrickers.Android\\bin",
+    "\\SteelStrickers\\Views"
   ],
-  "SelectedNode": "\\SteelStrickers.Android\\Assets\\AboutAssets.txt",
+  "SelectedNode": "\\SteelStrickers\\Views\\UserInformationPopup.xaml",
   "PreviewInSolutionExplorer": false
 }

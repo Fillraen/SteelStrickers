@@ -6,6 +6,7 @@ using System.Text;
 using System.Windows.Input;
 using Plugin.BluetoothClassic.Abstractions;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace SteelStrickers.ViewModels
 {
@@ -23,7 +24,6 @@ namespace SteelStrickers.ViewModels
 
         public AddRobotViewModel()
         {
-
             ConnectBluetooth();
         }
 
@@ -48,23 +48,22 @@ namespace SteelStrickers.ViewModels
             bluetoothDiscoveryService.StartDiscovery();
         }
 
-        public void ConnectToBondedDevice(Robot robot)
+        public async Task ConnectToBondedDevice(Robot robot)
         {
-            // Logique pour se connecter à l'appareil associé
-            if (bluetoothService.Connect(robot))
+            // Logic to connect to the bonded device
+            if (await bluetoothService.Connect(robot))
             {
-                bluetoothService.SendData("Login;");
+                await bluetoothService.SendData("Login;");
             }
-            
         }
 
-        public void PairAndConnectToDiscoveryDevice(Robot robot)
+        public async Task PairAndConnectToDiscoveryDevice(Robot robot)
         {
-            // Logique pour l'appariement et la connexion à l'appareil détecté
-            bluetoothDiscoveryService.PairDevice(robot);
-            if (bluetoothService.Connect(robot))
+            // Logic for pairing and connecting to the discovered device
+            bluetoothDiscoveryService.PairDevice(robot); // Assuming this is a synchronous call.
+            if (await bluetoothService.Connect(robot))
             {
-                
+                // Connected successfully, you may want to do something here.
             }
         }
 
