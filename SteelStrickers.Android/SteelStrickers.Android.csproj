@@ -473,5 +473,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\MainAbilityIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_robot.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -18,7 +18,6 @@ namespace SteelStrickers.Views
         public AddRobotPopup()
         {
             InitializeComponent();
-            cancelButton.Clicked += OnCloseButtonClicked;
         }
 
         private void OnCloseButtonClicked(object sender, EventArgs e)
@@ -31,28 +30,28 @@ namespace SteelStrickers.Views
         {
             if (e.SelectedItem is Robot robot)
             {
+                discoveryListView.SelectedItem = null;
+
                 // Logique pour se connecter à l'appareil sélectionné
                 (BindingContext as AddRobotViewModel)?.ConnectToBondedDevice(robot);
             }
-            // Désélectionnez l'élément pour pouvoir le sélectionner à nouveau
-            ((ListView)sender).SelectedItem = null;
+
         }
 
         private void OnDiscoveryDeviceSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem is Robot robot)
             {
+                bondedListView.SelectedItem = null;
+
                 // Logique pour l'appariement et la connexion à l'appareil sélectionné
                 (BindingContext as AddRobotViewModel)?.PairAndConnectToDiscoveryDevice(robot);
             }
-            // Désélectionnez l'élément pour pouvoir le sélectionner à nouveau
-            ((ListView)sender).SelectedItem = null;
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            cancelButton.Clicked -= OnCloseButtonClicked;
         }
     }
 }

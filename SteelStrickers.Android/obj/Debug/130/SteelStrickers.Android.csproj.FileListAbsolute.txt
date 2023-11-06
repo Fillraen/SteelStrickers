@@ -2695,3 +2695,9 @@ C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\Stee
 C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\eee7430f-7148-4b18-acef-2a0d50e176ad.txt
 C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\f9be578c-b7e6-4e09-b2c8-cccf916de35b.txt
 C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\fd6b9e35-faba-48a3-add2-019721cb9b0f.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\res\drawable\abilitybg.png
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\res\drawable\abilityicon1.png
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\res\drawable\abilityicon2.png
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\res\drawable\abilityicon3.png
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\res\drawable\mainabilityicon.png
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\res\drawable\icon_robot.png

@@ -25,8 +25,8 @@
 
             <Image Grid.ColumnSpan="3" Source="Background.png" Aspect="AspectFill" />
 
-            <controls:JoystickControl x:Name="JoystickControl" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="End" HeightRequest="250" WidthRequest="150" Margin="50,0,0,0"
-                                            Xposition="{Binding Xposition, Mode=TwoWay}" Yposition="{Binding Yposition, Mode=TwoWay}" Distance="{Binding Distance, Mode=TwoWay}" Angle="{Binding Angle, Mode=TwoWay}"/>
+            <controls:JoystickControl Grid.Column="0" x:Name="JoystickControl"  HorizontalOptions="Start" VerticalOptions="End" HeightRequest="250" WidthRequest="150" Margin="50,0,0,0"
+                                      Xposition="{Binding Xposition, Mode=TwoWay}" Yposition="{Binding Yposition, Mode=TwoWay}" Distance="{Binding Distance, Mode=TwoWay}" Angle="{Binding Angle, Mode=TwoWay}"/>
 
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
@@ -48,14 +48,58 @@
                 <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Text="03:21" FontSize="{StaticResource FontSizeXMedium}" FontFamily="Roboto-Bold.ttf#Roboto" TextColor="#07acef" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" Margin="0"/>
 
             </Grid>
-            
-            <StackLayout Grid.Column="2">
-                <StackLayout>
-                    <Button Text="Action 1" Command="{Binding Action1Command}" />
-                    <Button Text="Action 2" Command="{Binding Action2Command}" />
-                    <Button Text="Logout" Command="{Binding DisconnectCommand}" />
-                </StackLayout>
-            </StackLayout>
+
+<AbsoluteLayout Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="40">
+    <!-- Main Ability Button -->
+    <Frame x:Name="MainAbilityFrame" AbsoluteLayout.LayoutBounds="1, 1, 125, 125" AbsoluteLayout.LayoutFlags="PositionProportional"
+           Padding="0" HasShadow="False" BorderColor="Transparent" Background="Transparent">
+        <Grid>
+            <Image Source="joystickLayout.png" Aspect="AspectFill"/>
+            <Image Source="MainAbilityIcon.png" Aspect="AspectFit"/>
+        </Grid>
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding AbilityCommand}" CommandParameter="MainAbility" NumberOfTapsRequired="1"/>
+        </Frame.GestureRecognizers>
+    </Frame>
+
+    <!-- Ability 1 (at 0 degrees) -->
+    <Frame x:Name="Ability1Frame" AbsoluteLayout.LayoutBounds="-0.05, 0.95, 60, 60" AbsoluteLayout.LayoutFlags="PositionProportional"
+           Padding="0" HasShadow="False" BorderColor="Transparent" Background="Transparent">
+        <Grid>
+            <Image Source="AbilityBg.png" Aspect="AspectFill"/>
+            <Image Source="AbilityIcon1.png" Aspect="AspectFit"/>
+        </Grid>
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding AbilityCommand}" CommandParameter="Ability1" NumberOfTapsRequired="1"/>
+        </Frame.GestureRecognizers>
+    </Frame>
+
+    <!-- Ability 2 (at 90 degrees) -->
+    <Frame x:Name="Ability2Frame" AbsoluteLayout.LayoutBounds="0.15,0.7, 60, 60" AbsoluteLayout.LayoutFlags="PositionProportional"
+           Padding="0" HasShadow="False" BorderColor="Transparent" Background="Transparent">
+        <Grid>
+            <Image Source="AbilityBg.png" Aspect="AspectFill"/>
+            <Image Source="AbilityIcon2.png" Aspect="AspectFit"/>
+        </Grid>
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding AbilityCommand}" CommandParameter="Ability2" NumberOfTapsRequired="1"/>
+        </Frame.GestureRecognizers>
+    </Frame>
+
+    <!-- Ability 3 (at 180 degrees) -->
+    <Frame x:Name="Ability3Frame" AbsoluteLayout.LayoutBounds="0.8, 0.6, 60, 60" AbsoluteLayout.LayoutFlags="PositionProportional"
+           Padding="0" HasShadow="False" BorderColor="Transparent" Background="Transparent">
+        <Grid>
+            <Image Source="AbilityBg.png" Aspect="AspectFill"/>
+            <Image Source="AbilityIcon3.png" Aspect="AspectFit"/>
+        </Grid>
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding AbilityCommand}" CommandParameter="Ability3" NumberOfTapsRequired="1"/>
+        </Frame.GestureRecognizers>
+    </Frame>
+</AbsoluteLayout>
+
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

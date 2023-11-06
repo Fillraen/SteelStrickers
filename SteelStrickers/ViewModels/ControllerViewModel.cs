@@ -59,14 +59,12 @@ namespace SteelStrickers.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ICommand Action1Command { get; }
-        public ICommand Action2Command { get; }
 
         public ICommand DisconnectCommand { get; }
         public Robot CurrentRobot { get; set; }
 
         private JoystickControl Joystick;
-
+        public ICommand AbilityCommand { get; }
 
 
         private Timer _sendDataTimer;
@@ -79,10 +77,9 @@ namespace SteelStrickers.ViewModels
             //CurrentRobot = robot;
 
             // S'abonner à l'événement DataReceived
-            Action1Command = new Command(SendAction1);
-            Action2Command = new Command(SendAction2);
-            DisconnectCommand = new Command(Disconnect);
 
+            DisconnectCommand = new Command(Disconnect);
+            AbilityCommand = new Command<string>(ExecuteAbilityCommand);
 
             bluetoothService.DataReceived += OnDataReceived;
 
@@ -99,17 +96,29 @@ namespace SteelStrickers.ViewModels
             _sendDataTimer.Start();
         }
 
-        private void SendAction1()
+        private void ExecuteAbilityCommand(string abilityName)
         {
-            // Envoyez le message prédéterminé pour l'action 1
-            bluetoothService.SendData("A1;");
+            switch (abilityName)
+            {
+                case "MainAbility":
+                    // Handle main ability action
+                    bluetoothService.SendData("A1;");
+                    break;
+                case "Ability1":
+                    // Handle ability 1 action
+                    bluetoothService.SendData("A2;");
+                    break;
+                case "Ability2":
+                    // Handle ability 2 action
+                    bluetoothService.SendData("A3;");
+                    break;
+                case "Ability3":
+                    // Handle ability 3 action
+                    bluetoothService.SendData("A4;");
+                    break;
+            }
         }
 
-        private void SendAction2()
-        {
-            // Envoyez le message prédéterminé pour l'action 2
-            bluetoothService.SendData("A2;");
-        }
 
         private void OnDataReceived(object sender, string data)
         {
