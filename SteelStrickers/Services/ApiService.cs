@@ -76,7 +76,8 @@ namespace SteelStrickers.Services
 
         public async Task<bool> PostAsync<T>(string endpoint, T data)
         {
-            var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
+            var json = JsonConvert.SerializeObject(data);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await _client.PostAsync(BaseUrl + endpoint, content).ConfigureAwait(false);
             return response.IsSuccessStatusCode;
         }

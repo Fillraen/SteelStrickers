@@ -22,7 +22,7 @@ namespace SteelStrickers.Services
         }
         public async Task<GameTopic> GetAvailableTopic()
         {
-            return await _apiService.GetAsync<GameTopic>("match/available-topic");
+            return await _apiService.GetAsync<GameTopic>("match/available-gametopics");
         }
         public async Task<List<Match>> GetMatchByUserId(int userId)
         {

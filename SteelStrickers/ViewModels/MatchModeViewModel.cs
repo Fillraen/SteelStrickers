@@ -54,8 +54,10 @@ namespace SteelStrickers.ViewModels
             FilteredMatches = new ObservableCollection<Match>();
             createdMatch = new Match();
             CreatedMatch = new Match();
-            InitializeData();
+            selectedTopic = new GameTopic();
             this.selectedRobot = selectedRobot;
+            InitializeData();
+            
 
             JoinMatchCommand = new Command(async () => await JoinMatch());
             StartMatchCommand = new Command(async () => await StartMatch());
@@ -76,7 +78,7 @@ namespace SteelStrickers.ViewModels
         {
             //Start a match
             MatchStarted = true;
-
+            CreatedMatch.Status = "onGoing";
         }
 
         private async Task JoinMatch()
@@ -92,6 +94,9 @@ namespace SteelStrickers.ViewModels
             IsMatchNotCreated = true;
             IsOpponentFound = false;
             IsOpponentSearching = false;
+            
+            daoMqtt.Connect();
+
             Task.Run(async () => await LoadMatch());
             Task.Run(async () => await LoadCreatedMatch());
 
@@ -110,23 +115,20 @@ namespace SteelStrickers.ViewModels
         {
             Random random = new Random();
             CreatedMatch.IdFight = random.Next();
-            CreatedMatch.Name = ""; //link to the entry
+            CreatedMatch.Name = "";
             CreatedMatch.creator_id = userId;
-            CreatedMatch.IdRobot1 = selectedRobot.IdRobot; //link to the robot
+            CreatedMatch.IdRobot1 = selectedRobot.IdRobot; 
 
-            CreatedMatch.Status = "onHold";//8
+            CreatedMatch.Status = "onHold";
 
+            selectedTopic = await daoMatch.GetAvailableTopic(); 
+            CreatedMatch.Topic = selectedTopic.Id;
+
+
+            daoMqtt.Subscribe(selectedTopic.Topic);
 
             Task.Run(async () => await daoMatch.CreateMatch(CreatedMatch));
 
-            selectedTopic = await daoMatch.GetAvailableTopic(); //8
-            CreatedMatch.Topic = selectedTopic.Id;
-
-            
-            daoMqtt.Subscribe(selectedTopic.Topic);
-
-
-            
         }
 
         private async Task LoadMatch()
@@ -159,7 +161,7 @@ namespace SteelStrickers.ViewModels
             if (CreatedMatch != null && !MatchStarted)
             {
                 // Supposons que daoMatch a une méthode DeleteMatch qui prend l'ID du match et le supprime.
-                daoMqtt.UnSubscribe(new List<string> { selectedTopic.Topic });
+                daoMqtt.Disconnect();
                 await daoMatch.DeleteMatch(CreatedMatch.IdFight);
             }
         }
