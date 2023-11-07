@@ -11,6 +11,8 @@ using System;
 using Android.Runtime;
 using Android.Widget;
 
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 namespace SteelStrickers.Droid
 {
     [Activity(Label = "SteelStrickers", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
@@ -48,6 +50,7 @@ namespace SteelStrickers.Droid
             RequestNecessaryPermissions();
 
             LoadApplication(new App());
+            Xamarin.Forms.Application.Current.On<Xamarin.Forms.PlatformConfiguration.Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Pan);
         }
 
         private bool AllPermissionsGranted()

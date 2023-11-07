@@ -38,7 +38,17 @@ namespace SteelStrickers.Services
             var response = await _client.GetAsync(uri).ConfigureAwait(false);
             if (response.IsSuccessStatusCode)
             {
-                var content = await response.Content.ReadAsStringAsync();
+                var content = await response.Content.ReadAsStringAsync(); 
+                try
+                {
+                    return JsonConvert.DeserializeObject<T>(content);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    return default;
+                }
+                
                 return JsonConvert.DeserializeObject<T>(content);
             }
             // Gérer les erreurs comme vous le souhaitez

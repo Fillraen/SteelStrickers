@@ -17,12 +17,20 @@ namespace SteelStrickers.Views {
     public partial class MatchModePopup : global::Rg.Plugins.Popup.Pages.PopupPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry NameEntry;
+        private global::Xamarin.Forms.StackLayout MainLayout;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.Entry MatchNameEntry;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.ListView bondedListView;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MatchModePopup));
-            NameEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "NameEntry");
+            MainLayout = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "MainLayout");
+            MatchNameEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "MatchNameEntry");
+            bondedListView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "bondedListView");
         }
     }
 }

@@ -4,7 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pages="http://rotorgames.com"
     xmlns:viewModels="clr-namespace:SteelStrickers.ViewModels;assembly=SteelStrickers"
-    x:Class="SteelStrickers.Views.AddRobotPopup">
+    x:Class="SteelStrickers.Views.AddRobotPopup"
+    HasSystemPadding="False" HasKeyboardOffset="False">
     <pages:PopupPage.BindingContext>
         <viewModels:AddRobotViewModel/>
     </pages:PopupPage.BindingContext>

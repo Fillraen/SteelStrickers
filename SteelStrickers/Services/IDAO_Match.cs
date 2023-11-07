@@ -13,5 +13,6 @@ namespace SteelStrickers.Services
         Task<List<Match>> GetMatchByUserId(int userId);
         Task<bool> CreateMatch(Match match);
         Task<bool> EditMatch(Match match);
+        Task<bool> DeleteMatch(int matchId);
     }
 }

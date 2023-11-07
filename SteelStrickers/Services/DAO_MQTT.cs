@@ -1,24 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MQTTnet;
 using MQTTnet.Client;
 using MQTTnet.Packets;
 using MQTTnet.Protocol;
+using Xamarin.Forms;
+
+
 
 namespace SteelStrickers.Services
 {
-    public class DAO_MQTT
+    public class DAO_MQTT : IDAO_MQTT
     {
 
         private IMqttClient _client;
 
         // Mettez à jour les informations de connexion
-        private const string BrokerAddress = "172.31.43.122";
+        private const string BrokerAddress = "20.160.197.114";
         private const int BrokerPort = 1883;
-        private const string Username = "serreconnect";
-        private const string Password = "SC20232024";
+        private const string Username = "ss";
+        private const string Password = "ccftsts";
         string CLientID = Guid.NewGuid().ToString();
 
         public event EventHandler<MqttApplicationMessageReceivedEventArgs> MessageReceived;
@@ -27,13 +31,23 @@ namespace SteelStrickers.Services
             _client = new MqttFactory().CreateMqttClient();
             _client.ApplicationMessageReceivedAsync += OnMessageReceived;
         }
-
+        
         private Task OnMessageReceived(MqttApplicationMessageReceivedEventArgs e)
         {
             MessageReceived?.Invoke(this, e);
+            e.ApplicationMessage.Topic.ToString();
+            // Convertir ArraySegment<byte> en byte[]
+            byte[] payloadBytes = e.ApplicationMessage.PayloadSegment.ToArray();
+
+            // Convertir byte[] en string
+            string message = Encoding.UTF8.GetString(payloadBytes);
+
+            // Publier un message sur le MessagingCenter avec le sujet et le contenu du message
+            MessagingCenter.Send(this, "MQTTMessageReceived", message);
+
             return Task.CompletedTask;
         }
-
+        
         public async Task Connect()
         {
             try
@@ -82,6 +96,24 @@ namespace SteelStrickers.Services
                 };
 
                 await _client.SubscribeAsync(subscribeOptions);
+            }
+            else
+            {
+                Console.WriteLine("MQTT client is not connected.");
+            }
+        }
+
+        public async void UnSubscribe(List<string> topics)
+        {
+            if (_client.IsConnected)
+            {
+
+                var subscribeOptions = new MqttClientUnsubscribeOptions
+                {
+                    TopicFilters = topics
+                };
+
+                await _client.UnsubscribeAsync(subscribeOptions);
             }
             else
             {

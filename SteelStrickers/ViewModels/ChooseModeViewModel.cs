@@ -73,6 +73,7 @@ namespace SteelStrickers.ViewModels
             _User = new User();
             InitializeData();
 
+            
 
             // Initialize commands
             EditRobotCommand = new Command(async () => await EditRobot());
@@ -95,6 +96,7 @@ namespace SteelStrickers.ViewModels
             userId = Preferences.Get("IdUser", -1);
             Task.Run(async () => await LoadUser());
             Task.Run(async () => await LoadRobots());
+            Task.Run(async () => await daoMqtt.Connect());
         }
         private async Task LoadRobots()
         {
@@ -187,8 +189,19 @@ namespace SteelStrickers.ViewModels
 
         private async Task ChooseMatchMode()
         {
-            // Implement the logic to choose the match mode asynchronously
-            await PopupNavigation.Instance.PushAsync(new MatchModePopup());
+            // First check if there is a connected robot
+            var isConnected = bluetoothService.IsConnected();
+            isConnected = true;
+            if (isConnected)
+            {
+                // If there is a connected robot, navigate to the Match Creation or Join popup
+                await PopupNavigation.Instance.PushAsync(new MatchModePopup(SelectedRobot));
+            }
+            else
+            {
+                // If no robot is connected, show an error message or prompt to connect
+                await Application.Current.MainPage.DisplayAlert("Connection Error", "No robot is connected. Please connect to a robot before attempting to choose Match mode.", "OK");
+            }
         }
 
         private async Task AddRobot()

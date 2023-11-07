@@ -11,38 +11,36 @@ namespace SteelStrickers.Services
     {
         private readonly ApiService _apiService;
         private int userId;
-
         public DAO_Match()
         {
             _apiService = ApiService.Instance;
             userId = Preferences.Get("IdUser", -1);
         }
-
         public async Task<GameTopic> GetTopicForMatch(int matchId)
         {
             return await _apiService.GetAsync<GameTopic>($"match/{matchId}/topic");
         }
-
         public async Task<GameTopic> GetAvailableTopic()
         {
-            return await _apiService.GetAsync<GameTopic>("matchs/topic/available");
+            return await _apiService.GetAsync<GameTopic>("match/available-topic");
         }
-
         public async Task<List<Match>> GetMatchByUserId(int userId)
         {
-            return await _apiService.GetAsync<List<Match>>($"matchs/user/{userId}");
+            var m = await _apiService.GetAsync<List<Match>>($"match/user/{userId}");
+            return m;
         }
-
         public async Task<bool> CreateMatch(Match match)
         {
             return await _apiService.PostAsync("match", match);
         }
-
         public async Task<bool> EditMatch(Match match)
         {
             return await _apiService.PutAsync($"match/{match.IdFight}", match);
         }
-
-
+        public async Task<bool> DeleteMatch(int matchId)
+        {
+            return await _apiService.DeleteAsync("match", matchId.ToString());
+        }
     }
 }
+
