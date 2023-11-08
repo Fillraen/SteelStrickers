@@ -25,11 +25,11 @@ androidgeneratejnimarshalmethods=false
 os=windows_nt
 androidincludedebugsymbols=true
 androidpackagenamingpolicy=lowercasecrc64
-_nugetassetstimestamp=638349860114142478
+_nugetassetstimestamp=638350318718206123
 typemapkind=strings-asm
 androidsupportedabis=arm64-v8a
 armeabi-v7a
 x86
 x86_64
 androidmanifestplaceholders=
-projectfullpath=c:\users\ntaer\desktop\project visualstudio\fillraen\steelstrickers-xamarin\steelstrickers.android\steelstrickers.android.csproj
+projectfullpath=c:\users\slab95\source\repos\fillraen\steelstrickers-xamarin\steelstrickers.android\steelstrickers.android.csproj

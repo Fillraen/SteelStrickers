@@ -5,8 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Rg.Plugins.Popup.Services;
 using SteelStrickers.Models;
 using SteelStrickers.Services;
+using SteelStrickers.Views;
 using Syncfusion.DataSource.Extensions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -56,10 +58,14 @@ namespace SteelStrickers.ViewModels
             createdMatch = new Match();
             CreatedMatch = new Match();
             selectedTopic = new GameTopic();
+            IsOpponentFound = new bool();
+            IsOpponentSearching = new bool();
+            IsMatchNotCreated = new bool();
+
             this.selectedRobot = selectedRobot;
+            
             InitializeData();
             
-
             JoinMatchCommand = new Command(async () => await JoinMatch());
             StartMatchCommand = new Command(async () => await StartMatch());
             CreateMatchCommand = new Command(async () => await CreateMatch());
@@ -67,23 +73,28 @@ namespace SteelStrickers.ViewModels
 
         private async Task CreateMatch()
         {
-            Task.Run(async () => await daoMatch.EditMatch(CreatedMatch));
             IsMatchNotCreated = false;
-            IsOpponentFound = true;
-            IsOpponentSearching = false;
+            IsOpponentFound = false;
+            IsOpponentSearching = true;
+            OnPropertyChanged(nameof(IsOpponentSearching));
+            OnPropertyChanged(nameof(IsOpponentFound));
+            OnPropertyChanged(nameof(IsMatchNotCreated));
+            
+            Task.Run(async () => await daoMatch.EditMatch(CreatedMatch));
         }
-
-
 
         private async Task StartMatch()
         {
+
             //Start a match
             MatchStarted = true;
             CreatedMatch.Status = "onGoing";
+            daoMqtt.Publish(selectedTopic.Topic, "match start");
         }
 
         private async Task JoinMatch()
         {
+            MatchStarted = false;
             if (selectedMatch != null)
             {
                 CreatedMatch = selectedMatch;
@@ -99,9 +110,12 @@ namespace SteelStrickers.ViewModels
                 IsOpponentFound = false;
                 IsOpponentSearching = false;
 
+               
+
+                daoMqtt.Publish(selectedTopic.Topic, "Player2:Join");
+
                 daoMqtt.Subscribe(selectedTopic.Topic);
-
-
+                await ShowPopup();
             }
         }
         
@@ -128,8 +142,49 @@ namespace SteelStrickers.ViewModels
         private void HandleReceivedMessage(string message)
         {
             // Implémentez la logique pour traiter le message reçu ici
+            switch (message)
+            {
+                case "Player2:Join":
+                    if (CreatedMatch.opponent_id != userId)
+                    {
+                        IsMatchNotCreated = false;
+                        IsOpponentFound = true;
+                        IsOpponentSearching = false;
+                        OnPropertyChanged(nameof(IsOpponentSearching));
+                        OnPropertyChanged(nameof(IsOpponentFound));
+                        OnPropertyChanged(nameof(IsMatchNotCreated));
+                    }
+                    break;
+                case "Player1:Start":
+                    
+                    break;
+                case "match start":
+                    // Fermer le popup et naviguer
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
+                        await ClosePopup();
+                        // Ici, insérez la logique pour naviguer vers le contrôleur de navigation
+                        await Application.Current.MainPage.Navigation.PushAsync(new ControllerPage());
 
+                    });
+                    break;
+                default:
+                break;
+            }
+            
         }
+
+        public async Task ShowPopup()
+        {
+            await PopupNavigation.Instance.PushAsync(new WaitingPopup());
+        }
+
+        public async Task ClosePopup()
+        {
+            await PopupNavigation.Instance.PopAllAsync();
+        }
+
+
         private async Task LoadCreatedMatch()
         {
             Random random = new Random();
@@ -153,7 +208,7 @@ namespace SteelStrickers.ViewModels
         private async Task LoadMatch()
         {
             // Load your user here
-            var m = await daoMatch.GetMatchByUserId(2);
+            var m = await daoMatch.GetMatchNeededOpponent();
 
             foreach (Match match in m)
             {
@@ -183,6 +238,10 @@ namespace SteelStrickers.ViewModels
                 daoMqtt.Disconnect();
                 await daoMatch.DeleteMatch(CreatedMatch.IdFight);
             }
+        }
+
+        ~MatchModeViewModel(){
+            MessagingCenter.Unsubscribe<DAO_MQTT, string>(this, "MQTTMessageReceived");
         }
     }
 }

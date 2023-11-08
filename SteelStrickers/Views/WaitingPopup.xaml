@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:pages="http://rotorgames.com"
+                 xmlns:viewModels="clr-namespace:SteelStrickers.ViewModels;assembly=SteelStrickers"
+                 xmlns:models="clr-namespace:SteelStrickers.Models;assembly=SteelStrickers" 
+                 HasSystemPadding="False" HasKeyboardOffset="False"
+                 x:Class="SteelStrickers.Views.WaitingPopup">
+    <pages:PopupPage.Animation>
+        <pages:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <pages:PopupPage.Content>
+        <StackLayout HeightRequest="100" WidthRequest="100" VerticalOptions="Center" HorizontalOptions="Center">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout>
+                    <!-- Possibilite 2 le match a ete creer mais il y a pas d'opposant-->
+                    <Image Source="Rolling.gif" IsAnimationPlaying="True"  WidthRequest="96" HeightRequest="96" Style="{StaticResource UserInformationIconImageStyle}"/>
+                    <Label Text="Waiting for Creator !" TextColor="#61d9f1" FontSize="{StaticResource FontSizeXMedium}" FontFamily="Roboto-Bold.ttf#Roboto" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </pages:PopupPage.Content>
+</pages:PopupPage>

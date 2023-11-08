@@ -7,6 +7,7 @@ using Xamarin.Essentials;
 
 namespace SteelStrickers.Services
 {
+
     public class DAO_Match : IDAO_Match
     {
         private readonly ApiService _apiService;
@@ -18,7 +19,7 @@ namespace SteelStrickers.Services
         }
         public async Task<GameTopic> GetTopicForMatch(int matchId)
         {
-            return await _apiService.GetAsync<GameTopic>($"match/{matchId}/topic");
+            return await _apiService.GetAsync<GameTopic>($"match/topic/{matchId}");
         }
         public async Task<GameTopic> GetAvailableTopic()
         {
@@ -27,6 +28,11 @@ namespace SteelStrickers.Services
         public async Task<List<Match>> GetMatchByUserId(int userId)
         {
             var m = await _apiService.GetAsync<List<Match>>($"match/user/{userId}");
+            return m;
+        }
+        public async Task<List<Match>> GetMatchNeededOpponent()
+        {
+            var m = await _apiService.GetAsync<List<Match>>($"match/getMatchLookingForOpponent");
             return m;
         }
         public async Task<bool> CreateMatch(Match match)
@@ -41,6 +47,8 @@ namespace SteelStrickers.Services
         {
             return await _apiService.DeleteAsync("match", matchId.ToString());
         }
+
+
     }
 }
 

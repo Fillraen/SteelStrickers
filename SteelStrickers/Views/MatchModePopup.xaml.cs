@@ -37,7 +37,5 @@ namespace SteelStrickers.Views
                 }
             }
         }
-
-
     }
 }

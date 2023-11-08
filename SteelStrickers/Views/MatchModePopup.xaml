@@ -57,8 +57,6 @@
                     </Frame>
                     <Frame Style="{StaticResource UserInformationFrameStyle}" HeightRequest="150" WidthRequest="300" CornerRadius="20">
                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-
-                        
                         <!-- Possibilite 1 le match na pas encore ete creer -->
                             <Label IsVisible="{Binding IsMatchNotCreated}"  Text="You need to create a match !" TextColor="#61d9f1" FontSize="{StaticResource FontSizeXMedium}" FontFamily="Roboto-Bold.ttf#Roboto" HorizontalOptions="Center" VerticalOptions="Center"/>
 
