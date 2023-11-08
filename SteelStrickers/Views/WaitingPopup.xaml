@@ -31,9 +31,10 @@
                 <StackLayout>
                     <!-- Possibilite 2 le match a ete creer mais il y a pas d'opposant-->
                     <Image Source="Rolling.gif" IsAnimationPlaying="True"  WidthRequest="96" HeightRequest="96" Style="{StaticResource UserInformationIconImageStyle}"/>
-                    <Label Text="Waiting for Creator !" TextColor="#61d9f1" FontSize="{StaticResource FontSizeXMedium}" FontFamily="Roboto-Bold.ttf#Roboto" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </StackLayout>
             </Grid>
         </StackLayout>
     </pages:PopupPage.Content>
 </pages:PopupPage>
+
+    

@@ -99,3 +99,4 @@ C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.dll
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\refint\SteelStrickers.dll
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\SteelStrickers.pdb
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers\obj\Debug\netstandard2.0\Views\WaitingPopup.xaml.g.cs

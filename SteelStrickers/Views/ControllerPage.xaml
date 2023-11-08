@@ -7,9 +7,11 @@
              x:Class="SteelStrickers.Views.ControllerPage"
              Shell.NavBarIsVisible="False"
              Shell.TabBarIsVisible="False">
-    <ContentPage.BindingContext>
-        <viewModels:ControllerViewModel/>
-    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <valueConverter:TimeConverter x:Key="TimeConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid Margin="0" Padding="0">
             <Grid.Resources>
@@ -41,11 +43,11 @@
 
                 <Image Grid.Row="0" Grid.ColumnSpan="3" Source="HUDTimer.png" Aspect="AspectFit" WidthRequest="150" HeightRequest="75" VerticalOptions="Start" Margin="0,20,0,0"/>
 
-                <Label Grid.Row="0" Grid.Column="0" Text="02" FontSize="{StaticResource FontSizeXLarge}" FontFamily="Roboto-BoldItalic.ttf#Roboto" TextColor="#61d9f1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,35,-80,0"/>
-                <Label Grid.Row="0" Grid.Column="1" Text="10" FontSize="{StaticResource FontSizeLarge}" FontFamily="Roboto-Bold.ttf#Roboto" TextColor="#07acef" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start"  Margin="0,37,0,0"/>
-                <Label Grid.Row="0" Grid.Column="2" Text="07" FontSize="{StaticResource FontSizeXLarge}" FontFamily="Roboto-BoldItalic.ttf#Roboto" TextColor="#f93e5b" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" Margin="-80,35,0,0"/>
+                <Label Grid.Row="0" Grid.Column="0" Text="{Binding RobotPoints}" FontSize="{StaticResource FontSizeXLarge}" FontFamily="Roboto-BoldItalic.ttf#Roboto" TextColor="#61d9f1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,35,-80,0"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding VictoryPoints}" FontSize="{StaticResource FontSizeLarge}" FontFamily="Roboto-Bold.ttf#Roboto" TextColor="#07acef" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start"  Margin="0,37,0,0"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="{Binding OpponentPoints}" FontSize="{StaticResource FontSizeXLarge}" FontFamily="Roboto-BoldItalic.ttf#Roboto" TextColor="#f93e5b" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" Margin="-80,35,0,0"/>
 
-                <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Text="03:21" FontSize="{StaticResource FontSizeXMedium}" FontFamily="Roboto-Bold.ttf#Roboto" TextColor="#07acef" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" Margin="0"/>
+                <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding RemainingTime, Converter={StaticResource TimeConverter}}" FontSize="{StaticResource FontSizeXMedium}" FontFamily="Roboto-Bold.ttf#Roboto" TextColor="#07acef" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" Margin="0"/>
 
             </Grid>
 

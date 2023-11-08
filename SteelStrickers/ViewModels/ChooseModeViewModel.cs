@@ -48,8 +48,16 @@ namespace SteelStrickers.ViewModels
 
         public Robot SelectedRobot
         {
-            get { return selectedRobot; }
-            set { SetProperty(ref selectedRobot, value); }
+            get => selectedRobot;
+            set
+            {
+                if (selectedRobot != value)
+                {
+                    // Si un robot était déjà connecté, déconnectez-le
+
+                    SetProperty(ref selectedRobot, value);
+                }
+            }
         }
 
 
@@ -62,7 +70,9 @@ namespace SteelStrickers.ViewModels
         public ICommand ChooseMatchModeCommand { get; private set; }
         public ICommand AddRobotCommand { get; private set; }
         public ICommand UserInformationCommand { get; private set; }
-        
+        public bool IsBluetoothConnected { get; private set; }
+        public bool IsBluetoothDisconnected => !IsBluetoothConnected;
+
         private int userId;
 
         public ChooseModeViewModel()
@@ -85,6 +95,16 @@ namespace SteelStrickers.ViewModels
             ChooseMatchModeCommand = new Command(async () => await ChooseMatchMode());
             AddRobotCommand = new Command(async () => await AddRobot());
             UserInformationCommand = new Command(async () => await UserInformation());
+
+
+            MessagingCenter.Subscribe<AddRobotViewModel, Robot>(this, "RobotAdded", (sender, robot) =>
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    Robots.Add(robot);
+                    SelectedRobot = robot; // Sélectionnez le nouveau robot
+                });
+            });
         }
         private async void UpdateApiPropertyAsync()
         {
@@ -209,7 +229,10 @@ namespace SteelStrickers.ViewModels
             // Implement the logic to add a new robot asynchronously
             await PopupNavigation.Instance.PushAsync(new AddRobotPopup());
         }
-
+        ~ChooseModeViewModel()
+        {
+            MessagingCenter.Unsubscribe<AddRobotViewModel, Robot>(this, "RobotAdded");
+        }
 
     }
 

@@ -139,6 +139,7 @@ namespace SteelStrickers.ViewModels
                 HandleReceivedMessage(mqttMessage);
             });
         }
+
         private void HandleReceivedMessage(string message)
         {
             // Implémentez la logique pour traiter le message reçu ici
@@ -155,23 +156,18 @@ namespace SteelStrickers.ViewModels
                         OnPropertyChanged(nameof(IsMatchNotCreated));
                     }
                     break;
-                case "Player1:Start":
-                    
-                    break;
                 case "match start":
                     // Fermer le popup et naviguer
                     Device.BeginInvokeOnMainThread(async () =>
                     {
                         await ClosePopup();
                         // Ici, insérez la logique pour naviguer vers le contrôleur de navigation
-                        await Application.Current.MainPage.Navigation.PushAsync(new ControllerPage());
-
+                        await Application.Current.MainPage.Navigation.PushAsync(new ControllerPage(CreatedMatch));
                     });
                     break;
                 default:
-                break;
+                    break;
             }
-            
         }
 
         public async Task ShowPopup()
@@ -212,10 +208,19 @@ namespace SteelStrickers.ViewModels
 
             foreach (Match match in m)
             {
-                // Supposons que vous avez une méthode GetUserByIdAsync qui renvoie un User.
-                User creator = await daoUser.GetUserByIdAsync(match.creator_id);
-                match.CreatorName = creator?.Username;
-                allMatches.Add(match);
+                // need to add || match.creator_id == userId
+                if (match.Name == "" )
+                {
+                    continue;
+                }
+                else
+                {
+                    // Supposons que vous avez une méthode GetUserByIdAsync qui renvoie un User.
+                    User creator = await daoUser.GetUserByIdAsync(match.creator_id);
+                    match.CreatorName = creator?.Username;
+                    allMatches.Add(match);
+                }
+                
             }
 
             FilteredMatches = allMatches;
@@ -239,7 +244,6 @@ namespace SteelStrickers.ViewModels
                 await daoMatch.DeleteMatch(CreatedMatch.IdFight);
             }
         }
-
         ~MatchModeViewModel(){
             MessagingCenter.Unsubscribe<DAO_MQTT, string>(this, "MQTTMessageReceived");
         }

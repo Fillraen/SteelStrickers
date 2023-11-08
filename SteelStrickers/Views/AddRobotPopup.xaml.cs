@@ -30,22 +30,21 @@ namespace SteelStrickers.Views
         {
             if (e.SelectedItem is Robot robot)
             {
-                discoveryListView.SelectedItem = null;
-
-                // Logique pour se connecter à l'appareil sélectionné
-                (BindingContext as AddRobotViewModel)?.ConnectToBondedDevice(robot);
+                discoveryListView.SelectedItem = null; // Désélectionner l'autre liste
+                var viewModel = BindingContext as AddRobotViewModel;
+                viewModel.SelectedRobot = robot; // Définir le robot sélectionné
+                viewModel?.ConnectToBondedDevice(robot); // Connecter le robot
             }
-
         }
 
         private void OnDiscoveryDeviceSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem is Robot robot)
             {
-                bondedListView.SelectedItem = null;
-
-                // Logique pour l'appariement et la connexion à l'appareil sélectionné
-                (BindingContext as AddRobotViewModel)?.PairAndConnectToDiscoveryDevice(robot);
+                bondedListView.SelectedItem = null; // Désélectionner l'autre liste
+                var viewModel = BindingContext as AddRobotViewModel;
+                viewModel.SelectedRobot = robot; // Définir le robot sélectionné
+                viewModel?.PairAndConnectToDiscoveryDevice(robot); // Apparier et connecter le robot
             }
         }
 

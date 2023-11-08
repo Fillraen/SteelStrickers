@@ -100,12 +100,18 @@
                                 <Image Source="GenericSmallButtonNormal.png" Aspect="AspectFit"/>
                                 <Label Text="Cancel" TextColor="#61d9f1" FontSize="{StaticResource FontSizeMedium}" FontFamily="Roboto-Bold.ttf#Roboto" HorizontalOptions="Center" VerticalOptions="Center"/>
                             </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ClosePopupCommand}" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
                         </Frame>
                         <Frame WidthRequest="150" HeightRequest="75" HasShadow="False" Background="Transparent" Margin="0" >
                             <Grid>
                                 <Image Source="GenericSmallButtonNormal.png" Aspect="AspectFit"/>
                                 <Label Text="Confirm" TextColor="#61d9f1" FontSize="{StaticResource FontSizeMedium}" FontFamily="Roboto-Bold.ttf#Roboto" HorizontalOptions="Center" VerticalOptions="Center"/>
                             </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CreateRobotCommand}" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
                         </Frame>
                     </StackLayout>
                 </Grid>

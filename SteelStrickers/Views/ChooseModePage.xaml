@@ -131,22 +131,23 @@
                     <Frame Grid.Column="2" Style="{StaticResource GameModeActionButtonFrame}">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="FillAndExpand">
                             <Image Source="icon_ble.png" HeightRequest="36"/>
-                            <Label Text="Connect Bluetooth" Style="{StaticResource GameModeActionButtonText}">
+                            <Label Text="Connect Bluetooth" IsEnabled="{Binding IsBluetoothDisconnected}" Style="{StaticResource GameModeActionButtonText}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ConnectBluetoothCommand}" NumberOfTapsRequired="1"/>
+                                </Label.GestureRecognizers>
                             </Label>
                         </StackLayout>
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ConnectBluetoothCommand}" NumberOfTapsRequired="1" />
-                        </Frame.GestureRecognizers>
                     </Frame>
                     <!-- Disconnect bluetooth btn -->
                     <Frame Grid.Column="3" Style="{StaticResource GameModeActionButtonFrameAccent}">
                         <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
                             <Label Text="Disconnect From" Style="{StaticResource GameModeActionButtonTextAccent}" Margin="0,0,0,-7"/>
-                            <Label Text="{Binding SelectedRobot.Name}" Style="{StaticResource GameModeActionButtonTextAccent2}" Margin="0,-7,0,0" />
+                            <Label Text="{Binding SelectedRobot.Name}" IsEnabled="{Binding IsBluetoothDisconnected}" Style="{StaticResource GameModeActionButtonTextAccent2}" Margin="0,-7,0,0">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding DisconnectBluetoothCommand}" NumberOfTapsRequired="1"/>
+                                </Label.GestureRecognizers>
+                            </Label>
                         </StackLayout>
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding DisconnectBluetoothCommand}" NumberOfTapsRequired="1" />
-                        </Frame.GestureRecognizers>
                     </Frame>
                 </Grid>
                 <!-- List Available robots -->
