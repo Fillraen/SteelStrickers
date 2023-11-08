@@ -97,7 +97,7 @@
                     <Frame Style="{StaticResource UserInformationFrameStyle}" CornerRadius="5">
                         <StackLayout HeightRequest="175">
                             <!-- Liste des matchs associés -->
-                            <ListView x:Name="bondedListView" ItemsSource="{Binding FilteredMatches}" VerticalOptions="Start" SelectionMode="Single" >
+                            <ListView x:Name="bondedListView" ItemsSource="{Binding FilteredMatches}" VerticalOptions="Start" SelectionMode="Single" SelectedItem="{Binding selectedMatch, Mode=TwoWay}" >
                                 <ListView.ItemTemplate >
                                     <DataTemplate x:DataType="models:Match">
                                         <!-- Personnalisez ici pour ajouter "Created by" et le nom de l'utilisateur -->

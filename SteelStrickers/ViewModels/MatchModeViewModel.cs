@@ -41,6 +41,7 @@ namespace SteelStrickers.ViewModels
         public ICommand JoinMatchCommand { get; private set; }
         public ICommand StartMatchCommand { get; private set; }
         public ICommand CreateMatchCommand { get; private set; }
+        public Match selectedMatch { get; set; } 
         public bool MatchStarted { get; set; }
         public bool IsOpponentFound { get; set; }
         public bool IsOpponentSearching { get; set; }
@@ -83,7 +84,25 @@ namespace SteelStrickers.ViewModels
 
         private async Task JoinMatch()
         {
+            if (selectedMatch != null)
+            {
+                CreatedMatch = selectedMatch;
+                CreatedMatch.IdRobot2 = selectedRobot.IdRobot;
+                CreatedMatch.opponent_id = userId;
+                CreatedMatch.Status = "onGoing";
+                CreatedMatch.IdFight = selectedMatch.IdFight;
 
+                selectedTopic = await daoMatch.GetTopicForMatch(selectedMatch.IdFight);
+                CreatedMatch.Topic = selectedTopic.Id;
+                
+                Task.Run(async () => await daoMatch.EditMatch(CreatedMatch));
+                IsOpponentFound = false;
+                IsOpponentSearching = false;
+
+                daoMqtt.Subscribe(selectedTopic.Topic);
+
+
+            }
         }
         
         private void InitializeData()
