@@ -165,7 +165,9 @@ namespace SteelStrickers.ViewModels
             if (SelectedRobot.Name != null)
             {
                 await bluetoothService.Connect(SelectedRobot);
+                await bluetoothService.SendData("Login;");
                 await Application.Current.MainPage.DisplayAlert("Connection Ok", "", "OK");
+                
             }
             else
             {
@@ -180,6 +182,9 @@ namespace SteelStrickers.ViewModels
             // Implement the disconnect Bluetooth logic asynchronously
             if (SelectedRobot.Name != null && isConnected)
             {
+                await bluetoothService.SendData("Logout;");
+                //add 2ms to delay
+                await Task.Delay(200);
                 await bluetoothService.Disconnect();
             }
         }

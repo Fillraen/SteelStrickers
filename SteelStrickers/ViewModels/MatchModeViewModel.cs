@@ -102,7 +102,7 @@ namespace SteelStrickers.ViewModels
                 CreatedMatch.opponent_id = userId;
                 CreatedMatch.Status = "onGoing";
                 CreatedMatch.IdFight = selectedMatch.IdFight;
-
+                MatchStarted = true;
                 selectedTopic = await daoMatch.GetTopicForMatch(selectedMatch.IdFight);
                 CreatedMatch.Topic = selectedTopic.Id;
                 
@@ -160,6 +160,8 @@ namespace SteelStrickers.ViewModels
                     // Fermer le popup et naviguer
                     Device.BeginInvokeOnMainThread(async () =>
                     {
+
+                        await DeleteCreatedMatch();
                         await ClosePopup();
                         // Ici, insérez la logique pour naviguer vers le contrôleur de navigation
                         await Application.Current.MainPage.Navigation.PushAsync(new ControllerPage(CreatedMatch));
@@ -209,18 +211,25 @@ namespace SteelStrickers.ViewModels
             foreach (Match match in m)
             {
                 // need to add || match.creator_id == userId
+                /*
                 if (match.Name == "" )
                 {
                     continue;
                 }
                 else
                 {
-                    // Supposons que vous avez une méthode GetUserByIdAsync qui renvoie un User.
-                    User creator = await daoUser.GetUserByIdAsync(match.creator_id);
-                    match.CreatorName = creator?.Username;
-                    allMatches.Add(match);
+                    
                 }
-                
+                */
+                    // Supposons que vous avez une méthode GetUserByIdAsync qui renvoie un User.
+                   
+               if (match.Name != "" || match.Name != null)
+               {
+                   User creator = await daoUser.GetUserByIdAsync(match.creator_id);
+                   match.CreatorName = creator?.Username;
+                    allMatches.Add(match);
+
+                }
             }
 
             FilteredMatches = allMatches;

@@ -30,11 +30,7 @@ namespace SteelStrickers.Views
             // Ensure viewModel is not null before using it.
             if (viewModel != null)
             {
-                // Now it is safe to access viewModel's properties and methods.
-                if (!viewModel.MatchStarted && viewModel.CreatedMatch != null)
-                {
-                    await viewModel.DeleteCreatedMatch();
-                }
+                await viewModel.DeleteCreatedMatch();
             }
         }
     }

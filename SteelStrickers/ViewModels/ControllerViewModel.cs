@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Text;
 using System.Timers;
 using System.Windows.Input;
@@ -92,7 +93,6 @@ namespace SteelStrickers.ViewModels
         }
 
         private int _remainingTime; // Remaining time in seconds
-
         public int RemainingTime
         {
             get => _remainingTime;
@@ -138,15 +138,22 @@ namespace SteelStrickers.ViewModels
         }
 
         private bool _isCombatMode = false;
-        private Timer _matchTimer;
 
         public ControllerViewModel(Match createdMatch)
         {
+            var t = createdMatch;
             Joystick = new JoystickControl();
             DisconnectCommand = new Command(Disconnect);
             AbilityCommand = new Command<string>(ExecuteAbilityCommand);
 
             bluetoothService.DataReceived += OnDataReceived;
+
+            // Match mode initialization
+            VictoryPoints = CombatModeVictoryPoints; // Points for victory in match mode
+            RemainingTime = 180; // 3 minutes for match mode
+            RobotPoints = 0; // Points initiaux du robot en mode test
+            OpponentPoints = 0; // Points initiaux de l'adversaire en mode test
+
 
             _sendDataTimer = new Timer(1000); // Envoie des données toutes les 250ms
             _sendDataTimer.Elapsed += (sender, e) =>
@@ -159,27 +166,29 @@ namespace SteelStrickers.ViewModels
             };
             _sendDataTimer.Start();
 
-            // Match mode initialization
-            VictoryPoints = CombatModeVictoryPoints; // Points for victory in match mode
-            RemainingTime = 180; // 3 minutes for match mode
-            RobotPoints = 0; // Points initiaux du robot en mode test
-            OpponentPoints = 0; // Points initiaux de l'adversaire en mode test
-            // Start the match timer
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 if (RemainingTime > 0)
                 {
-                    RemainingTime--;
-                    return true; // Return true to keep the timer reoccurring
+                    RemainingTime--; // Decrement the timer
                 }
                 else
                 {
-                    // Handle match end
-                    return false; // Return false to stop the timer
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        EndMatch(); // Handle the match end on the UI thread
+                    });
                 }
+                return RemainingTime > 0; // Continue timing if time remains
             });
+
+
         }
 
+        private void EndMatch()
+        {
+
+        }
 
         private void ExecuteAbilityCommand(string abilityName)
         {
@@ -207,7 +216,8 @@ namespace SteelStrickers.ViewModels
 
         private void OnDataReceived(object sender, string data)
         {
-            if (data == "hit")
+            var t = data.Split(';');
+            if (t[0] == "hit") 
             {
                 OpponentPoints++; // Incrémente les points de l'adversaire
                 CheckVictoryCondition();
@@ -218,6 +228,7 @@ namespace SteelStrickers.ViewModels
             if (OpponentPoints >= _victoryPoints)
             {
                 // Gérer la condition de victoire (par exemple, fin de partie)
+                EndMatch();
             }
         }
 

@@ -2666,6 +2666,44 @@ C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\Stee
 C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\stamp\_GenerateJavaStubs.stamp
 C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\0d1b17c9-b78a-4fa2-a503-39848e637249.jar
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\2e594893-5e01-4ade-be70-a31f86c618e2.jar
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\3dd307a6-cc69-4a88-ba10-b8d03d79ccbe.jar
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\945500ab-2c47-4c90-aee7-e97f342cccb6.jar
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\a93c9eec-b785-4f71-8835-83792d473ad3.jar
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\c344fd43-2859-4d56-80c5-37a72744ecdf.jar
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\d1679277-6b42-4103-b7c6-ffff5b1cf38a.jar
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\e2f42d18-c25f-4504-a8cf-e90b83d4a25c.jar
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\00e60eff-4dd0-40ee-9062-3c76e78de004.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\03eb8772-13cf-46f9-b5e8-e361914c82ca.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\0b663f32-894f-4563-87e7-29c178edbc68.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\17c40c62-c729-4a7f-82d9-7817de9f4c80.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\1ba7dc31-a09f-4791-a61b-9cce24c054b1.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\1f20317d-7e8f-4701-b8a2-f2cb34148842.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\2de03b6a-fbc7-4fd2-a83e-a84749a67d6f.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\38e91c6e-39b7-41e8-a15a-f63e03d927e8.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\473aaa12-ce7e-4133-ae44-a47a1c73c88a.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\4842b962-d89d-4147-8500-732f566f20c2.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\53d511db-1832-426d-a634-c1e64e5e6de7.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\568ff984-283e-4a78-acfc-2cead9d40e23.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\5a410e2c-647e-4d23-b8ed-6dd9269c2386.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\5fb10c6d-1b11-4248-b0b4-617395fe6c82.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\65b34b0c-c2d6-4a26-9e87-fd24e039dd0c.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\6960e9a8-3329-42c9-80d4-26b9cdc9f506.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\78a55239-9fc1-4fed-8829-3f165394242e.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\7ea96d6c-1cbd-4cb4-bdc8-072a444ffee8.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\80fb0a87-9598-4ea6-8d77-fe2f248d40a8.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\9e5f3615-7cca-4b54-ad59-47b7f9219e26.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\b802d0f6-b5ab-467a-832d-912b23215d94.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\bad9cf70-c527-440c-85cd-7568ea36afce.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\be1972e0-2c89-4d24-8e6b-1feb53c1269e.cfg
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\bf617bef-de54-45a4-8425-c20a5745e288.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\d1eb26e2-3802-4fbc-8236-def4ed7e8d9a.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\d2bda634-7f14-4c5d-9cbe-2bab70207627.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\d7ba5727-c4c2-4cf1-b9ab-a1c82cc9c6e6.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\f07d57f4-de88-442c-b14f-09c7f116c18e.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\f7d73fd5-0a84-4d32-a46d-edc1c7581e7b.txt
+C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\f86ca4c9-ec27-4b53-bab4-76d6756e8bd0.txt
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\bin\Debug\SteelStrickers.Android.dll
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\bin\Debug\SteelStrickers.Android.pdb
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\bin\Debug\com.companyname.steelstrickers.apk
@@ -3109,45 +3147,45 @@ C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Andr
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\android\assets\Xamarin.Kotlin.StdLib.Jdk8.dll
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\android\assets\Xamarin.KotlinX.Coroutines.Android.dll
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\android\assets\Xamarin.KotlinX.Coroutines.Core.Jvm.dll
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\1540b75e-5328-4c99-be3e-9eeca6d3c9c8.jar
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\80ccf6dd-5f58-4774-b74a-fa5715466404.jar
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\b4bf22a0-4d86-4445-b231-0a9b25ebf5b0.jar
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\b9e3931b-fbf5-42db-8f91-0d9d7b9bf947.jar
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\bb0877e8-0083-433a-a6f5-f583c28f6369.jar
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\c14f5be7-6650-4d62-915c-459b58e17fe3.jar
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\cdeb1ab4-5fcc-4f99-bae6-d97ed6b0925b.jar
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\e37a3387-b223-4911-aec7-d3dcd29121ae.jar
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\24003a1d-31a4-4edc-b048-e87b1cee6a35.jar
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\39c8a861-bd3d-4bdf-b4e6-342ae4713e1e.jar
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\3c156bd8-b8a8-4ea0-9e49-9645feb0d716.jar
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\5277e751-a6b9-4042-a0e2-c90c13023c2a.jar
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\857ad01d-1908-489e-8179-33a1322c66f1.jar
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\bc1ff926-b926-424d-82ea-a1adf59b14a5.jar
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\d8a1c558-0839-4e04-9213-554537cb2369.jar
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\d9ee70c5-6b7e-4a14-a577-00dfa3097fdb.jar
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\stamp\_AndroidXJetifyJavaLibraryRules.stamp
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\0350b3fd-0b02-4e4d-9e75-d1ba7e40ca0a.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\03f840de-2cc9-42ca-9e57-d67f2e4c2776.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\043a3bdc-8f02-44f7-bc9d-d061af16defa.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\05ae3941-f9d5-45f2-992b-6aea79660fa8.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\0f81d347-660b-4666-af9b-8b00b3e1e30b.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\16249a39-94bb-4029-8e02-007df876d4c7.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\19a9470f-91a9-4ca8-b212-c3648a3a2a4e.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\1ed50d74-7cb7-4aed-b215-47680fd15db8.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\24754f0e-dcb0-4e09-8a06-5cff1f9831c8.cfg
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\2d4b6e27-8f83-4c86-ab71-5adf6733b1c7.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\2e8c278e-b29a-4335-a666-828ab06817a8.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\30b63d5e-3697-4dc7-b3ad-07e7c3c70edd.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\356c722a-6d0f-4ff3-b3ad-2afe30010100.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\36f46285-9b68-4c63-9892-719a8496e210.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\38ac18fe-c557-4ccf-b272-d14182a2c711.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\3d738839-b858-4f2b-869e-1e3816e6afe6.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\4eb805cd-bc45-44bd-8059-30c098f77980.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\673da2dc-d678-43a5-9f32-3cfb02f5c628.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\892c6a1e-8c2f-482c-becc-8a208f9bcef6.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\a0d53093-bd55-4ec0-a8cd-7a3584c0c718.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\a1731ecf-a693-4395-b96c-05bed6811780.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\a235a057-cb8e-4799-b772-2b54b6abbe92.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\a8cb64c9-b489-4601-aeca-7960c02e5eb5.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\b35351bc-70f1-42b8-ade5-2d40684185e3.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\bdc1dee1-bdfd-4089-9136-c0ae4aed03d6.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\ccba2c03-f9c5-4dae-ba06-a8e794cdcbea.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\d03bedda-13c5-4614-9698-73333bffce28.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\f7f002cf-dbc0-4451-bcce-941d04ac1cd8.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\fc64b5c0-28b4-49d7-bf76-12768735a06a.txt
-C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\feb7bf9d-e8d9-4592-8044-f27a552afd55.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\05274406-810a-4586-afa2-2ba2a8d12591.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\10717ef7-de6d-4f61-99c8-4eedfa557432.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\20568e32-90d4-4ded-98c8-e12725def6ea.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\26239729-2f7e-4ddb-85fa-7d50b337737b.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\3e82c868-5258-434b-93ab-14367e9f63e4.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\45465a40-a9b6-4e57-8fd6-653aa1ff7d8d.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\4760018e-bf57-43bb-a7c4-917c0bbce6bd.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\5022fd83-2358-431a-b6a4-575db911550b.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\58df8ae3-6659-4e47-a838-96f92a6836bb.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\5ce3c749-578f-42f6-9e95-906467fe30b9.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\76016a89-837c-4e31-9c79-372b076c74dc.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\7db6e48b-e4e2-41d0-9741-2da3a5f60ba2.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\832d9029-395d-48f5-b046-75744f58ddd7.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\87fd870c-5143-4bff-91d1-c962992dc87f.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\8e7ecc4c-867a-48c3-9540-c9291ceb0358.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\90dd4433-e5f0-49dc-9bbf-2418d3f83f5d.cfg
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\97fe6278-7a0e-4840-8560-c1b3af793d28.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\a07a02ad-81a9-492a-b721-f3f5ba4f6d5d.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\a7dc6158-1ead-4830-ad1b-4b8f298dc318.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\bed72eaa-cbbf-41ce-bf5e-d17ba4453515.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\c40a97df-e721-4cfd-956d-53d0e699a2a5.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\caa7a522-ffdc-4b1d-be96-aa6ce13cf73d.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\cec9cbc3-c66a-4e01-af48-266440ace8df.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\d9d27457-1195-4c24-9e3c-13a2b4d74c9a.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\d9e06d3a-bf0d-44ed-ac4c-b61e89fca0b6.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\da58f27e-b084-464e-8d2a-43927cdb3916.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\db214625-d604-4046-bcdd-f4cb84ec4b47.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\f1c0b7e8-3bba-4728-99e6-e2a3fdba40fc.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\f22d3dfe-a80a-4522-aeb4-0ff282c071d5.txt
+C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\f9dee06a-aaab-4ec3-9a32-af4cc0bce6ee.txt
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\stamp\_AndroidXJetifyProguardRules.stamp
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\_AndroidXJetifyProguardRules.jetify
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\stamp\_AndroidXCecilfy.stamp
@@ -3628,41 +3666,3 @@ C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Andr
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\stamp\_GenerateJavaStubs.stamp
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\SLAB95\source\repos\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\0d1b17c9-b78a-4fa2-a503-39848e637249.jar
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\2e594893-5e01-4ade-be70-a31f86c618e2.jar
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\3dd307a6-cc69-4a88-ba10-b8d03d79ccbe.jar
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\945500ab-2c47-4c90-aee7-e97f342cccb6.jar
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\a93c9eec-b785-4f71-8835-83792d473ad3.jar
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\c344fd43-2859-4d56-80c5-37a72744ecdf.jar
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\d1679277-6b42-4103-b7c6-ffff5b1cf38a.jar
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\jl\e2f42d18-c25f-4504-a8cf-e90b83d4a25c.jar
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\00e60eff-4dd0-40ee-9062-3c76e78de004.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\03eb8772-13cf-46f9-b5e8-e361914c82ca.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\0b663f32-894f-4563-87e7-29c178edbc68.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\17c40c62-c729-4a7f-82d9-7817de9f4c80.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\1ba7dc31-a09f-4791-a61b-9cce24c054b1.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\1f20317d-7e8f-4701-b8a2-f2cb34148842.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\2de03b6a-fbc7-4fd2-a83e-a84749a67d6f.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\38e91c6e-39b7-41e8-a15a-f63e03d927e8.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\473aaa12-ce7e-4133-ae44-a47a1c73c88a.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\4842b962-d89d-4147-8500-732f566f20c2.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\53d511db-1832-426d-a634-c1e64e5e6de7.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\568ff984-283e-4a78-acfc-2cead9d40e23.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\5a410e2c-647e-4d23-b8ed-6dd9269c2386.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\5fb10c6d-1b11-4248-b0b4-617395fe6c82.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\65b34b0c-c2d6-4a26-9e87-fd24e039dd0c.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\6960e9a8-3329-42c9-80d4-26b9cdc9f506.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\78a55239-9fc1-4fed-8829-3f165394242e.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\7ea96d6c-1cbd-4cb4-bdc8-072a444ffee8.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\80fb0a87-9598-4ea6-8d77-fe2f248d40a8.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\9e5f3615-7cca-4b54-ad59-47b7f9219e26.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\b802d0f6-b5ab-467a-832d-912b23215d94.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\bad9cf70-c527-440c-85cd-7568ea36afce.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\be1972e0-2c89-4d24-8e6b-1feb53c1269e.cfg
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\bf617bef-de54-45a4-8425-c20a5745e288.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\d1eb26e2-3802-4fbc-8236-def4ed7e8d9a.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\d2bda634-7f14-4c5d-9cbe-2bab70207627.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\d7ba5727-c4c2-4cf1-b9ab-a1c82cc9c6e6.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\f07d57f4-de88-442c-b14f-09c7f116c18e.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\f7d73fd5-0a84-4d32-a46d-edc1c7581e7b.txt
-C:\Users\NTAer\Desktop\Project VisualStudio\Fillraen\SteelStrickers-Xamarin\SteelStrickers.Android\obj\Debug\130\androidx\proguard\f86ca4c9-ec27-4b53-bab4-76d6756e8bd0.txt

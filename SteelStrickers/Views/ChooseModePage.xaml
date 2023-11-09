@@ -131,7 +131,7 @@
                     <Frame Grid.Column="2" Style="{StaticResource GameModeActionButtonFrame}">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="FillAndExpand">
                             <Image Source="icon_ble.png" HeightRequest="36"/>
-                            <Label Text="Connect Bluetooth" IsEnabled="{Binding IsBluetoothDisconnected}" Style="{StaticResource GameModeActionButtonText}">
+                            <Label Text="Connect Bluetooth" Style="{StaticResource GameModeActionButtonText}">
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ConnectBluetoothCommand}" NumberOfTapsRequired="1"/>
                                 </Label.GestureRecognizers>
@@ -142,7 +142,7 @@
                     <Frame Grid.Column="3" Style="{StaticResource GameModeActionButtonFrameAccent}">
                         <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
                             <Label Text="Disconnect From" Style="{StaticResource GameModeActionButtonTextAccent}" Margin="0,0,0,-7"/>
-                            <Label Text="{Binding SelectedRobot.Name}" IsEnabled="{Binding IsBluetoothDisconnected}" Style="{StaticResource GameModeActionButtonTextAccent2}" Margin="0,-7,0,0">
+                            <Label Text="{Binding SelectedRobot.Name}" LineBreakMode="TailTruncation" Style="{StaticResource GameModeActionButtonTextAccent2}" Margin="0,-7,0,0">
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding DisconnectBluetoothCommand}" NumberOfTapsRequired="1"/>
                                 </Label.GestureRecognizers>
@@ -207,6 +207,8 @@
                                                              WidthRequest="150">
                                                     <Label Text="{Binding Name}"
                                                            Style="{StaticResource GameModeRobotName}"
+                                                           LineBreakMode="TailTruncation"
+                                                           WidthRequest="75"
                                                            HorizontalTextAlignment="Center" />
                                                     <Image Source="char2.png"
                                                            Style="{StaticResource GameModeRobotImage}"
