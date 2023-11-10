@@ -222,32 +222,14 @@ namespace SteelStrickers.ViewModels
         #region communication mqtt
         private void HandleReceivedMessage(string message)
         {
-            // Implémentez la logique pour traiter le message reçu ici
-            switch (message)
+            if (message.StartsWith("playerHit:"))
             {
-                case "playerHit":
-                    if (!_hitSentByLocalPlayer)
-                    {
-                        Device.BeginInvokeOnMainThread(() =>
-                        {
-                            if (!MatchEnded())
-                            {
-                                RobotPoints++; // Incrémente les points du joueur local car l'adversaire a été touché
-                                CheckVictoryCondition();
-                            }
-                            // Réinitialiser le drapeau immédiatement après le traitement
-                            _hitSentByLocalPlayer = false;
-                        });
-                    }
-                    else
-                    {
-                        // Réinitialise le drapeau pour le prochain coup
-                        _hitSentByLocalPlayer = false;
-                    }
-                    break;
-                
-                default:
-                    break;
+                int senderId = int.Parse(message.Split(':')[1]);
+                if (senderId != userId && !MatchEnded())
+                {
+                    OpponentPoints++; // Un autre joueur a touché
+                    CheckVictoryCondition();
+                }
             }
         }
         #endregion
@@ -256,31 +238,32 @@ namespace SteelStrickers.ViewModels
         // receive bluettoth data
         private void OnDataReceived(object sender, string data)
         {
-            var t = data.Split(';');
-            if (t.Contains("hit"))
+            if (data.Contains("hit") && !MatchEnded())
             {
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    if (!MatchEnded())
-                    {
-                        // Le joueur local est touché, donc augmenter les points de l'adversaire
-                        OpponentPoints++; // Incrémente les points de l'adversaire
-                        // Indiquer que le joueur local a été touché
-                        _hitSentByLocalPlayer = true;
-                        // Publier le fait que le joueur local a été touché
-                        daoMqtt.Publish(selectedTopic.Topic, "playerHit");
-                        CheckVictoryCondition();
-                    }
-                });
+                HandleLocalPlayerHit();
             }
         }
-        // Ajouter une méthode pour réinitialiser le drapeau lorsque le joueur local touche l'adversaire
-        private void PlayerLocalHit()
+
+        private void HandleLocalPlayerHit()
         {
-            _hitSentByLocalPlayer = true;
-            // Attendre un court délai avant de réinitialiser le drapeau pour éviter les fausses détections
-            Task.Delay(500).ContinueWith(t => _hitSentByLocalPlayer = false);
+            if (!MatchEnded())
+            {
+                _hitSentByLocalPlayer = true;
+                RobotPoints++; // Supposons que le joueur local a touché l'adversaire
+                CheckVictoryCondition();
+                // Publier le coup avec l'ID du joueur local
+                daoMqtt.Publish(selectedTopic.Topic, $"playerHit:{userId}");
+                ResetLocalPlayerHitFlag();
+            }
         }
+        // Réinitialiser le drapeau après un délai pour permettre la réception du message MQTT
+        private async void ResetLocalPlayerHitFlag()
+        {
+            await Task.Delay(500); // Un délai pour éviter les doubles comptages
+            _hitSentByLocalPlayer = false;
+        }
+
+
         private bool MatchEnded()
         {
             return OpponentPoints >= _victoryPoints || RobotPoints >= _victoryPoints || RemainingTime <= 0;
@@ -323,65 +306,42 @@ namespace SteelStrickers.ViewModels
         #endregion
         private void CheckVictoryCondition()
         {
-            if (OpponentPoints >= _victoryPoints || RobotPoints >= _victoryPoints)
+            if (MatchEnded())
             {
-                // Gérer la condition de victoire (par exemple, fin de partie)
                 EndMatch();
             }
         }
+
         private void EndMatch()
         {
-            Device.BeginInvokeOnMainThread(async () =>
-            {
-                // Arrêtez le timer avant de le disposer
-                _sendDataTimer.Stop();
-                _sendDataTimer.Dispose();
+            _sendDataTimer.Stop();
+            _sendDataTimer.Dispose();
 
-                // Mettre à jour le match dans la base de données
-                selectedMatch.Points_Robot1 = RobotPoints;
-                selectedMatch.Points_Robot2 = OpponentPoints;
-                selectedMatch.IdVainqueur = RobotPoints > OpponentPoints ? selectedMatch.opponent_id : selectedMatch.creator_id;
-                selectedMatch.Status = "stopped";
-                selectedMatch.FightingTime = TimeSpan.FromSeconds(180 - RemainingTime);
-
-
-                // Si l'utilisateur est le vainqueur, alors il met à jour le match
-                if (selectedMatch.IdVainqueur == userId)
-                {
-                    // Il est préférable d'utiliser une méthode asynchrone et d'attendre son achèvement
-                    // plutôt que d'utiliser Task.Run
-                    
-                        await daoMatch.EditMatch(selectedMatch);
-                        await UpdateEloOfPlayers(RobotPoints, OpponentPoints);
-                    
-                }
-
-                // Naviguer vers la page de résultats avec le résultat du match
-                NavigateToResultPage(RobotPoints, OpponentPoints);
-            });
+            UpdateMatchResult();
         }
-        // Méthode pour naviguer vers la page de résultats
-        private void NavigateToResultPage(int localPlayerScore, int opponentScore)
+        private async void UpdateMatchResult()
         {
-            var result = localPlayerScore > opponentScore ? "Victoire" : "Défaite";
-            var matchResult = new MatchResult
-            {
-                LocalPlayerScore = localPlayerScore,
-                OpponentScore = opponentScore,
-                Result = result,
-                EloChange = CalculateEloChange(localPlayerScore, opponentScore)
-            };
+            selectedMatch.Points_Robot1 = RobotPoints;
+            selectedMatch.Points_Robot2 = OpponentPoints;
+            selectedMatch.IdVainqueur = RobotPoints > OpponentPoints ? userId : selectedMatch.opponent_id;
+            selectedMatch.Status = "Terminé";
+            selectedMatch.FightingTime = TimeSpan.FromSeconds(180 - RemainingTime);
 
-            Device.BeginInvokeOnMainThread(async () =>
+            if (selectedMatch.IdVainqueur == userId)
             {
-                await Application.Current.MainPage.Navigation.PushAsync(new ResultMatchPage(matchResult));
-            });
+                await daoMatch.EditMatch(selectedMatch);
+                await UpdateEloOfPlayers(RobotPoints, OpponentPoints);
+            }
+
+            NavigateToResultPage();
         }
+
         private async Task UpdateEloOfPlayers(int localPlayerScore, int opponentScore)
         {
             int eloChange = CalculateEloChange(localPlayerScore, opponentScore);
-            User localUser = await daoUser.GetUserByIdAsync(userId);
-            User opponentUser = await daoUser.GetUserByIdAsync(selectedMatch.opponent_id.GetValueOrDefault());
+            // Mise à jour de l'ELO des deux joueurs
+            var localUser = await daoUser.GetUserByIdAsync(userId);
+            var opponentUser = await daoUser.GetUserByIdAsync(selectedMatch.opponent_id.GetValueOrDefault());
 
             localUser.Elo += eloChange;
             opponentUser.Elo -= eloChange;
@@ -389,26 +349,42 @@ namespace SteelStrickers.ViewModels
             await daoUser.UpdateUserAsync(localUser);
             await daoUser.UpdateUserAsync(opponentUser);
         }
+
+        private void NavigateToResultPage()
+        {
+            var result = new MatchResult
+            {
+                LocalPlayerScore = RobotPoints,
+                OpponentScore = OpponentPoints,
+                Result = RobotPoints > OpponentPoints ? "Victoire" : "Défaite",
+                EloChange = CalculateEloChange(RobotPoints, OpponentPoints)
+            };
+
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await Application.Current.MainPage.Navigation.PushAsync(new ResultMatchPage(result));
+            });
+        }
+
         private int CalculateEloChange(int localPlayerScore, int opponentScore)
         {
-            // Logique pour calculer le changement d'Elo (à implémenter)
-            var elo = Math.Abs(localPlayerScore - opponentScore);
-            return elo;
+            // Implémentez la logique de calcul d'ELO ici
+            return Math.Abs(localPlayerScore - opponentScore);
         }
+
         private void Disconnect()
         {
             bluetoothService.SendData("Logout;");
-            System.Threading.Thread.Sleep(500);
+            System.Threading.Thread.Sleep(500); // Considérez d'utiliser await Task.Delay(500); pour une application asynchrone
             bluetoothService.Disconnect();
         }
 
-        
-        
         // N'oubliez pas de vous désabonner de l'événement lors de la destruction du ViewModel pour éviter les fuites de mémoire
         ~ControllerViewModel()
         {
             MessagingCenter.Unsubscribe<DAO_MQTT, string>(this, "MQTTMessageReceived");
             bluetoothService.DataReceived -= OnDataReceived;
+            _sendDataTimer?.Dispose();
         }
     }
 }
