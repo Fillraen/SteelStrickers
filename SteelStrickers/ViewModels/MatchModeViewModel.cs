@@ -85,7 +85,7 @@ namespace SteelStrickers.ViewModels
 
         private async Task StartMatch()
         {
-
+            CreatedMatch = await daoMatch.GetMatchById(CreatedMatch.IdFight);
             //Start a match
             MatchStarted = true;
             CreatedMatch.Status = "onGoing";

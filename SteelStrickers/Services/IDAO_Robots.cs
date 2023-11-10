@@ -13,7 +13,7 @@ namespace SteelStrickers.Services
         List<Robot> GetAllRobots();
 
 
-        Task<List<Robot>> GetAllRobotsByUserId();
+        Task<List<Robot>> GetAllRobotsByUserId(int iduser);
         Task<Robot> GetRobotById(int id);
         Task<bool> EditRobot(Robot robot);
         Task<bool> DeleteRobot(int id);

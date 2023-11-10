@@ -2,12 +2,52 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:SteelStrickers.ViewModels;assembly=SteelStrickers"
-             x:Class="SteelStrickers.Views.LoginPage">
+             x:Class="SteelStrickers.Views.LoginPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
     <ContentPage.BindingContext>
         <viewModels:LoginViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>
+            <Image Grid.ColumnSpan="2" Source="Background.png" Aspect="AspectFill" />
+            <Grid  Grid.ColumnSpan="2"  VerticalOptions="Center" HorizontalOptions="Center" Margin="100,50" WidthRequest="600">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.8*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.ColumnSpan="2" Source="Generic_Horisontal_Window_Premade.png" Aspect="AspectFit"  />
+                <Label Grid.ColumnSpan="2"  Text="Sign In" Style="{StaticResource UserInformationTitleLabelStyle}" Margin="0,40,0,0" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="{StaticResource FontSizeXMedium}"/>
+                <Grid Grid.Column="0" Margin="0,0,0,0" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="196" HeightRequest="196" Padding="20" >
+                    <Image Source="Facescan2.png" Aspect="AspectFill"/>
+                </Grid>
+                <StackLayout Grid.Column="1" Margin="0,0,0,0" VerticalOptions="Center" HorizontalOptions="Center" Padding="0,30,30,0" >
+                    <Frame Grid.Row="2" Style="{StaticResource UserInformationFrameStyle}">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Image Source="icon_user.png" WidthRequest="24" HeightRequest="24" Style="{StaticResource UserInformationIconImageStyle}"/>
+                            <Entry  Placeholder="Login Email" WidthRequest="300" Style="{StaticResource UserInformationEntryStyle}" Text="{Binding Email, Mode=TwoWay}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="2" Style="{StaticResource UserInformationFrameStyle}">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Image Source="icon_cadenas.png" WidthRequest="24" HeightRequest="24" Style="{StaticResource UserInformationIconImageStyle}"/>
+                            <Entry  Placeholder="Password" IsPassword="True" WidthRequest="300" Style="{StaticResource UserInformationEntryStyle}" Text="{Binding Password, Mode=TwoWay}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame WidthRequest="100" HeightRequest="75" HasShadow="False" Background="Transparent" Margin="0" VerticalOptions="End" HorizontalOptions="End">
+                        <Grid>
+                            <Image Source="GenericSmallButtonNormal.png" Aspect="AspectFit"/>
+                            <Label Text="Sign In !" TextColor="#61d9f1" FontSize="{StaticResource FontSizeMedium}" FontFamily="Roboto-Bold.ttf#Roboto" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding LoginCommand}" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </StackLayout>
+
+            </Grid>
+            
+            <!-- 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="3*"/>
@@ -25,6 +65,8 @@
                 <Button Text="Sign up " Style="{StaticResource SignupBtn}" Clicked="Signup_Clicked"/>
                 <Button Text="Login" Style="{StaticResource LoginBtn}" Clicked="Login_Clicked"/>
             </StackLayout>
+            -->
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

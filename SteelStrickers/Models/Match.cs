@@ -25,4 +25,11 @@ namespace SteelStrickers.Models
         public string CreatorName {get; set; }
         
     }
+    public class MatchResult
+    {
+        public int LocalPlayerScore { get; set; }
+        public int OpponentScore { get; set; }
+        public string Result { get; set; }
+        public int EloChange { get; set; }
+    }
 }

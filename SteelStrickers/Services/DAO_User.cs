@@ -39,7 +39,7 @@ namespace SteelStrickers.Services
         public async Task<User> GetUserByEmailAsync(string email)
         {
             var headers = new Dictionary<string, string> { { "Email", email } };
-            var user = await _apiService.GetWithHeadersAsync<User>("/users/by-email", headers);
+            var user = await _apiService.GetWithHeadersAsync<User>("users/by-email", headers);
             if (user != null)
             {
                 return (user);

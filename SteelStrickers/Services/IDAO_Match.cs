@@ -15,6 +15,7 @@ namespace SteelStrickers.Services
         Task<bool> EditMatch(Match match);
         Task<bool> DeleteMatch(int matchId);
 
+        Task<Match> GetMatchById(int matchId);
         Task<List<Match>> GetMatchNeededOpponent();
     }
 }

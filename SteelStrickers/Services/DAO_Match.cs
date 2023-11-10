@@ -25,6 +25,11 @@ namespace SteelStrickers.Services
         {
             return await _apiService.GetAsync<GameTopic>("match/available-gametopics");
         }
+
+        public async Task<Match> GetMatchById(int matchId)
+        {
+            return await _apiService.GetAsync<Match>($"match/{matchId}");
+        }
         public async Task<List<Match>> GetMatchByUserId(int userId)
         {
             var m = await _apiService.GetAsync<List<Match>>($"match/user/{userId}");

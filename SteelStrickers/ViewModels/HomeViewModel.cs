@@ -69,7 +69,7 @@ namespace SteelStrickers.ViewModels
         {
             //DetailedUser = await daoUser.GetUserByIdAsync(userId);
             
-            var RobotsList = await daoRobots.GetAllRobotsByUserId();
+            var RobotsList = await daoRobots.GetAllRobotsByUserId(userId);
             foreach (var robots in RobotsList )
             {
                 Robots.Add(robots);

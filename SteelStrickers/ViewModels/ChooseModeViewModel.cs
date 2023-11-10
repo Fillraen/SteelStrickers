@@ -121,7 +121,7 @@ namespace SteelStrickers.ViewModels
         private async Task LoadRobots()
         {
             // Load your robots here
-            var RobotsList = await daoRobots.GetAllRobotsByUserId();
+            var RobotsList = await daoRobots.GetAllRobotsByUserId(userId);
             foreach (var robots in RobotsList)
             {
                 Robots.Add(robots);
@@ -182,9 +182,8 @@ namespace SteelStrickers.ViewModels
             // Implement the disconnect Bluetooth logic asynchronously
             if (SelectedRobot.Name != null && isConnected)
             {
-                await bluetoothService.SendData("Logout;");
-                //add 2ms to delay
-                await Task.Delay(200);
+                bluetoothService.SendData("Logout;");
+                System.Threading.Thread.Sleep(500);
                 await bluetoothService.Disconnect();
             }
         }

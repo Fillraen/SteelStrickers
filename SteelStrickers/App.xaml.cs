@@ -25,14 +25,12 @@ namespace SteelStrickers
             audioService = new AudioService();
             audioService.PlayBackgroundMusic();
 
-
             MainPage = new AppShell();
-            Preferences.Set("IdUser", 2);
         }
 
         protected override void OnStart()
         {
-            /*
+            
             if (MainPage is Shell shellPage)
             {
                 int userId = Preferences.Get("IdUser", -1);
@@ -54,7 +52,7 @@ namespace SteelStrickers
                     }
                     else
                     {
-                        shellPage.GoToAsync($"//{nameof(HomePage)}");
+                        shellPage.GoToAsync($"//{nameof(ChooseModePage)}");
                     }
                 }
                 else
@@ -62,7 +60,7 @@ namespace SteelStrickers
                     shellPage.GoToAsync($"//{nameof(LoginPage)}");
                 }
             }
-            */
+            
         }
 
         protected override void OnSleep()

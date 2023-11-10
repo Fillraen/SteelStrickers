@@ -32,7 +32,7 @@ namespace SteelStrickers.Services
             return t;
         }
 
-        public async Task<List<Robot>> GetAllRobotsByUserId()
+        public async Task<List<Robot>> GetAllRobotsByUserId(int userId)
         {
             return await _apiService.GetAsync<List<Robot>>($"robots/user/{userId}");
         }

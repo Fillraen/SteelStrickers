@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SteelStrickers.Views.ResultMatchPage"
+             xmlns:viewModels="clr-namespace:SteelStrickers.ViewModels;assembly=SteelStrickers"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="Background.png" Aspect="AspectFill" />
+            
+            <Image Source="Resultbackground.png" Margin="400,0,0,0" Aspect="AspectFill" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="char1.png" Grid.Column="0" Margin="50"/>
+                <StackLayout Grid.Column="1" Margin="30,50,10,20">
+                    <Label Text="Result" Style="{StaticResource UserInformationTitleLabelStyle}" FontSize="{StaticResource FontSizeExtraLarge}" HorizontalOptions="Center" />
+                    <Label Text="{Binding matchResultLocalPlayer}" Style="{StaticResource UserInformationTitleLabelStyle}" FontSize="57" HorizontalOptions="Center" />
+
+                    <Label Text="Score" Style="{StaticResource UserInformationTitleLabelStyle}" Margin="0,30,0,0" FontSize="{StaticResource FontSizeLarge}" HorizontalOptions="Center" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="{Binding matchPointLocalPlayer}" Style="{StaticResource UserInformationTitleLabelStyle}" FontSize="{StaticResource FontSizeXMedium}" HorizontalOptions="Center" />
+                        <Label Text="-" Style="{StaticResource UserInformationTitleLabelStyle}" FontSize="{StaticResource FontSizeXMedium}" HorizontalOptions="Center" />
+                        <Label Text="{Binding matchPointOpponent}" Style="{StaticResource UserInformationTitleLabelStyle}" FontSize="{StaticResource FontSizeXMedium}" HorizontalOptions="Center" />
+
+                    </StackLayout>
+                    <Label Text="Reward" Style="{StaticResource UserInformationTitleLabelStyle}" Margin="0,50,0,0" FontSize="{StaticResource FontSizeExtraLarge}" HorizontalOptions="Center" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="{Binding EloTakkenSignLocalPlayer}" Style="{StaticResource UserInformationTitleLabelStyle}" FontSize="{StaticResource FontSizeXMedium}" HorizontalOptions="Center" />
+                        <Label Text="{Binding EloTakkenLocalPlayer}" Style="{StaticResource UserInformationTitleLabelStyle}" FontSize="{StaticResource FontSizeXMedium}" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <Frame WidthRequest="150" HeightRequest="150" HasShadow="False" Background="Transparent" Margin="0" VerticalOptions="End" HorizontalOptions="End">
+                        <Grid>
+                            <Image Source="GenericSmallButtonNormal.png" Aspect="AspectFit"/>
+                            <Label Text="EXIT" TextColor="#61d9f1" FontSize="{StaticResource FontSizeMedium}" FontFamily="Roboto-Bold.ttf#Roboto" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ReturnHomePageCommand}" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
